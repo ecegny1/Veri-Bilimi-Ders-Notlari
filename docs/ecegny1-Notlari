@@ -97,9 +97,16 @@ Regresyon Analizlerinde Mean Square Error(MSE) ve Mean Absolute Error(MAE) sıkl
 Lineer Regresyon 
 
 Bir veya daha fazla bağımsız değişken (özellik) ile bir bağımlı değişken (tahmin edilmek istenen değer) arasındaki doğrusal ilişkiyi modellemektedir.  Lineer regresyonda 2 boyutlu bir uzayda 2 noktalı bir çizgi mevcuttur. Çizgi 2 boyutlu düzlemi/uzayı bölmektedir. Bu çizgi elde edilen gözlemler sayesinde çizilir ve her gözlem birer nokta ile gösterilir. Çizginin üzerinde veya çizgiye en yakın gözlem en doğru gözlem olmakla birlikte, gözlemlerin çizgiye olan uzaklıkları ise hata terimini(residual) ortaya koymaktadır. 
-Lineer regresyon ile ilgili VsCode Jupyter Notebook'ta bir örnek yapmak istediğimizi varsayalım.
-Öncelikle çalışmamızı lineer_regresyon.ipynb olarak olması gereken ortama kaydedelim. 
-Lineer Regresyon için topladığımız verileri bir excel dosyasında satır ve sütun olarak tablolaştırarak derleyelim ve excel dosyamızı .csv uzantısı ile kaydedelim. 
 
+Lineer regresyon ile ilgili VsCode Jupyter Notebook'ta bir örnek yapmak istediğimizi varsayalım.
+
+Öncelikle çalışmamızı lineer_regresyon.ipynb olarak olması gereken ortama kaydedelim. 
+Lineer Regresyon için topladığımız verileri bir excel dosyasında satır ve sütun olarak tablolaştırarak derleyelim ve excel dosyamızı .csv uzantısı ile kaydedelim ve kodlarımızı yazmaya başlayalım.
+
+Bu tür kod blokları ile çalışırken bize yardımcı olacak bazı kütüphaneler mevcuttur. Kodlarımızı yazmaya başlamadan önce onları indirmeli ve içe aktarmalıyız. 
+
+```bash
+pip install pandas
+```
 
 
