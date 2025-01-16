@@ -18,7 +18,6 @@ Makine Öğrenmesi : Elde edilen bilgiden öğrenilebilen, algoritmalarla ilgile
 Sigmoid Fonksiyonu : Matematikte ve makine öğrenmesinde yaygın olarak kullanılan, S şeklindeki  bir eğriye sahip olan ve özellikle lojistik regresyon ve sinir ağlarında kullanılan bir fonksiyondur. 
 Fonksiyonun matematiksel formülü şu şekildedir: 
 
-![](https://www.gstatic.com/education/formulas2/553212783/tr/sigmoid_function.svg)
 
                                      Sigmoid = 1/ 1+(e)^-x
 
