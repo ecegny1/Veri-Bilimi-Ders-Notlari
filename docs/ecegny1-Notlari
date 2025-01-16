@@ -1,1 +1,29 @@
- 
+# BT Akademi Veri Bilimi Ders Notları
+Eğitmen :  M. Ali Bayram
+
+Yapay Zeka Nedir?
+
+Yapay zeka, verilen bilgilere göre bir sonraki adımı tahmin eden bir sistemdir. 
+Belli bir yapıyı, belli bir bütünü oluşturan dallardan, birimlerden her birine örüntü denir. 
+Sentez ise bir araya getirmek, parçalardan bütün oluşturmaktır. 
+Örüntü bulmaya çalıştığımız şey, ulaşmaya çalıştığımız hedef olarak adlandırılabilir. Örüntü olmazsa yapay zeka olamaz.
+
+Yapay Zeka ve Makine Öğrenmesi ile İlgili Bazı Kavramlar
+
+Analitik Düşünme : Parçalara ayırarak detaylı bakabilmektir. 
+Veri Analizi : Günümüz dilinde eldeki olayı anlamak olarak kullanılabilmekle birlikte, veri analizi elimizdeki verilerle olayları anlayabilmektir.
+Veri Bilimi : Veri analizinin yanısıra veri analizinde elimizde bir bilgiyi analiz edebilirken, veri biliminde amaç elde olmayanı tahmin etmektir.
+Makine Öğrenmesi : Elde edilen bilgiden öğrenilebilen, algoritmalarla ilgilenen yapay zekanın bir alt dalıdır. 
+
+Sigmoid Fonksiyonu : Matematikte ve makine öğrenmesinde yaygın olarak kullanılan, S şeklindeki  bir eğriye sahip olan ve özellikle lojistik regresyon ve sinir ağlarında kullanılan bir fonksiyondur. 
+Fonksiyonun matematiksel formülü şu şekildedir: 
+
+![](https://www.gstatic.com/education/formulas2/553212783/tr/sigmoid_function.svg)
+
+                                     Sigmoid = 1/ 1+(e)^-x
+
+x : Sigmoid fonksiyonuna koymak istediğimiz sayıdır. 0 ile 1 arasında yer almaktadır. 
+e : Doğal logaritma tabanı olan eular sayısıdır, yaklaşık değeri 2.71828'e eşittir.
+
+Yukarıda verilen formülün amacı sayıları bir düzene oturtmaktır. 
+
