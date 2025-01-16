@@ -1,6 +1,33 @@
 # BT Akademi Veri Bilimi Ders Notları
 Eğitmen :  M. Ali Bayram
 
+Böyle bir eğitime başlarken teknik bilgileri edinmenin yanısıra pratik yapmakta çok önemlidir. 
+
+Bu nedenle bildiğiniz teorik bilgilerinizi uygulayabilmeniz veri bilimi alanında ilerlemenizde büyük katkı sağlayacaktır.
+
+Teorik bilgilere geçmeden önce bilgisayarınızda veri bilimine dair nelerin kurulu olması gerektiğinden hangi platformlardan ne amaçla yararlanabileceğinizden bahsetmek gerekir. 
+
+Öncelikle her profesyonel insan bu işe kendini adamaya karar verdiğinde amatörce başlar, bu nedenle en büyük tavsiyemiz yaptığınız çalışmaları paylaşmaktan asla kaçınmayın.
+
+Peki nerede pratik yapacak, kodlarınızı nerede mi yazacaksınız? İşte size çalışabileceğiniz iki harika platform:
+
+Google Colab : https://colab.research.google.com/ bu linkten gmail adresiniz ile hesap oluşturabilir ve kod çalışmalarınızı burada gerçekleştirebilirsiniz.
+
+Google Colab'e ek olarak VsCode uygulamasını bilgisayarınıza indirerek de yine kod çalışmalarınızı buradan da gerçekleştireebilirsiniz. 
+VsCode için ise "https://code.visualstudio.com/download" bu linki kullanabilir, bilgisayarınız için uygun sürümü indirebilirsiniz. 
+
+Tavsiyemiz her türlü platforma aşina olmanız ve kullanılabilirliğinizi ne kadar arttırabilirseniz konfor alanınız genişleyecek, çalışmalarınız ise daha üst kademelere taşınacaktır. 
+
+Peki ya bu platformlardaki kodlarımızı halka açık bir şekilde nerede yayınlayabiliriz?
+"https://github.com/" Github platformuna, VsCode veya Google Colab'e giriş yaptığınız e-mail adresiniz ile kayıt olursanız yaptığınız çalışmaları daha konforlu bir şekilde paylaşabilirsiniz.
+
+Bunlara ek olarak amacımız makine öğrenmesini, derin öğrenmeyi anlamak ve veri bilimine adım atarak ileri düzey projeler oluşturabilmek. 
+Bu projelerimizin yapıtaşlarından biri ise elde ettiğimiz verilerdir. Başlangıç düzeyindeki bir veri bilimci için en büyük problem "Nasıl veri bulacağım, nasıl verilerle, neler yapacağım?" sorularına yanıt bulmaktır.
+
+Öncelikli olarak hazır çalışmaları inceleyebilir, hazır veri setleri üzerinden çalışmalarınızı gerçekleştirebilirsiniz. 
+Bunun için ise "Kaggle" : https://www.kaggle.com ve "Hugging Face" :https://huggingface.co/ platformlarını inceleyebilir, verisetlerini indirebilir ve kendi çalışmalarınızı yapabilirsiniz.
+Dilerseniz kaynak erişimine açık sitelerden örneğin "TÜİK, KAP, IETT, vb. veri sitelerinden kendi ihtiyaçlarınız doğrultusunda verilerinizi excel formatında kendinize göre düzenleyebilir ve excel formatını ".csv" olarak kaydederek yazacağınız kodlar için veri seti olarak kullanabilirsiniz.
+
 Yapay Zeka Nedir?
 
 Yapay zeka, verilen bilgilere göre bir sonraki adımı tahmin eden bir sistemdir. 
@@ -17,7 +44,6 @@ Makine Öğrenmesi : Elde edilen bilgiden öğrenilebilen, algoritmalarla ilgile
 
 Sigmoid Fonksiyonu : Matematikte ve makine öğrenmesinde yaygın olarak kullanılan, S şeklindeki  bir eğriye sahip olan ve özellikle lojistik regresyon ve sinir ağlarında kullanılan bir fonksiyondur. 
 Fonksiyonun matematiksel formülü şu şekildedir: 
-
 
                                      Sigmoid = 1/ 1+(e)^-x
 
