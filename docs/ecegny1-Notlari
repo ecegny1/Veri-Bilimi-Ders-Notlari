@@ -16,6 +16,12 @@ Google Colab : https://colab.research.google.com/ bu linkten gmail adresiniz ile
 Google Colab'e ek olarak VsCode uygulamasını bilgisayarınıza indirerek de yine kod çalışmalarınızı buradan da gerçekleştireebilirsiniz. 
 VsCode için ise "https://code.visualstudio.com/download" bu linki kullanabilir, bilgisayarınız için uygun sürümü indirebilirsiniz. 
 
+Dosyalarınızı kaydederken kullanmış olduğunuz programlama diline göre kaydetmelisiniz. Örneğin, Python ile bir kod yazdıysanız kayıt edeceğiniz dosya uzantısı .py olmalıdır. 
+
+Kodlarınızı açıklamak için kod bloklarınızın içine açıklamalar eklemek isterseniz tek satırlık yorumlar için # kullanabilir veya çok satırlı bir yorum yazacaksanız """ """ şeklinde üç çift tırnak kullanmalısınız. 
+
+VsCode Jupyter Notebook ile çalışıyorsanız, uzantınız .ipynb olmalıdır.
+
 Tavsiyemiz her türlü platforma aşina olmanız ve kullanılabilirliğinizi ne kadar arttırabilirseniz konfor alanınız genişleyecek, çalışmalarınız ise daha üst kademelere taşınacaktır. 
 
 Peki ya bu platformlardaki kodlarımızı halka açık bir şekilde nerede yayınlayabiliriz?
@@ -37,6 +43,13 @@ Sentez ise bir araya getirmek, parçalardan bütün oluşturmaktır.
 
 Yapay Zeka ve Makine Öğrenmesi ile İlgili Bazı Kavramlar
 
+Veri : Elde edilen bilgi olarak tanımlanabilir. Verinin boyutu ne kadar artarsa yapılan yorumun başarısı da bir o kadar artar. Verideki özellikler, sütunlar, verinin boyutu ne kadar geliştirilirse bakış açısı o kadar artar. Yorumun doğruluk oranı o kadar artar. 
+
+İstatistikte Veri ikiye ayrılmaktadır:
+  1. Numerik Veri
+  2. Kategorik Veri
+Not: Kategorik veri ile lineer bir şey çizmek kolay değildir.
+
 Analitik Düşünme : Parçalara ayırarak detaylı bakabilmektir. 
 Veri Analizi : Günümüz dilinde eldeki olayı anlamak olarak kullanılabilmekle birlikte, veri analizi elimizdeki verilerle olayları anlayabilmektir.
 Veri Bilimi : Veri analizinin yanısıra veri analizinde elimizde bir bilgiyi analiz edebilirken, veri biliminde amaç elde olmayanı tahmin etmektir.
@@ -51,4 +64,26 @@ x : Sigmoid fonksiyonuna koymak istediğimiz sayıdır. 0 ile 1 arasında yer al
 e : Doğal logaritma tabanı olan eular sayısıdır, yaklaşık değeri 2.71828'e eşittir.
 
 Yukarıda verilen formülün amacı sayıları bir düzene oturtmaktır. 
+
+Sınıflandırma modellerinde tahminlerin doğruluğunu(accuracy) değerlendirmek için kullanılan temel kavramlar:
+  * True Positive
+  * False Positive 
+  * True Negative
+  * False Negative
+
+Yalnız bazı durumlarda doğruluk ölçütleri her zaman doğru olmayabilir.
+
+Kayıp Fonksiyonu (Loss Function)
+
+Makine öğrenmesi ve derin öğrenme modellerinde, modelin yaptığı tahminler ile gerçek değerler arasındaki farkı ölçmek için kullanılan matematiksel bir fonksiyondur. Modelin başarısızlık derecesini belirler ve amacı, bu hatayı minimize etmektir.
+
+Regresyon Analizlerinde Mean Square Error(MSE) ve Mean Absolute Error(MAE) sıklıkla kullanılmaktadır. 
+
+Lineer Regresyon 
+
+Bir veya daha fazla bağımsız değişken (özellik) ile bir bağımlı değişken (tahmin edilmek istenen değer) arasındaki doğrusal ilişkiyi modellemektedir.  Lineer regresyonda 2 boyutlu bir uzayda 2 noktalı bir çizgi mevcuttur. Çizgi 2 boyutlu düzlemi/uzayı bölmektedir. Bu çizgi elde edilen gözlemler sayesinde çizilir ve her gözlem birer nokta ile gösterilir. Çizginin üzerinde veya çizgiye en yakın gözlem en doğru gözlem olmakla birlikte, gözlemlerin çizgiye olan uzaklıkları ise hata terimini(residual) ortaya koymaktadır. 
+
+
+
+
 
