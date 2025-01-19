@@ -394,6 +394,7 @@ En temel koşul ifadesidir.
 Döngü kapsamında olay gerçekleşir ve son bulur. 
 
 Örnek :
+
 ```bash
 if len(isim)<5:
   print ("İsim 5 karakterden küçüktür.")
@@ -406,6 +407,7 @@ Not: len() fonksiyonu, verilen bir dizinin (örneğin bir string'in) uzunluğunu
 ## Komutlar 
 
 Continue Komutu : Net olarak döngü içinde koşul sağlanırsa adım atlama komutudur. Her koşulda kullanılan bir komut değildir, belli koşullarda yazılmaktadır. 
+
 Break Komutu : Döngüyü bitir komutudur. Döngü dışında da yazılabilir.
 
 Continue ve break komutları döngü içinde yazılırlar ve genelde koşul içinde kullanılırlar.
@@ -425,6 +427,7 @@ Koşul operatörlerinde elde edilen cevap True veya False'dur.
 Ünlem(!) işaretini hangi operatörün başına koyarsak tersi anlamına gelmektedir.
 
 Eşittir (==): İki değeri karşılaştırır ve eşit olup olmadığını kontrol eder. Örnek: a == b
+
 Eşit Değildir (!=): İki değerin eşit olup olmadığını kontrol eder. Örnek: a != b
 
 Not: Eşit (==) ve Eşit değil (!=) operatörleri bütün veri tipleri ile kullanılmaz fakat çoğu veri tipinde kullanılabilir. Bazı veri tipleri (örneğin, float ve int) karşılaştırıldığında küçük farklar nedeniyle beklenmedik sonuçlar verebilir. Bu nedenle, örneğin kayan noktalı sayılarla çalışırken dikkatli olunmalıdır.
