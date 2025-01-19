@@ -77,9 +77,191 @@ Makine Öğrenmesi : Elde edilen bilgiden öğrenilebilen, algoritmalarla ilgile
   5. Modelin Değerlendirilmesi
   6. Sonuçların Sunulması ve Aksiyon Alınması
 
+Makine öğrenmesi, yapay zekanın alt alanıdır ve veriden öğrenme yeteneğine odaklanır. Supervised ve unsupervised learning, makine öğrenmesinin alt kategorileridir.
+
+## a. Supervised Learning (Denetimli Öğrenme): 
+
+Verilerin etiketli olduğu durumlarda kullanılır. Model, bağımlı değişken (hedef) ile bağımsız değişkenler (özellikler) arasındaki ilişkiyi öğrenir. Eğitmek istediğimiz datada model etiketlenmiş veri setleri üzerinde çalışır. 
+
+Örnek: E-posta sınıflandırma (spam veya değil), ev fiyatı tahmini.
+
+## Algoritmalar:
+
+## 1. Doğrusal Regresyon (Linear Regression)
+
+Veri bilimi de regresyona örnek olarak gösterilebilmektedir. Veriye düzgün çizgiler çizdirebilmek veri biliminin tanımıdır diyebilir ve lineer regresyonu şu şekilde de tanımlayabiliriz:
+
+Bir veya daha fazla bağımsız değişken (özellik) ile bir bağımlı değişken (tahmin edilmek istenen değer) arasındaki doğrusal ilişkiyi modellemektedir.  
+
+Lineer regresyon bir yapay zeka modelidir.
+
+Lineer regresyona ne soruyoruz, bize ne veriyor?
+
+![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*sZl820GxVJwjHYzA4LObJw.png)
+
+Lineer regresyonda 2 boyutlu bir uzayda 2 noktalı bir çizgi mevcuttur. Çizgi 2 boyutlu düzlemi/uzayı bölmektedir. Bu çizgi elde edilen gözlemler sayesinde çizilir ve her gözlem birer nokta ile gösterilir. Çizginin üzerinde veya çizgiye en yakın gözlem en doğru gözlem olmakla birlikte, gözlemlerin çizgiye olan uzaklıkları ise hata terimini(residual) ortaya koymaktadır. 
+
+Lineer regresyon ile ilgili VsCode Jupyter Notebook'ta bir örnek yapmak istediğimizi varsayalım.
+
+Öncelikle excelde çalışmak istediğimiz anlamlı veri setimizi oluşturalım, lineer regresyon için topladığımız verileri bir excel dosyasında satır ve sütun olarak tablolaştırarak derleyelim  ve excel dosyamızı lineer_regresyon.csv olarak kaydedelim. CSV uzantısı virgülle ayrılmışd değerler(comma seperated value) demektir. CSV dosyanızı vscode'da açtığınızda virgülle ayrılmış sütunlardan oluşan tablonuz karşınıza çıkacaktır. CSV dosyanızı açtığınızda bir satırda kaç virgül varsa o kadar sütun var demektir. 
+
+Ardından Vscode veya colab çalışma ortamında çalışmamızı lineer_regresyon.ipynb olarak olması gereken ortama kaydedelim ve kodlarımızı yazmaya başlayalım.
+
+Bu tür kod blokları ile çalışırken bize yardımcı olacak bazı kütüphaneler mevcuttur. Kodlarımızı yazmaya başlamadan önce onları indirmeli ve içe aktarmalıyız. 
+
+- Pandas ile gruplama, ekleme, birleştirme, kaynaştırma, bir araya getirme işlemlerini gerçekleştirebilir. Ayrıca bu kütüphane veri temizleme için veri doldurma, değiştirme ve varsayma özelliklerini de gerçekleştirebilirsiniz. Pandas kütüphanesi kullandığınız platformda yüklü değilse ;
+
+```bash
+pip install pandas
+```
+Yukarıdaki kod bloğu ile kütüphaneyi programınıza kurabilirsiniz. Ardından kullanabilmek için kütüphaneyi içe aktarmanız gerekmektedir, onun içinde ; 
+
+```bash
+import pandas as pd 
+```
+Kodunu kullanmalıyız. 
+
+Çalışmamızda kullanabilmemiz için hazırlamış olduğumuz veri dosyamızı okuyalım. 
+
+```bash
+veri_adi = pd.read_csv("dosya_adi")
+```
+Aşağıdaki kod bloğunda parantez içine herhangi bir sayı yazarsak tablomuzdaki ilk  o kadar sayıdaki satırları ekrana yazdırır.
+
+```bash
+veri_adi.head()
+```
+
+- Eğer verilerimizle grafik çizdirmek istersek aşağıdaki kodu kullanabiliriz. Fakat öncesinde grafik çizdirmek için sahip olmamız gereken kütüphanenin yüklü olduğundan emin olmalıyız, eğer yüklü değilse ;
+
+```bash
+pip install matplotlib
+```
+kütüphaneyi indirmeli. 
+
+Ardından ;
+
+```bash
+import matplotlib.pyplot as plt 
+```
+kütüphaneyi yukarıdaki kod bloğu ile içe aktarıp ardından aşağıdaki kod bloğu ile grafiğimizi çizdirebiliriz.
+
+```bash
+plt.scatter(veri_adi["veri1"], veri_adi["veri2"])
+plt.xlabel("Veri 1")
+plt.ylabel("Veri 2")
+plt.title("Scatter Plot")
+plt.show()
+```
+
+Kodlamalardaki ana amacımız oluşturduğumuz modelleri tahminlemektir. Bir yapay zeka modeli formül ve formüldeki parametrelerden oluşmaktadır. Modeli oluşturabilmek için gerekli kütüphaneler yüklenmeli ve model ondan sonra oluşturularak test edilmelidir.
+
+-  Numpy bilimsel hesaplamalar ve veri analizi için kullanılan güçlü bir kütüphanedir.Kurulu olmadığı durumlarda öncelikle indirmek gerekmektedir.
+   
+```bash
+pip install numpy
+```
+Ardından kütüphaneyi içe aktarmalıyız.
+
+```bash
+import numpy as np
+```
+
+- Tahminleme için kullanacağımız kütüphane Scikit-Learn(sklearn) kütüphanesidir. Scikit-Learn kütüphanesinin indirilmesi.
+
+```bash
+pip install scikit-learn
+```
+Ardından kütüphaneyi kullanılacak model ile birlikte içe aktarmalıyız.
+
+```bash
+from sklearn.linear_model import LinearRegression
+```
+- Modeli tanımlayalım.
+
+```bash
+model = LinearRegression()
+```
+- Modeli Eğitelim 
+
+Modellerin ilk eğitilmesine pre-train denilmektedir. 
+Elimizdeki verilerle bulduğumuz lineer regresyon denklemindeki (Y=ax+b+ϵ) a ve b'nin güncellenip doğru sonuca ulaşabilmemiz için a ve b'yi doğru şekilde bulmak için datayı fit ediyoruz. a ve b değişkenlei modelimizin parametreleri olarak adlandırılmaktadırlar.
+
+```bash
+model.fit(veri_adi[["veri1"]], veri_adi["veri2"])
+```
+
+Lineer regresyonda a=5, b=4 bu sayılar elimde varsa tahminleme yapabiliyorum. 
+
+Modele tahmin etme fonksiyonu tanımladığımızda a ve b belli iken biz modele x'i verirsek model bize y'yi tahminleyecek.
+
+```bash
+def tahmin_et(x, a, b):
+    y = a * x + b  # Doğru lineer regresyon formülü
+    return y
+```
+## 2. Lojistik Regresyon (Logistic Regression)
+
+Kaç değişken kullanıldıysa o değişkenlerin = operatörü ile tek tek ataması yapılması gerekmektedir. Ardından lojistik regresyon tanımlanmaktadır.
+
+Önce kaç a tanımlayacağını belirt ardından b'yi tanımla.
+
+Ardından lojistik regresyon tanımlanır.
+
+Her bir x(boyut) için ayrı ayrı değerlendirme gerçekleştirilir.
+
+Örnek :
+
+```bash
+a1 = 2.5
+a2 = 3.6
+a3 = 4.6
+a4 = 5.8
+a5 = 9.6
+
+b = 8.8
+
+def lojistik_regresyon_(x, a1, a2, a3, a4, a5, b):
+    #Doğrusal model: x[0] * a1 + x[1] * a2 + ... + x[4] * a5 + b
+    y = a1 * x[0] + a2 * x[1] + a3 * x[2] + a4 * x[3] + a5 * x[4] + b
+    return y
+```
+
+## Bilinmesi Gereken Genel Terimlerden Bazıları:
+
+Composition : Belirli aralıklardaki bilgiyi daha dar başka aralıklara sıkıştırmak için kullanılır. 
+Feature_Selection : Hangi özellik veriler için daha gerekli. Verideki özelliklerin her biri verinin boyutudur. 
+
+Teorik olarak veride 4 boyut bulunmaktadır. Ama dört boyutun çizilmesi mümkün değildir. 3 boyuta kadar veriler çizilebilir. 4 Boyutlunun çizilmesi zor olduğu kadar hesaplanması da çok zordur. 
+
+Veri kümelerine benziyor denebilmesi için en az 2 boyutta da benzerlik olmalıdır. 
+
+## 3. Destek Vektör Makineleri (SVM)
+## 4. Karar Ağaçları (Decision Trees)
+## 5. Yapay Sinir Ağları (Artificial Neural Networks)
+   
+b. Unsupervised Learning (Denetimsiz Öğrenme)
+
+Verilerin etiketlenmediği durumlarda kullanılır. Model, verilerdeki desenleri ve yapıları keşfetmeye çalışır.
+
+Örnek: Müşteri segmentasyonu, kümeleme analizi.
+
+Algoritmalar:
+
+1. K-Means Kümeleme
+2. Hiyerarşik Kümeleme
+3. Apriori Algoritması
+4. Principal Component Analysis (PCA)
+
 Veri Maskeleme (Anonimleştirme): Toplanan veriler kişisel veriler olabileceğinden maskeleme olmalıdır. 
 
 Eğer elde edilen veriler gerçek verilerse veri temizleme/hazırlama yani ön işlem adımı bu tür verilerde daha az yapılır. 
+
+
+## Market Basket Analizi :
+Birliktelik kuralı(Association rule) ile öğrenme. 
+
+Ne, ne ile gider? sorusuna cevao bulunmalıdır.
 
 ## Sigmoid Fonksiyonu :
 
@@ -131,142 +313,6 @@ Veri tipinin ne olduğundan emin olunamadığında type() ifadesi kullanılıp p
 
 !! Dikkat edilmesi gereken bir diğer husus ise kodlama dillerinde türkçe karakter kullanımına önem verilmesi ve ingilizce karakterle kodlama yapılmasıdır. Buna ek olarak ise bütün adımları gerçekleştirip hiçbir zaman çalışmayan kodlara ise ölü kod denir.
 
- # Lineer Regresyon 
-
-Veri bilimi de regresyona örnek olarak gösterilebilmektedir. Veriye düzgün çizgiler çizdirebilmek veri biliminin tanımıdır diyebilir ve lineer regresyonu şu şekilde de tanımlayabiliriz:
-
-Bir veya daha fazla bağımsız değişken (özellik) ile bir bağımlı değişken (tahmin edilmek istenen değer) arasındaki doğrusal ilişkiyi modellemektedir.  
-
-Lineer regresyon bir yapay zeka modelidir.
-
-![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*sZl820GxVJwjHYzA4LObJw.png)
-
-Lineer regresyonda 2 boyutlu bir uzayda 2 noktalı bir çizgi mevcuttur. Çizgi 2 boyutlu düzlemi/uzayı bölmektedir. Bu çizgi elde edilen gözlemler sayesinde çizilir ve her gözlem birer nokta ile gösterilir. Çizginin üzerinde veya çizgiye en yakın gözlem en doğru gözlem olmakla birlikte, gözlemlerin çizgiye olan uzaklıkları ise hata terimini(residual) ortaya koymaktadır. 
-
-Lineer regresyon ile ilgili VsCode Jupyter Notebook'ta bir örnek yapmak istediğimizi varsayalım.
-
-Öncelikle excelde çalışmak istediğimiz anlamlı veri setimizi oluşturalım, lineer regresyon için topladığımız verileri bir excel dosyasında satır ve sütun olarak tablolaştırarak derleyelim  ve excel dosyamızı lineer_regresyon.csv olarak kaydedelim. CSV uzantısı virgülle ayrılmışd değerler(comma seperated value) demektir. CSV dosyanızı vscode'da açtığınızda virgülle ayrılmış sütunlardan oluşan tablonuz karşınıza çıkacaktır. CSV dosyanızı açtığınızda bir satırda kaç virgül varsa o kadar sütun var demektir. 
-
-Ardından Vscode veya colab çalışma ortamında çalışmamızı lineer_regresyon.ipynb olarak olması gereken ortama kaydedelim ve kodlarımızı yazmaya başlayalım.
-
-Bu tür kod blokları ile çalışırken bize yardımcı olacak bazı kütüphaneler mevcuttur. Kodlarımızı yazmaya başlamadan önce onları indirmeli ve içe aktarmalıyız. 
-
-1. Pandas ile gruplama, ekleme, birleştirme, kaynaştırma, bir araya getirme işlemlerini gerçekleştirebilir. Ayrıca bu kütüphane veri temizleme için veri doldurma, değiştirme ve varsayma özelliklerini de gerçekleştirebilirsiniz. Pandas kütüphanesi kullandığınız platformda yüklü değilse ;
-
-```bash
-pip install pandas
-```
-Yukarıdaki kod bloğu ile kütüphaneyi programınıza kurabilirsiniz. Ardından kullanabilmek için kütüphaneyi içe aktarmanız gerekmektedir, onun içinde ; 
-
-```bash
-import pandas as pd 
-```
-Kodunu kullanmalıyız. 
-
-Çalışmamızda kullanabilmemiz için hazırlamış olduğumuz veri dosyamızı okuyalım. 
-
-```bash
-veri_adi = pd.read_csv("dosya_adi")
-```
-Aşağıdaki kod bloğunda parantez içine herhangi bir sayı yazarsak tablomuzdaki ilk  o kadar sayıdaki satırları ekrana yazdırır.
-
-```bash
-veri_adi.head()
-```
-
-2. Eğer verilerimizle grafik çizdirmek istersek aşağıdaki kodu kullanabiliriz. Fakat öncesinde grafik çizdirmek için sahip olmamız gereken kütüphanenin yüklü olduğundan emin olmalıyız, eğer yüklü değilse ;
-
-```bash
-pip install matplotlib
-```
-kütüphaneyi indirmeli. 
-
-Ardından ;
-
-```bash
-import matplotlib.pyplot as plt 
-```
-kütüphaneyi yukarıdaki kod bloğu ile içe aktarıp ardından aşağıdaki kod bloğu ile grafiğimizi çizdirebiliriz.
-
-```bash
-plt.scatter(veri_adi["veri1"], veri_adi["veri2"])
-plt.xlabel("Veri 1")
-plt.ylabel("Veri 2")
-plt.title("Scatter Plot")
-plt.show()
-```
-
-Kodlamalardaki ana amacımız oluşturduğumuz modelleri tahminlemektir. Bir yapay zeka modeli formül ve formüldeki parametrelerden oluşmaktadır. Modeli oluşturabilmek için gerekli kütüphaneler yüklenmeli ve model ondan sonra oluşturularak test edilmelidir.
-
-3. Numpy bilimsel hesaplamalar ve veri analizi için kullanılan güçlü bir kütüphanedir.Kurulu olmadığı durumlarda öncelikle indirmek gerekmektedir.
-   
-```bash
-pip install numpy
-```
-Ardından kütüphaneyi içe aktarmalıyız.
-
-```bash
-import numpy as np
-```
-
-4. Tahminleme için kullanacağımız kütüphane Scikit-Learn(sklearn) kütüphanesidir. Scikit-Learn kütüphanesinin indirilmesi.
-
-```bash
-pip install scikit-learn
-```
-Ardından kütüphaneyi kullanılacak model ile birlikte içe aktarmalıyız.
-
-```bash
-from sklearn.linear_model import LinearRegression
-```
-Modeli tanımlayalım.
-
-```bash
-model = LinearRegression()
-```
-Modeli Eğitelim 
-
-Modellerin ilk eğitilmesine pre-train denilmektedir. 
-Elimizdeki verilerle bulduğumuz lineer regresyon denklemindeki (Y=ax+b+ϵ) a ve b'nin güncellenip doğru sonuca ulaşabilmemiz için a ve b'yi doğru şekilde bulmak için datayı fit ediyoruz. a ve b değişkenlei modelimizin parametreleri olarak adlandırılmaktadırlar.
-
-```bash
-model.fit(veri_adi[["veri1"]], veri_adi["veri2"])
-```
-
-Lineer regresyonda a=5, b=4 bu sayılar elimde varsa tahminleme yapabiliyorum. 
-
-Modele tahmin etme fonksiyonu tanımladığımızda a ve b belli iken biz modele x'i verirsek model bize y'yi tahminleyecek.
-
-```bash
-def tahmin_et(x, a, b):
-    y = a * x + b  # Doğru lineer regresyon formülü
-    return y
-```
-
-## Lojistik Regresyon 
-
-Kaç değişken kullanıldıysa o değişkenlerin = operatörü ile tek tek ataması yapılması gerekmektedir. Ardından lojistik regresyon tanımlanmaktadır.
-Önce kaç a tanımlayacağını belirt ardından b'yi tanımla.
-Ardından lojistik regresyon tanımlanır.
-Her bir x(boyut) için ayrı ayrı değerlendirme gerçekleştirilir.
-
-Örnek :
-
-```bash
-a1 = 2.5
-a2 = 3.6
-a3 = 4.6
-a4 = 5.8
-a5 = 9.6
-
-b = 8.8
-
-def lojistik_regresyon_(x, a1, a2, a3, a4, a5, b):
-    #Doğrusal model: x[0] * a1 + x[1] * a2 + ... + x[4] * a5 + b
-    y = a1 * x[0] + a2 * x[1] + a3 * x[2] + a4 * x[3] + a5 * x[4] + b
-    return y
-```
-
 ## Koleksiyonlar (Collections)
 
 Birden çok veriyi bir arada tutmak için kullanılan veri koleksiyonlarıdır. 
@@ -274,10 +320,15 @@ Birden çok veriyi bir arada tutmak için kullanılan veri koleksiyonlarıdır.
 ## 1. Listeler (Lists)
 
 Stringlerden oluşan listeler ve dinamik listeler olarak ikiye ayrılmaktadır. 
+
 Sıralı ifadelerden oluşurlar.
+
 Değiştirilebilir (Mutable) elemanlara sahiptirler. 
+
 Aynı listede farklı türde elemanlar bulunabilir.
+
 Yinelenen (duplicate) elemanlara izin verir.
+
 Python dilinde listeler köşeli paratez ile belirtilmektedir. 
 
 Örnek: 
@@ -288,10 +339,15 @@ alinacak = ["elma","armut","muz","çilek"]
 ## 2. Demetler (Tuples)
 
 Demetler değişmeyecek verilerin kümelenmesinde kullanılırlar.
+
 Demetler de listeler de olduğu gibi sıralı ifadelerden oluşmaktadır. 
+
 Elemanlar değiştirilemez (immutable).
+
 Farklı türde elemanlar içerebilirler.
+
 Yinelenen elemanlara izin verilir.
+
 Python dilinde demetler yuvarlak paratez ile belirtilmektedir. 
 
 Örnek: 
@@ -302,9 +358,13 @@ alinacak = ("elma","armut","muz","çilek")
 ## 3. Kümeler (Sets)
 
 Sırasız veri setleridir.
+
 Elemanlar değiştirilebilir (mutable).
+
 Yinelenen elemanlara izin verilmez.
+
 Benzersiz elemanların saklanmasında kullanılmaktadır. 
+
 Python dilinde kümeler süslü parantez ile ifade edilmektedir.
 
 Örnek: 
@@ -314,8 +374,11 @@ alinacak = {"elma","armut","muz","çilek"}
 ## 4. Diziler (Arrays)
 
 Diziler de birden fazla veriyi saklayan yapılardır.
+
 Aynı türden elemanları içerir.
+
 Koleksiyonların alt kümesi olarak görülebilir.
+
 Sıra sayıları ve aynı olan verilerin bulundukları yerler farklıdır.
 
 Örnek: 
@@ -331,9 +394,13 @@ dizi = np.array([1, 2, 3, 4, 5])
 ## 5. Dictionary (Sözlükler)
 
 Elemanlar anahtar ve değer olarak tutulmaktadır. 
+
 Sırasızdır (Python 3.6+ itibariyle sıralıdır).
+
 Anahtar-değer (key-value) çiftleri şeklinde veriler saklanmaktadır.
+
 Anahtarlar benzersizdir; ancak değerler tekrarlanabilir.
+
 Etiketli veri saklama (örneğin, JSON formatı) gibi durumlarda kullanılmaktadırlar. 
 
 Örnek:
@@ -352,12 +419,14 @@ For döngüsünde sayısal değeri döngüye sokmak için "in range" ifadesi kul
 for i in range (1000):
   print ("Beni affet.")
 ```
+
 - Bu döngü, range(1000) ifadesi sayesinde 0'dan başlayarak 999'a kadar toplamda 1000 kez tekrarlanır.
 - Her döngüde i değişkeni bir önceki değerden bir artırılır.
 - İlk döngüde i = 0
 - İkinci döngüde i = 1
 ...
 - Son döngüde i = 999
+  
 Her döngü iterasyonunda, ekrana "Beni affet." yazdırılır.
 Bu işlem, toplamda 1000 kez tekrarlanır.
 
@@ -381,6 +450,7 @@ while i<1000:
 ```bash
 for alinacaklar in alinacaklar_listesi:
 ```
+
 Yukarıdaki örnek kodda kod listenin uzunluğu kadar döngüye girer. 
 Koleksiyonun bütün elemanları için çalıştırırken kullanılır. 
 
@@ -391,7 +461,14 @@ Koşul : Değişen durumun kontrolü için geçerlidiri kontrolün sağlanması 
 ## 1. If Koşul İfadesi
 
 En temel koşul ifadesidir.
+
 Döngü kapsamında olay gerçekleşir ve son bulur. 
+
+Her "if" gördüğümüzde bir koşul kontrol ediyoruz. 
+
+Else , hiçbir koşul sağlanmazsa çalışacak komuttur.
+
+elif = diğer yazılım dillerinde ise else if olarak kullanılmaktadır.
 
 Örnek :
 
@@ -401,6 +478,7 @@ if len(isim)<5:
 else :
   print ("İsim 5 karakterden küçük değildir.")
 ```
+
 Not: len() fonksiyonu, verilen bir dizinin (örneğin bir string'in) uzunluğunu döndürür.
 
 
@@ -415,6 +493,7 @@ Continue ve break komutları döngü içinde yazılırlar ve genelde koşul içi
 ## Operatörler
 
 Operatörler değerleri değişkene atarlar. 
+
 = : Atama operatörüdür.
 == :Koşul durum sorgulama operatörüdür.
 
@@ -433,18 +512,27 @@ Eşit Değildir (!=): İki değerin eşit olup olmadığını kontrol eder. Örn
 Not: Eşit (==) ve Eşit değil (!=) operatörleri bütün veri tipleri ile kullanılmaz fakat çoğu veri tipinde kullanılabilir. Bazı veri tipleri (örneğin, float ve int) karşılaştırıldığında küçük farklar nedeniyle beklenmedik sonuçlar verebilir. Bu nedenle, örneğin kayan noktalı sayılarla çalışırken dikkatli olunmalıdır.
 
 Büyüktür (>): Bir değerin diğerinden büyük olup olmadığını kontrol eder. Örnek: a > b
+
 Küçüktür (<): Bir değerin diğerinden küçük olup olmadığını kontrol eder. Örnek: a < b
+
 Büyüktür veya Eşittir (>=): Bir değerin diğerinden büyük veya eşit olup olmadığını kontrol eder. Örnek: a >= b
+
 Küçüktür veya Eşittir (<=): Bir değerin diğerinden küçük veya eşit olup olmadığını kontrol eder. Örnek: a <= b
 
 Bir şeyin birden fazla koşulunun sağlanmasını isteriz.
 
 ## Matematiksel Operatörler
+
 Toplama (+): İki sayıyı toplar. Örnek: a + b
+
 Çıkarma (-): Bir sayıdan diğerini çıkarır. Örnek: a - b
+
 Çarpma (*): İki sayıyı çarpar. Örnek: a * b
+
 Bölme (/): Bir sayıyı diğerine böler. Örnek: a / b
+
 Üs () veya Pow()**: Bir sayıyı üssünü alır. Örnek: a ** b
+
 Mod Alma (%): Bölümün kalanını verir. Örnek: a % b
 
 Örnek : 
@@ -456,18 +544,23 @@ else:
     print("Tek sayı")
 ```
 ## Mantıksal Operatörleri
+
 Koşul ifadeleriyle çalışırken kullanılan operatörlerdir.
 
 Genellikle koşul ifadelerinde birden fazla koşulu birleştirirken kullanılır.
+
 3 ana mantıksal operatör vardır: 
 
 - Ve (and(∧)), koşulun gerçekleşmesi için iki tarafında doğru olması gerekmektedir.
+
 - Veya (or(∨)), koşullardan birinin sağlanması doğruluk açısından yeterlidir.
+
 - Değil (not(')), koşulların sağlanamadığı durumlarda kullanılmaktadır.
 
 Bunlar, koşul ifadelerinin (if-else gibi) sonucunu kontrol etmek ve daha karmaşık mantıksal ifadeler oluşturmak için kullanılır.
 
 Örnek:
+
 ```bash
 i = 8  
 if i % 2 == 0 and i > 6:
@@ -475,3 +568,48 @@ if i % 2 == 0 and i > 6:
 else:
     print("Koşul sağlanmadı")
 ```
+
+# Veri Bilimi Modelleri (Problemleri)
+
+1. Regresyon(Regression) : Geçmiş dataya bakıp, tarihsel tahminlerde bulunup yorumlama ve sayısal tahminleme yapar.
+
+   Regresyon Algoritmaları : Lineer Regresyon
+   
+                             Lasso/Ridge Regresyon
+   
+                             Polinomsal Regresyon
+   
+   Regresyon Örnekleri : Bir evin fiyatını tahmin etmek.
+   
+                         Hisse senedi fiyatlarını tahmin etmek.
+
+2. Sınıflandırma(Classification) : Elimizde olan verileri sınıflandırmak için kullanılan bir methoddur. Cevabımız numerik değil kategoriktir.
+
+Sınıflandırma Algoritmaları : Logistic Regression
+
+                              Decision Trees
+                              
+                              Random Forest
+                              
+                              Support Vector Machines (SVM)
+                              
+                              Neural Networks
+                              
+
+Sınıflandırma Örnekleri : Müşterinin kredi almaya uygun olup olmaması. Belirli sayıda sınıf içine sokacaksak bu bir sınıflandırma örneğidir.
+
+                          Hastanın hasta olup olmadığını sınıflandırmak.
+                          
+3. Kümeleme (Clustering) : Etiketlenmemiş verilerde, benzer özelliklere sahip örnekleri bir araya toplamak için kullanılır.
+
+Kümeleme Algoritmaları: 
+                        
+                        K-Means : Veriyi kaç gruba ayırmak istediğimiz ile alakaladır. Örneğin bir sınıf listesi mevcut. Listede öğrencilerin özellikleri yazmakta, yaş, boy, kilo vb. Rasgele gruplar atıyoruz. Kaç küme atayacaksak "K" değeri o olacak.
+                        
+                        DBSCAN
+                        
+                        Hierarchical Clustering
+
+Kümeleme Örnekleri : Müşterileri alışveriş alışkanlıklarına göre segmentlere ayırmak.
+
+                     Sosyal medya verilerinde benzer kullanıcı grupları bulmak.
