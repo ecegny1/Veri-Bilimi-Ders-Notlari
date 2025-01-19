@@ -50,9 +50,34 @@ Belli bir yapıyı, belli bir bütünü oluşturan dallardan, birimlerden her bi
 Sentez ise bir araya getirmek, parçalardan bütün oluşturmaktır. 
 Örüntü bulmaya çalıştığımız şey, ulaşmaya çalıştığımız hedef olarak adlandırılabilir. Örüntü olmazsa yapay zeka olamaz.
 
+
+## Popüler Olarak Kullanılan Yapay Zeka Motorları
+
+* Gemini
+* Perplexity.ai
+* open.ai
+* amazon
+* google
+* mister.ai
+* claude
+* sider
+* Dora
+* Bytez
+* notebookLM
+
+Yapay zeka zihinsel işklerimizi yapıyor diyebiliriz. Fikri bul, karışık olarak ifade etsen bile yapay zeka kontrol eder. Fakat işimizi sağlama almak adına yapay zekanında çıkardığı çıktıyı yine de kontrol etmek gerekmektedir.
+
 ## Yapay Zeka ve Makine Öğrenmesi ile İlgili Bazı Kavramlar
 
-Veri : Elde edilen bilgi olarak tanımlanabilir. Verinin boyutu ne kadar artarsa yapılan yorumun başarısı da bir o kadar artar. Verideki özellikler, sütunlar, verinin boyutu ne kadar geliştirilirse bakış açısı o kadar artar. Yorumun doğruluk oranı o kadar artar. 
+Veri : Sahip olduğumuz probleme göre edindiğimiz her türlü bilgiye veri diyebiliriz. Verinin boyutu ne kadar artarsa yapılan yorumun başarısı da bir o kadar artar. Verideki özellikler, sütunlar, verinin boyutu ne kadar geliştirilirse bakış açısı o kadar artar. Yorumun doğruluk oranı o kadar artar. Bulunan veriler etiketli olmalıdır ki, oluşturacağımız yapay zeka modelini eğitebilelim. 
+
+Sentetik Veri : Rastgele veri olmayıp gerçek hayata yakın veriler. Gerçeğe benziyor ama tamamen gerçek değil.
+
+Nereden nasıl veri bulabiliriz?
+
+Öncelikle problemimizin ne olduğuna karar vermeli ve problemi çözmek için doğru modeli kurmak için hangi verilere ihtiyacımız olduğunu bilmeliyiz. 
+
+Örneğin ; ekonomik verilere ihtiyacımız var. Dünya Bankası, OECD, TUIK, IBB Open Data vb. sitelerden veriler elde edilebilir.
 
 İstatistikte Veri ikiye ayrılmaktadır:
   1. Numerik Veri
@@ -131,9 +156,7 @@ Aşağıdaki kod bloğunda parantez içine herhangi bir sayı yazarsak tablomuzd
 ```bash
 veri_adi.head()
 ```
-
 - Eğer verilerimizle grafik çizdirmek istersek aşağıdaki kodu kullanabiliriz. Fakat öncesinde grafik çizdirmek için sahip olmamız gereken kütüphanenin yüklü olduğundan emin olmalıyız, eğer yüklü değilse ;
-
 ```bash
 pip install matplotlib
 ```
@@ -153,7 +176,6 @@ plt.ylabel("Veri 2")
 plt.title("Scatter Plot")
 plt.show()
 ```
-
 Kodlamalardaki ana amacımız oluşturduğumuz modelleri tahminlemektir. Bir yapay zeka modeli formül ve formüldeki parametrelerden oluşmaktadır. Modeli oluşturabilmek için gerekli kütüphaneler yüklenmeli ve model ondan sonra oluşturularak test edilmelidir.
 
 -  Numpy bilimsel hesaplamalar ve veri analizi için kullanılan güçlü bir kütüphanedir.Kurulu olmadığı durumlarda öncelikle indirmek gerekmektedir.
@@ -204,6 +226,8 @@ def tahmin_et(x, a, b):
 
 Kaç değişken kullanıldıysa o değişkenlerin = operatörü ile tek tek ataması yapılması gerekmektedir. Ardından lojistik regresyon tanımlanmaktadır.
 
+Datayı 0 ile 5 arasına sıkıştırıyor. Temel mantığı ikşli datalar. 
+
 Önce kaç a tanımlayacağını belirt ardından b'yi tanımla.
 
 Ardından lojistik regresyon tanımlanır.
@@ -229,18 +253,39 @@ def lojistik_regresyon_(x, a1, a2, a3, a4, a5, b):
 
 ## Bilinmesi Gereken Genel Terimlerden Bazıları:
 
-Composition : Belirli aralıklardaki bilgiyi daha dar başka aralıklara sıkıştırmak için kullanılır. 
-Feature_Selection : Hangi özellik veriler için daha gerekli. Verideki özelliklerin her biri verinin boyutudur. 
+* Veritabanı (Database) : Verilerin toplandığı yer. Örnek veritabanlarından biri SQL(Structured Query Language(Düzenli Sorgu Dİli))'dir. Veritabanı kullanmanın avantajı verileri excele kıyasla saniyeler içinde sisteme işlemesidir.Daha hızlıdır.
 
-Teorik olarak veride 4 boyut bulunmaktadır. Ama dört boyutun çizilmesi mümkün değildir. 3 boyuta kadar veriler çizilebilir. 4 Boyutlunun çizilmesi zor olduğu kadar hesaplanması da çok zordur. 
+* İlişkisel Veritabanı : Bir sayfadaki bilgi, diğer sayfalardaki bilgilere referans veriyorsa, tablolar arası ilişki varsa bu ilişkisel veritabanıdır. 
 
-Veri kümelerine benziyor denebilmesi için en az 2 boyutta da benzerlik olmalıdır. 
+* Composition : Belirli aralıklardaki bilgiyi daha dar başka aralıklara sıkıştırmak için kullanılır. 
+
+* Feature_Selection : Hangi özellik veriler için daha gerekli. Verideki özelliklerin her biri verinin boyutudur. 
+
+* (.*?) : Herhangi bir şey olabilir anlamına gelen kod. Diyelim ki tarih, saat,başlık, bilgi sütunları mevcutbilgilerin değişeceği yerlere bu ifadeyi kullanabiliriz.
+
+* Teorik olarak veride 4 boyut bulunmaktadır. Ama dört boyutun çizilmesi mümkün değildir. 3 boyuta kadar veriler çizilebilir. 4 Boyutlunun çizilmesi zor olduğu kadar hesaplanması da çok zordur. 
+
+* Veri kümelerine benziyor denebilmesi için en az 2 boyutta da benzerlik olmalıdır. 
+
+* np.random.seed() : buraya yazılan sayı ile aynı verilerin tekrardan getirilmesi için gereken kod. 
+
+* Standard Scalar: Sayısal çokluk ifade etmeyen verileri çokluk ifade edebilecek hale getiriyor.
+
+* LabelEncoder : Metni sayıya dönüştürme.
+
+* .shape () : Verinin şeklini veren kod.
+
+* softmax: Verdiğin sayıların hepsinin olasılığının toplamını 1 olacak şekilde o aralığa sıkıştırıyor.
 
 ## 3. Destek Vektör Makineleri (SVM)
-## 4. Karar Ağaçları (Decision Trees)
+
+Datayı en iyi sınıf sayısına ayıran doğruları bulmak ve aradaki doğruları doldurmak amaç.
+## 4. Karar Ağaçları (Decision Trees):
+
+2'li dallara bölerek verilen verilerden bilgiler elde edilebilir.
 ## 5. Yapay Sinir Ağları (Artificial Neural Networks)
    
-b. Unsupervised Learning (Denetimsiz Öğrenme)
+## b. Unsupervised Learning (Denetimsiz Öğrenme)
 
 Verilerin etiketlenmediği durumlarda kullanılır. Model, verilerdeki desenleri ve yapıları keşfetmeye çalışır.
 
@@ -248,10 +293,22 @@ Verilerin etiketlenmediği durumlarda kullanılır. Model, verilerdeki desenleri
 
 Algoritmalar:
 
-1. K-Means Kümeleme
-2. Hiyerarşik Kümeleme
-3. Apriori Algoritması
-4. Principal Component Analysis (PCA)
+## 1. K-Means Kümeleme
+
+K-Means kümeleme, verileri anlamlı gruplara ayırmak için kullanılır. 
+
+Bir K-Means Modeli olduğunu varsayalım. Başlangıçta k adet küme belirlenir. Her veri kümesinde en yakın merkez nokta atanır. 
+
+Örnek : 1. kümenin merkezi belirli bir koordinatta yer almaktadır. 
+Kaç sayıda küme varsa hepsinin merkez koordinatları belirlenir.
+Merkezler bulunduğunda model kurulabilir hale gelmektedir. Lineer regresyonda noktaları verdiğinde modeli kurarken burada da merkez koordinatlar bulunduğunda model kurulmaktadır. 
+
+
+## 2. Hiyerarşik Kümeleme
+
+## 3. Apriori Algoritması
+
+## 4. Principal Component Analysis (PCA)
 
 Veri Maskeleme (Anonimleştirme): Toplanan veriler kişisel veriler olabileceğinden maskeleme olmalıdır. 
 
@@ -277,10 +334,26 @@ Yukarıda verilen formülün amacı sayıları bir düzene oturtmaktır.
 
 ## Sınıflandırma modellerinde tahminlerin doğruluğunu(accuracy) değerlendirmek için kullanılan temel kavramlar:
 
-  * True Positive
-  * False Positive 
-  * True Negative
-  * False Negative
+Bir sınıflandırma modelinin çıktısını değerlendirir.
+
+a) Confusion Matrix(Karmaşıklık Matrisi): 
+
+  * True Positive (TP) : Doğru pozitif tahmini.
+
+  * False Positive (FP) : Yanlış pozitif tahmin. (Type 1 hatası: Gerçek olan bir hipotezin yanlış olarak reddedilmesi.)
+ 
+  * True Negative (TN) : Doğru negatif tahmin.
+ 
+  * False Negative (FN) : Yanlış negatif tahmin. (Type 2 hatası: Gerçekte yanlış olan hipotezin doğru olarak kabul edilmesi.(Tehlikeyi gözden kaçırmak gibi düşünülebilir.)
+
+b) Accuracy (Doğruluk Oranı ): TP+TN/TP+TN+FP+FN , kolay anlaşılır bir metriktir.Dengeli olmayan veri setinde yanıltıcı olabilir.
+
+c) Precision (Kesinlik): Pozitif tahminlerin ne kadar doğru olduğunu ölçer : TP/(TP+FN).
+
+Önemli olduğu durum yanlış. Pozitiflerin maliyeti yüksekse.
+
+d) Recall (Dayanaklılık ve Hassasiyet) : Gerçek pozitiflerin ne kadar doğru olduğunun göstergesidir. =TP/(TP+FN)
+    
 
 Yalnız bazı durumlarda doğruluk ölçütleri her zaman doğru olmayabilir.
 
@@ -305,8 +378,11 @@ Değişkenler tanımlanırken iki tane fonksiyon kullanılabilir. Bunlardan biri
 ## Değişken Türleri 
 
 1. String : Metinsel ifadeleri tanımlamak için kullanılmaktadır. Örneğin ; "Ali" , string türünde tanımlanmış ve Ali değeri atanmış bir değişkendir. Bir ifadenin tırnak içinde ("") belirtilmiş olması, string ifade olduğu anlamına gelmektedir. Python'da tırnak içinde yazılmış her ifade string veri türüne girmektedir.
+
 2. Integer : Tam sayıları tanımlamak için kullanılmaktadır. Örneğin; yas = 25, yaş değişkenine 25 sayısı atanmıştır. 
+
 3. Float : Ondalıklı sayıların tanımlanmasında kullanılır. Örneğin; sicaklik = 25,5.  Sıcaklık değişkenine 25,5 atanmıştır. 
+
 4. Boolean : 2'li ifadelerde True, False olarak atanmaktadır.
 
 Veri tipinin ne olduğundan emin olunamadığında type() ifadesi kullanılıp parantez içine değişken yazılarak değişkenin türünü öğrenebiliriz. 
@@ -391,6 +467,11 @@ import numpy as np
 dizi = np.array([1, 2, 3, 4, 5])
 ```
 
+Not: Numpy Python'ın sayısalıdır. 
+as takma isimler için kullanılmaktadır. 
+import komutu ise kütüphaneden fonksiyonları çağırıyoruz.
+
+
 ## 5. Dictionary (Sözlükler)
 
 Elemanlar anahtar ve değer olarak tutulmaktadır. 
@@ -402,6 +483,8 @@ Anahtar-değer (key-value) çiftleri şeklinde veriler saklanmaktadır.
 Anahtarlar benzersizdir; ancak değerler tekrarlanabilir.
 
 Etiketli veri saklama (örneğin, JSON formatı) gibi durumlarda kullanılmaktadırlar. 
+
+{süslü parantez ile başlar, elemanlar virgül ile ayrılır.}
 
 Örnek:
 ```bash
@@ -587,7 +670,7 @@ else:
 
 Sınıflandırma Algoritmaları : Logistic Regression
 
-                              Decision Trees
+                              Decision Trees : 
                               
                               Random Forest
                               
@@ -613,3 +696,58 @@ Kümeleme Algoritmaları:
 Kümeleme Örnekleri : Müşterileri alışveriş alışkanlıklarına göre segmentlere ayırmak.
 
                      Sosyal medya verilerinde benzer kullanıcı grupları bulmak.
+
+
+## Çalıştığımız ortamda internetten veri çekebilme
+
+Curl : URL üzerinde veri transferi gerçekleştirmek amacıyla gelişmiş komut satırıdır.
+"curlconverter.com" Gerekli URL'leri curl formatına çevirmek için bu siteyi kullanabilirsiniz.
+
+Comment : Yorum.
+
+Regex (Regular Expression) : Düzenli açıklamalar. 
+
+HTML : Hyper Text Markup Language. Hiper metin işaretleme dili programlama dili değildir. Bazı HTML etiketleri;
+
+<a>HTML ile bir web sitesi tasarlarken link vermek istediğimizde bu etiketi kullanırız. </a> 
+<li>Listeleme Etkiletidir.</li>
+<!--   --> : Html yorum satırı.
+
+
+Örneğin VsCode'da çalıştığımızı varsayalım ve internetten veri çekmek için VsCode'u internete bağlamalıyız. VsCode python ortamında 
+internete bağlanmalıdır. 
+
+```bash
+import requests
+import json  
+url = "gerekli_url_bu_alana_yazılmalıdır"
+response = requests.get(url)
+if response.status_code == 200:
+    data = response.json()
+    with open("data.json", "w", encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=4)
+    print("Veri başarıyla kaydedildi!")
+else:
+    print(f"İstek başarısız oldu. HTTP Durum Kodu: {response.status_code}")
+```
+
+JSON: JavaScript Object Notation 
+JSON verisini ayrıştırma :
+
+data = response.json()
+
+JSON verisini bir dosyaya kaydetme : 
+
+    with open("data.json", "w", encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=4)
+        
+GET: URL'den verileri getirmek için kullanılan methodlardan biridir. Tarayıcıların adres çubuğu GET methodu ile çalışmaktadır. GET methodunda kaçıncı sayfayı istediğimizi belirtemiyoruz.
+POST: URL'den verileri getirmek için kullanılan methodlardan biridir. Kaçıncı sayfayı istediğimizi belirtebiliyoruz.
+
+response= request.pos --> response adında bir değişken tanımlıyoruz. İnternete bağlanıp değer getirecek. Methodu değiştirmek istediğimizde pos yazdığımız kısmı get ile değiştiriyoruz. Bir cevap bekliyorsak POS diyemeyiz, GET demeliyiz.
+Get ile bağlandığında Pos ile bağlanamazsın, Pos ile bağlandığında Get ile bağlantı kuramazsın.
+
+response.text : İşaretli dataları getirmektedir.
+
+
+
