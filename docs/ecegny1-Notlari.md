@@ -77,7 +77,7 @@ Nereden nasıl veri bulabiliriz?
 
 Öncelikle problemimizin ne olduğuna karar vermeli ve problemi çözmek için doğru modeli kurmak için hangi verilere ihtiyacımız olduğunu bilmeliyiz. 
 
-Örneğin ; ekonomik verilere ihtiyacımız var. Dünya Bankası, OECD, TUIK, IBB Open Data vb. sitelerden veriler elde edilebilir.
+Örneğin ; ekonomik verilere ihtiyacımız var.  Dünya Bankası, OECD, TUIK, IBB Open Data vb. sitelerden veriler elde edilebilir.
 
 İstatistikte Veri ikiye ayrılmaktadır:
   1. Numerik Veri
@@ -279,7 +279,10 @@ def lojistik_regresyon_(x, a1, a2, a3, a4, a5, b):
 
 ## 3. Destek Vektör Makineleri (SVM)
 
-Datayı en iyi sınıf sayısına ayıran doğruları bulmak ve aradaki doğruları doldurmak amaç.
+Datayı en iyi sınıf sayısına ayıran doğruları bulmak ve aradaki doğruları doldurmak amaç. Çizgiyi modelin sınırlarına çizdirmek amaç.
+
+![image](https://i0.wp.com/spotintelligence.com/wp-content/uploads/2024/05/support-vector-machine-svm.jpg?resize=1024%2C576&ssl=1)
+
 ## 4. Karar Ağaçları (Decision Trees):
 
 2'li dallara bölerek verilen verilerden bilgiler elde edilebilir.
