@@ -30,6 +30,8 @@ Kodlarınızı açıklamak için kod bloklarınızın içine açıklamalar eklem
 
 VsCode Jupyter Notebook ile çalışıyorsanız, uzantınız .ipynb olmalıdır.
 
+Bunlara ek olarak kodlama sayfasındaki code bloğunda hem code hem markdown kısmı bulunmaktadır. Kod bloğuna kodunuzu yazıp, açıklamalarınızı markdown kısmına yazabilirsiniz. Buna ek olarak da markdown kısmına istediğiniz resmi ekleyip resim üzerinden kodlama yapıyorsanız ona göre kodlarınızı yazıp, açıklamalarınızı ekleyebilirsiniz.
+
 Tavsiyemiz her türlü platforma aşina olmanız ve kullanılabilirliğinizi ne kadar arttırabilirseniz konfor alanınız genişleyecek, çalışmalarınız ise daha üst kademelere taşınacaktır. 
 
 ## Peki ya bu platformlardaki kodlarımızı halka açık bir şekilde nerede yayınlayabiliriz?
@@ -65,7 +67,11 @@ Sentez ise bir araya getirmek, parçalardan bütün oluşturmaktır.
 * Bytez
 * notebookLM
 
-Yapay zeka zihinsel işklerimizi yapıyor diyebiliriz. Fikri bul, karışık olarak ifade etsen bile yapay zeka kontrol eder. Fakat işimizi sağlama almak adına yapay zekanında çıkardığı çıktıyı yine de kontrol etmek gerekmektedir.
+Yapay zeka zihinsel işklerimizi yapıyor diyebiliriz. Fikri bul, karışık olarak ifade etsen bile yapay zeka kontrol eder. Fakat işimizi sağlama almak adına yapay zekanında çıkardığı çıktıyı yine de kontrol etmek gerekmektedir. Bir yapay zeka modeli çok fazla veri ile test edilip çalışıyorsa bir terslik var demektir.
+
+Örneğin; Hava yağmurlu mu, değil mi?  Yağmurlu havanınn yüzde kaçında hava kapalı? Bu da bir olasılıktır. Yağmurlu olup açık olması da bir olasılıktır. 
+
+Yukarıdaki örnek naive bias'e örnek olarak gösterilebilir. Basit ama güçlü bir sınıflandırma algoritmasıdır. Olasılıkları birbirinden bağımsız değerlendiriyor. 
 
 ## Yapay Zeka ve Makine Öğrenmesi ile İlgili Bazı Kavramlar
 
@@ -93,7 +99,9 @@ Veri Bilimi : Veri analizinin yanısıra veri analizinde elimizde bir bilgiyi an
 
 ## Makine Öğrenmesinin Temelleri
 
-Makine Öğrenmesi : Elde edilen bilgiden öğrenilebilen, algoritmalarla ilgilenen yapay zekanın bir alt dalıdır. Makine öğrenmesi bir modeldir ve o modeldeki sayılardan oluşmaktadır.  6 adımdan oluşmaktadır.
+Makine Öğrenmesi : Elde edilen bilgiden öğrenilebilen, algoritmalarla ilgilenen yapay zekanın bir alt dalıdır. Makine öğrenmesi bir modeldir ve o modeldeki sayılardan oluşmaktadır. Modelin tamamı demek için sonsuz bir gözlem olmalıdır. Tam sonsuza vardığımız noktada biz o modeli tamamlamış oluruz.
+
+6 adımdan oluşmaktadır.
 
   1. Problemin Belirlenmesi : Çözülmek istenen temel sorun nedir?
   2. Veri Toplama
@@ -116,13 +124,15 @@ Verilerin etiketli olduğu durumlarda kullanılır. Model, bağımlı değişken
 
 Veri bilimi de regresyona örnek olarak gösterilebilmektedir. Veriye düzgün çizgiler çizdirebilmek veri biliminin tanımıdır diyebilir ve lineer regresyonu şu şekilde de tanımlayabiliriz:
 
-Bir veya daha fazla bağımsız değişken (özellik) ile bir bağımlı değişken (tahmin edilmek istenen değer) arasındaki doğrusal ilişkiyi modellemektedir.  
+Bir veya daha fazla bağımsız değişken (özellik) ile bir bağımlı değişken (tahmin edilmek istenen değer) arasındaki doğrusal ilişkiyi modellemektedir.  Lineer regresyonda verinin mantıklı bir dağılım gösterdiğini varsayarsak, çizginin değişimini doğru hesaplarsak, y'yi doğru tahmin edebiliriz.
 
 Lineer regresyon bir yapay zeka modelidir.
 
 Lineer regresyona ne soruyoruz, bize ne veriyor?
 
 ![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*sZl820GxVJwjHYzA4LObJw.png)
+
+Herhangi bir şeyin her iki yönünü de bilmezsek tek perspektiften bakarsak dümdüz tek boyutlu bir doğrudur.
 
 Lineer regresyonda 2 boyutlu bir uzayda 2 noktalı bir çizgi mevcuttur. Çizgi 2 boyutlu düzlemi/uzayı bölmektedir. Bu çizgi elde edilen gözlemler sayesinde çizilir ve her gözlem birer nokta ile gösterilir. Çizginin üzerinde veya çizgiye en yakın gözlem en doğru gözlem olmakla birlikte, gözlemlerin çizgiye olan uzaklıkları ise hata terimini(residual) ortaya koymaktadır. 
 
@@ -279,14 +289,90 @@ def lojistik_regresyon_(x, a1, a2, a3, a4, a5, b):
 
 ## 3. Destek Vektör Makineleri (SVM)
 
-Datayı en iyi sınıf sayısına ayıran doğruları bulmak ve aradaki doğruları doldurmak amaç. Çizgiyi modelin sınırlarına çizdirmek amaç.
+Datayı en iyi sınıf sayısına ayıran doğruları bulmak ve aradaki doğruları doldurmak amaç.
+
+Çizgiyi modelin sınırlarında çizdirmek amaç. Yani bir regresyon modeli düşünüldüğünde support vector machine çizgilerini modeli sınırları içerisine çekiyoruz. 
+
+Overfit : Amaç siyaj çizgiyi bulmak. Modeli belli bir başarının üzerinde tahmin ediyorsa çizgi maviyr yapışık olacaktır. Maviye yapışmamış olması gerekmektedir.
+
+Underfit : Çizgi veriye o kadar iyi yerleşti ki veriyi çok iyi yorumluyor. Veri dışı tahminleme yapamıyor. Veriden vazgeçtiğimizde tam olmadığında veriyi temsil edemiyorç
 
 ![image](https://i0.wp.com/spotintelligence.com/wp-content/uploads/2024/05/support-vector-machine-svm.jpg?resize=1024%2C576&ssl=1)
 
 ## 4. Karar Ağaçları (Decision Trees):
 
 2'li dallara bölerek verilen verilerden bilgiler elde edilebilir.
+
 ## 5. Yapay Sinir Ağları (Artificial Neural Networks)
+
+Yapay sinir ağı, bir sürü çeşit çeşit düzgün çizgiler çizme sanatıdır.
+
+<img width="544" alt="image" src="https://github.com/user-attachments/assets/7bdcefaf-eb8e-4928-854e-553a7fe0529e" />
+
+Sinir ağlarında, aynı şeye farklı açılarla bakıyoruz.
+
+Bir şeye ne kadar çok açıdan bakarsak o kadar o şey hakkında konuşma ve fikir beyan etme hakkımız olur.
+
+Bir fonksiyon tanımlıyoruz
+Def lineer_regression(X):
+Y = a*x+b bu benim lineer regresyon modelim a dışarıda tanımlı bir şeydş
+a=3
+b=5 
+bunlar dışarıda tanımlı parametreler
+return y dedik şu anda bunu grafikte görmek istersek ya da y_23=lineer_regression(23)
+çizgiyi çizdirdik plt ile 
+bir boyut veriyoruz bize diğer boyutu veriyor bu çizgi
+
+def f(x):
+return a*x+b verdiğimiz x ten y yi verebiliyor bize
+
+uzay 3 boyutlu olsaydı x ve y yi verecektik o da bize z yi verecekti 
+
+biz 2 verecektik o bize tek verecekti
+
+
+def linner_regression_3d(x,y)
+return a*x+b*y
+
+
+bir şeyin yerini ölçmek için kaç boyutsa eğer o kadar üst çıkarız 
+a kare vs gibi 
+
+
+bir sinir hücresi aslında bir fonksiyon ve birden çok sinir ağını birbirine bağlamak fonksiyonları iç içe yazmak demek.
+
+temelde dikkatimizi çekecek şey birkaç ağ ise birkaç fonksiyondan oluşuyor iç içe yazılmış fonksiyonu iyi organize edersek şekli çizdirebiliyoruz 
+
+aktivasyon fonksiyonu : bir sinir hücresinin aktive olabilmesi için belli değerler arasında yer alması gerekiyor buna aktivasyon fonksiyonu denir
+
+normal fonskyionumuz bir sinir hücresi. Aktivasyon fonksiyonu organize ediyor. 
+Bir yapay sinir ağı bir sürü birleşmiş fonksiyonun bir araya gelmiş hali 
+![image](https://github.com/user-attachments/assets/a8d81257-9812-4a49-8fc4-8012baeedceb)
+
+
+Bir örnekle olayı anlamaya çalışalım.
+
+![image3](https://github.com/user-attachments/assets/945e81f1-e452-4efc-8b7e-fbf78ce461c2)
+
+Yukarıdajki şema bir sınıftaki notlar ve ağırlıkları olsun. 
+Vizeden 50
+Finalde 30 almış 
+Bu kısım bizim müdahale edeceğimiz bir ağ veya hücre değil
+Z1h1 z2h2 bunlarda dersin iki hocası olsun
+Vizeyi bir başka hoca değerlendiriyor bir başka hoca değerlendiriyor vizeye iki bakış açısı geliyor
+Vize ve finalleri hocalar ayrı ayrı değerlendiriyor
+![image](https://github.com/user-attachments/assets/98bdddad-75bd-4711-952e-5eae20c02091)
+
+## - Back Propogation
+
+Ortada bir hata var önce bu hatayı hesaplıyoruz.
+Sigmoid e sayısı 2.71 biz oraya 1.5 3.7 10 yazsak da çalışıyor. 
+Üssel fonksiyonun türevi alınırken hep doğal log kullanılıyor. Doğal log un tabanı e sayısı. 
+Sigmoidin türevini almak için fonksiyon yazmıştık bu sayede tekrar tekrar almamıza gerek kalmayacak
+
+Ağırlıklarımız var bir sonraki adımda bunlar ne olacak?
+![image](https://github.com/user-attachments/assets/b0d98920-2039-46cf-8f4e-f78399b26354)
+
    
 ## b. Unsupervised Learning (Denetimsiz Öğrenme)
 
@@ -390,7 +476,7 @@ Değişkenler tanımlanırken iki tane fonksiyon kullanılabilir. Bunlardan biri
 
 Veri tipinin ne olduğundan emin olunamadığında type() ifadesi kullanılıp parantez içine değişken yazılarak değişkenin türünü öğrenebiliriz. 
 
-!! Dikkat edilmesi gereken bir diğer husus ise kodlama dillerinde türkçe karakter kullanımına önem verilmesi ve ingilizce karakterle kodlama yapılmasıdır. Buna ek olarak ise bütün adımları gerçekleştirip hiçbir zaman çalışmayan kodlara ise ölü kod denir.
+!! Dikkat edilmesi gereken bir diğer husus ise kodlama dillerinde türkçe karakter kullanımına önem verilmesi ve ingilizce karakterle kodlama yapılmasıdır. Buna ek olarak ise bütün adımları gerçekleştirip hiçbir zaman çalışmayan kodlara ise ölü kod denir. Örneğin return ile başlayan bir kod bloğunun altına başka bir kod yazarsak o kod çalışmayacaktırç Ölü kod olarak adlandırılacaktır. Çünkü return komutu sadece döngüdeki emri ekrana yansıtır.
 
 ## Koleksiyonlar (Collections)
 
