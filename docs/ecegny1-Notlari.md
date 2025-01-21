@@ -108,24 +108,34 @@ Veri Bilimi : Veri analizinin yanısıra veri analizinde elimizde bir bilgiyi an
 
 ## Makine Öğrenmesinin Temelleri
 
-Makine Öğrenmesi : Elde edilen bilgiden öğrenilebilen, algoritmalarla ilgilenen yapay zekanın bir alt dalıdır. Makine öğrenmesi bir modeldir ve o modeldeki sayılardan oluşmaktadır. Modelin tamamı demek için sonsuz bir gözlem olmalıdır. Tam sonsuza vardığımız noktada biz o modeli tamamlamış oluruz.
+Makine Öğrenmesi : Elde edilen bilgiden öğrenilebilen, algoritmalarla ilgilenen yapay zekanın bir alt dalıdır. 
+
+o	Makine öğrenmesi vs Geleneksel Programlama: Geleneksel programlamada kurallar açıkça yazılırken, makine öğrenmesinde veri ile öğrenme sağlanır. Bu sayede, makine öğrenmesi farklı verilerle uyum sağlayabilir.
+
+Makine öğrenmesi bir modeldir ve o modeldeki sayılardan oluşmaktadır. Modelin tamamı demek için sonsuz bir gözlem olmalıdır. Tam sonsuza vardığımız noktada biz o modeli tamamlamış oluruz.
 
 6 adımdan oluşmaktadır.
 
   1. Problemin Belirlenmesi :
+     
      - Çözülmek istenen temel sorun nedir?
      
   2. Veri Toplama :
+     
      - Problem için gerekli olan verilerin gerekli platformlardan elde edilerek , uygun formatta depolanması durumudur.
      
   3. Veri Temizleme/ Hazırlama :
-     - Kullanacağımız algoritmaya göre verilerin ayıklanması, boş veri sütunlarının gerekli doldurma yöntemleri ile doldurulması veya değeri bulunamayan değişkenlerin algoritmadan çıkarılması ve modelin oluşturulabilmesi için verinin hazır hale getirilmesi.
+     
+     - Kullanacağımız algoritmaya göre verilerin ayıklanması, boş veri sütunlarının gerekli doldurma yöntemleri ile doldurulması veya değeri bulunamayan değişkenlerin algoritmadan çıkarılması ve modelin oluşturulabilmesi için verinin hazır hale getirilmesi. Orantısız veri ile uğraşmak (imbalanced data set): Verilerde dengesizlik varsa, modelin hatalı öğrenmesini önlemek için veri dengelenir. Bu işlem, doğru ve adil tahminler yapmayı sağlar.
+
      
   4. Özellik Mühendisliği :
+     
      - Özellik çıkarımı teknikleri: Özellik çıkarımı, verinin önemli kısımlarını analiz için öne çıkarır. Bu süreç, veriyi daha anlamlı hale getirir.
      - Özellik seçim yöntemleri: En etkili özellikler seçilerek analiz kalitesi artırılır. Özellik seçim yöntemleri, modelin karmaşıklığını azaltır.
 
   5. Modelin Değerlendirilmesi :
+     
      - Validasyon ve test seti seçmenin önemi: Doğruluğu ölçmek için model, eğitim dışında farklı veriyle test edilmelidir. Bu sayede, modelin genel veri üzerinde ne kadar iyi performans gösterdiği anlaşılır.
      - Sub-sample ile veri seçimini hızlandırmak: Büyük veri kümelerinde küçük örneklerle hızla test yapılır. Bu işlem, daha büyük veriler üzerinde hızlı sonuç almak için etkilidir.
      - Sub-sample seçim yöntemi: Veri, küçük örnek gruplar halinde seçilerek analiz edilir. Sub-sampling, verinin hızlıca incelenmesini sağlar.
@@ -133,8 +143,40 @@ Makine Öğrenmesi : Elde edilen bilgiden öğrenilebilen, algoritmalarla ilgile
      - Model karşılaştırma metrikleri: Farklı modellerin doğruluk, hassasiyet gibi ölçütlerle kıyaslanması yapılır. Bu karşılaştırmalar, en iyi modeli seçmek için kullanılır.
   
   6. Sonuçların Sunulması ve Aksiyon Alınması
+  
+    - Makine öğrenmesi, yapay zekanın alt alanıdır ve veriden öğrenme yeteneğine odaklanır. Supervised ve unsupervised learning, makine öğrenmesinin alt kategorileridir.
 
-Makine öğrenmesi, yapay zekanın alt alanıdır ve veriden öğrenme yeteneğine odaklanır. Supervised ve unsupervised learning, makine öğrenmesinin alt kategorileridir.
+## Bilinmesi Gereken Genel Terimlerden Bazıları:
+
+* Veritabanı (Database) : Verilerin toplandığı yer. Örnek veritabanlarından biri SQL(Structured Query Language(Düzenli Sorgu Dİli))'dir. Veritabanı kullanmanın avantajı verileri excele kıyasla saniyeler içinde sisteme işlemesidir.Daha hızlıdır.
+
+* İlişkisel Veritabanı : Bir sayfadaki bilgi, diğer sayfalardaki bilgilere referans veriyorsa, tablolar arası ilişki varsa bu ilişkisel veritabanıdır. 
+
+* Composition : Belirli aralıklardaki bilgiyi daha dar başka aralıklara sıkıştırmak için kullanılır. 
+
+* Feature_Selection : Hangi özellik veriler için daha gerekli. Verideki özelliklerin her biri verinin boyutudur. 
+
+* (.*?) : Herhangi bir şey olabilir anlamına gelen kod. Diyelim ki tarih, saat,başlık, bilgi sütunları mevcutbilgilerin değişeceği yerlere bu ifadeyi kullanabiliriz.
+
+* Teorik olarak veride 4 boyut bulunmaktadır. Ama dört boyutun çizilmesi mümkün değildir. 3 boyuta kadar veriler çizilebilir. 4 Boyutlunun çizilmesi zor olduğu kadar hesaplanması da çok zordur. 
+
+* Veri kümelerine benziyor denebilmesi için en az 2 boyutta da benzerlik olmalıdır. 
+
+* np.random.seed() : buraya yazılan sayı ile aynı verilerin tekrardan getirilmesi için gereken kod. 
+
+* Standard Scalar: Sayısal çokluk ifade etmeyen verileri çokluk ifade edebilecek hale getiriyor.
+
+* LabelEncoder : Metni sayıya dönüştürme.
+
+* .shape () : Verinin şeklini veren kod.
+
+* Softmax: Verdiğin sayıların hepsinin olasılığının toplamını 1 olacak şekilde o aralığa sıkıştırıyor.
+
+## o	Hangi durumlarda kullanılabilir?
+
+Makine öğrenmesi, tahmin, sınıflandırma ve örüntü tanıma gibi veri analizlerinde etkilidir. Özellikle veri yoğun işlerde kullanımı avantaj sağlar. Verinin elle kodlanmasının zor olduğu durumlarda makine öğrenmesi kullanılabilir.
+
+# Makine Öğrenmesi Çeşitleri
 
 ## a. Supervised Learning (Denetimli Öğrenme): 
 
@@ -142,7 +184,7 @@ Verilerin etiketli olduğu durumlarda kullanılır. Model, bağımlı değişken
 
 Örnek: E-posta sınıflandırma (spam veya değil), ev fiyatı tahmini.
 
-## Algoritmalar:
+## Sınıflandırma Algoritmalar:
 
 ## 1. Doğrusal Regresyon (Linear Regression)
 
@@ -295,33 +337,9 @@ def lojistik_regresyon(x, a1, a2, a3, a4, a5, b):
 
 ```
 
-## Bilinmesi Gereken Genel Terimlerden Bazıları:
-
-* Veritabanı (Database) : Verilerin toplandığı yer. Örnek veritabanlarından biri SQL(Structured Query Language(Düzenli Sorgu Dİli))'dir. Veritabanı kullanmanın avantajı verileri excele kıyasla saniyeler içinde sisteme işlemesidir.Daha hızlıdır.
-
-* İlişkisel Veritabanı : Bir sayfadaki bilgi, diğer sayfalardaki bilgilere referans veriyorsa, tablolar arası ilişki varsa bu ilişkisel veritabanıdır. 
-
-* Composition : Belirli aralıklardaki bilgiyi daha dar başka aralıklara sıkıştırmak için kullanılır. 
-
-* Feature_Selection : Hangi özellik veriler için daha gerekli. Verideki özelliklerin her biri verinin boyutudur. 
-
-* (.*?) : Herhangi bir şey olabilir anlamına gelen kod. Diyelim ki tarih, saat,başlık, bilgi sütunları mevcutbilgilerin değişeceği yerlere bu ifadeyi kullanabiliriz.
-
-* Teorik olarak veride 4 boyut bulunmaktadır. Ama dört boyutun çizilmesi mümkün değildir. 3 boyuta kadar veriler çizilebilir. 4 Boyutlunun çizilmesi zor olduğu kadar hesaplanması da çok zordur. 
-
-* Veri kümelerine benziyor denebilmesi için en az 2 boyutta da benzerlik olmalıdır. 
-
-* np.random.seed() : buraya yazılan sayı ile aynı verilerin tekrardan getirilmesi için gereken kod. 
-
-* Standard Scalar: Sayısal çokluk ifade etmeyen verileri çokluk ifade edebilecek hale getiriyor.
-
-* LabelEncoder : Metni sayıya dönüştürme.
-
-* .shape () : Verinin şeklini veren kod.
-
-* Softmax: Verdiğin sayıların hepsinin olasılığının toplamını 1 olacak şekilde o aralığa sıkıştırıyor.
-
 ## 3. Destek Vektör Makineleri (SVM)
+
+SVM, veriyi doğrusal veya doğrusal olmayan şekilde ayırmak için en iyi sınırları çizer. Bu model, veriyi etkili bir şekilde ayırmak için kullanılır.
 
 Datayı en iyi sınıf sayısına ayıran doğruları bulmak ve aradaki doğruları doldurmak amaç.
 
@@ -333,9 +351,14 @@ Underfit : Çizgi veriye o kadar iyi yerleşti ki veriyi çok iyi yorumluyor. Ve
 
 ![image](https://i0.wp.com/spotintelligence.com/wp-content/uploads/2024/05/support-vector-machine-svm.jpg?resize=1024%2C576&ssl=1)
 
-## 4. Karar Ağaçları (Decision Trees):
+## 4. Ağaç Bazlı Modeller:
 
-2'li dallara bölerek verilen verilerden bilgiler elde edilebilir.
+Decision Trees: Karar ağaçları, veriyi dallara ayırarak analiz eder. Her dal, farklı bir karar veya sınıflandırmayı temsil eder. 2'li dallara bölerek verilen verilerden bilgiler elde edilebilir.
+
+Random Forests: Birden fazla karar ağacı kullanarak doğruluğu artırır. Her ağaç, bağımsız bir tahmin yapar ve sonuçlar birleştirilir.
+
+Gradient Boosting Machines (e.g., XGBoost, LightGBM): Gradient boosting, hataları azaltarak modeli daha hassas hale getirir. XGBoost ve LightGBM gibi algoritmalar, bu tekniği hızlandırır.
+
 
 ## 5. Yapay Sinir Ağları (Artificial Neural Networks)
 
@@ -346,6 +369,8 @@ Yapay sinir ağı, bir sürü çeşit çeşit düzgün çizgiler çizme sanatıd
 Sinir ağlarında, aynı şeye farklı açılarla bakıyoruz.
 
 Bir şeye ne kadar çok açıdan bakarsak o kadar o şey hakkında konuşma ve fikir beyan etme hakkımız olur.
+
+NN yapısı: Yapay sinir ağları, nöron adı verilen birimlerin katmanlar halinde birleşmesinden oluşur. Her nöron, belirli bir görevi yerine getirerek bilgiyi işler.
 
 Bir fonksiyon tanımlıyoruz.
 
@@ -415,9 +440,12 @@ Sigmoid e sayısı 2.71 biz oraya 1.5 3.7 10 yazsak da çalışıyor.
 Sigmoidin türevini almak için fonksiyon yazmıştık bu sayede tekrar tekrar almamıza gerek kalmayacak
 
 Ağırlıklarımız var bir sonraki adımda bunlar ne olacak?
-![image](https://github.com/user-attachments/assets/b0d98920-2039-46cf-8f4e-f78399b26354)
 
-   
+
+10.	İleri Sınıflandırma Teknikleri
+•	Ensemble Methods: Birden fazla modelin bir araya gelerek daha iyi sonuçlar vermesini sağlar. Bu yöntem, farklı modellerin avantajlarını birleştirir.
+•	Imbalanced Datasets: Verilerde dengesizlik varsa, modelin doğru sonuç vermesi zorlaşır. Bu durumda, dengesiz veri kümeleri özel yöntemlerle ele alınır.
+
 ## b. Unsupervised Learning (Denetimsiz Öğrenme)
 
 Verilerin etiketlenmediği durumlarda kullanılır. Model, verilerdeki desenleri ve yapıları keşfetmeye çalışır.
@@ -437,7 +465,84 @@ Kaç sayıda küme varsa hepsinin merkez koordinatları belirlenir.
 Merkezler bulunduğunda model kurulabilir hale gelmektedir. Lineer regresyonda noktaları verdiğinde modeli kurarken burada da merkez koordinatlar bulunduğunda model kurulmaktadır. 
 
 
-## 2. Hiyerarşik Kümeleme
+## 2. Hiyerarşik Kümeleme:
+
+Hiyerarşik kümeleme, verileri alt kümelere (dendrogram) ayrılmış bir ağaç yapısı içinde organize eden bir kümeleme yöntemidir. İki türü vardır:
+
+- Aglomeratif (Birleştirici):
+  o	Küçük kümelerden başlayarak daha büyük kümeler oluşturur.
+  o	Tüm veri noktaları başlangıçta ayrı bir küme olarak değerlendirilir ve benzer kümeler birleştirilir.
+
+Senaryo:
+Bir e-ticaret sitesinin müşterilerini satın alma davranışlarına göre segmentlere ayırmak istiyoruz. Elimizde her müşteriye ait şu bilgiler var:
+•	Ortalama harcama tutarı.
+•	Alışveriş sıklığı (yılda kaç kez alışveriş yaptığı).
+Yaklaşım:
+Birleştirici kümeleme, her müşteriyi başta kendi başına bir küme olarak değerlendirir ve aşağıdaki gibi çalışır:
+1.	Her müşteri, başlangıçta kendi başına bir küme (20 müşteri = 20 küme).
+2.	En yakın iki müşteri (örneğin benzer harcama tutarına ve alışveriş sıklığına sahip olanlar) birleştirilir.
+3.	Birleştirme işlemi, tüm müşteriler tek bir küme haline gelene kadar devam eder.
+4.	Sonuç dendrogram üzerinden incelenir ve kümeler belirlenir.
+   
+from scipy.cluster.hierarchy import linkage, dendrogram
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Örnek müşteri verisi
+data = np.array([
+    [200, 15], [220, 20], [250, 10], [300, 5],
+    [400, 12], [410, 8], [380, 6], [420, 25],
+    [100, 40], [120, 45], [130, 50], [140, 48]
+])
+
+## Hiyerarşik kümeleme (Ward metodu)
+Z = linkage(data, method='ward')
+
+## Dendrogram Çizimi 
+plt.figure(figsize=(10, 6))
+dendrogram(Z)
+plt.title('Birleştirici Kümeleme - Dendrogram')
+plt.xlabel('Müşteriler')
+plt.ylabel('Mesafe')
+plt.show()
+
+- 2.	Divisive (Bölücü):
+o	Tüm veri setini tek bir küme olarak değerlendirerek başlar ve sonra bölünür.
+o	Daha az yaygındır.
+Senaryo:
+Bir üniversitenin bölümlerini, öğrenci başarıları (ortalama not) ve bölümlerdeki derslerin zorluk seviyesine göre gruplamak istiyoruz.
+Yaklaşım:
+Bölücü kümeleme, tüm bölümleri başta tek bir küme olarak değerlendirir ve aşağıdaki gibi çalışır:
+1.	Tüm veriler tek bir küme olarak başlar (örneğin, 10 bölüm = 1 küme).
+2.	Küme içerisindeki en uzak noktalar (en çok farklılık gösteren bölümler) belirlenir.
+3.	Bu noktalar temel alınarak küme ikiye bölünür.
+4.	Bu işlem, her bölüm kendi başına bir küme haline gelene kadar devam eder.
+5.	En uygun küme sayısı dendrogram veya benzer metrikler kullanılarak belirlenir.
+
+Python Uygulaması (Yaklaşık Benzerlik için): Bölücü kümeleme, SciPy gibi kütüphanelerde doğrudan desteklenmez, ancak sklearn ile benzetim yapılabilir.
+
+from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Örnek veri
+data = np.array([
+    [3.5, 7], [3.8, 6.5], [4.2, 5.8], [4.0, 6.2],
+    [2.5, 8], [2.8, 7.5], [1.5, 9], [2.0, 8.8]
+])
+
+# İlk kümeleme: KMeans ile tek kümeden bölünmeye başlama
+kmeans = KMeans(n_clusters=2, random_state=0).fit(data)
+
+# Küme etiketlerini görselleştirme
+plt.scatter(data[:, 0], data[:, 1], c=kmeans.labels_, cmap='viridis')
+plt.title('Bölücü Kümeleme - İlk Adım')
+plt.xlabel('Ortalama Not')
+plt.ylabel('Zorluk Seviyesi')
+plt.show()
+
+![Resim1](https://github.com/user-attachments/assets/8b5265a3-dc23-4042-be1d-460ff41c192b)
+
 
 ## 3. Apriori Algoritması
 
@@ -447,6 +552,13 @@ Veri Maskeleme (Anonimleştirme): Toplanan veriler kişisel veriler olabileceği
 
 Eğer elde edilen veriler gerçek verilerse veri temizleme/hazırlama yani ön işlem adımı bu tür verilerde daha az yapılır. 
 
+## c. Reinforcement Learning (Pekiştirmeli Öğrenme)
+
+Bir sistemin sürekli olarak çevresinden aldığı geri bilidirimlerle en iyi hareketi öğrenmesini sağlar. Otonom araçlar ,robotik sistemler örnek olarak gösterilebilir. 
+
+## d. Semi-supervised ve Self-supervised Learning
+
+Yarı denetimli öğrenmede az sayıda etiketli veri, çok sayıda etiketlenmemiş veri ile birlikte kullanılır. Kendinden denetimli öğrenme ise örnekler arası ilişkilerle öğrenir.
 
 ## Market Basket Analizi :
 Birliktelik kuralı(Association rule) ile öğrenme. 
@@ -469,7 +581,7 @@ Yukarıda verilen formülün amacı sayıları bir düzene oturtmaktır.
 
 Bir sınıflandırma modelinin çıktısını değerlendirir.
 
-a) Confusion Matrix(Karmaşıklık Matrisi): 
+a) Confusion Matrix(Karmaşıklık Matrisi): Bir sınıflandırma modelinin çıktısını değerlendirir.
 
   * True Positive (TP) : Doğru pozitif tahmini.
 
@@ -479,16 +591,38 @@ a) Confusion Matrix(Karmaşıklık Matrisi):
  
   * False Negative (FN) : Yanlış negatif tahmin. (Type 2 hatası: Gerçekte yanlış olan hipotezin doğru olarak kabul edilmesi.(Tehlikeyi gözden kaçırmak gibi düşünülebilir.)
 
-b) Accuracy (Doğruluk Oranı ): TP+TN/TP+TN+FP+FN , kolay anlaşılır bir metriktir.Dengeli olmayan veri setinde yanıltıcı olabilir.
+b) Accuracy (Doğruluk Oranı ):Modelin doğru tahmin ettiği toplam veri oranı.
 
-c) Precision (Kesinlik): Pozitif tahminlerin ne kadar doğru olduğunu ölçer : TP/(TP+FN).
+                                Fotmül: TP+TN/TP+TN+FP+FN 
+
+Kolay anlaşılır bir metriktir.Dengeli olmayan veri setinde yanıltıcı olabilir.
+
+c) Precision (Kesinlik): Pozitif tahminlerin ne kadar doğru olduğunu ölçer.
+
+                                Formül : TP/(TP+FN)
 
 Önemli olduğu durum yanlış. Pozitiflerin maliyeti yüksekse.
 
-d) Recall (Dayanaklılık ve Hassasiyet) : Gerçek pozitiflerin ne kadar doğru olduğunun göstergesidir. =TP/(TP+FN)
-    
+d) Recall (Dayanaklılık ve Hassasiyet) : Gerçek pozitiflerin ne kadar doğru olduğunun göstergesidir. Önemli olduğu durum: Yanlış negatiflerin maliyeti yüksekse.
 
+                                Formül: TP/(TP+FN)
+    
 Yalnız bazı durumlarda doğruluk ölçütleri her zaman doğru olmayabilir.
+
+
+e) F1 Score: Precision ve Recall’un harmonik ortalamasıdır.
+                                
+                                Formül : F1=2*(Precision*Recall/Precision+Recall)
+
+Avantaj: Dengeli bir değerlendirme sunar.
+
+f) ROC-AUC (Receiver Operating Characteristic - Area Under Curve): Modelin farklı eşik değerleri için doğruluğunu ölçer.
+
+•	ROC Eğrisi: TPR (True Positive Rate) ve FPR (False Positive Rate) ilişkisini gösterir.
+
+•	AUC: Eğrinin altındaki alan, modelin genel başarısını ölçer.
+
+
 
 ## Kayıp Fonksiyonu (Loss Function)
 
