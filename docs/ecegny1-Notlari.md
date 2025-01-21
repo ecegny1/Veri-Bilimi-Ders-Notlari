@@ -50,6 +50,34 @@ Bu projelerimizin yapıtaşlarından biri ise elde ettiğimiz verilerdir. Başla
 Bunun için ise "Kaggle" : https://www.kaggle.com  ve "Hugging Face" :https://huggingface.co/ platformlarını inceleyebilir, verisetlerini indirebilir ve kendi çalışmalarınızı yapabilirsiniz.
 Dilerseniz kaynak erişimine açık sitelerden örneğin "TÜİK, KAP, IETT, vb. veri sitelerinden kendi ihtiyaçlarınız doğrultusunda verilerinizi excel formatında kendinize göre düzenleyebilir ve excel formatını ".csv" olarak kaydederek yazacağınız kodlar için veri seti olarak kullanabilirsiniz.
 
+## Bilinmesi Gereken Genel Terimlerden Bazıları:
+
+* Veritabanı (Database) : Verilerin toplandığı yer. Örnek veritabanlarından biri SQL(Structured Query Language(Düzenli Sorgu Dİli))'dir. Veritabanı kullanmanın avantajı verileri excele kıyasla saniyeler içinde sisteme işlemesidir.Daha hızlıdır.
+
+* İlişkisel Veritabanı : Bir sayfadaki bilgi, diğer sayfalardaki bilgilere referans veriyorsa, tablolar arası ilişki varsa bu ilişkisel veritabanıdır. 
+
+* Composition : Belirli aralıklardaki bilgiyi daha dar başka aralıklara sıkıştırmak için kullanılır. 
+
+* Feature_Selection : Hangi özellik veriler için daha gerekli. Verideki özelliklerin her biri verinin boyutudur. 
+
+* (.*?) : Herhangi bir şey olabilir anlamına gelen kod. Diyelim ki tarih, saat,başlık, bilgi sütunları mevcutbilgilerin değişeceği yerlere bu ifadeyi kullanabiliriz.
+
+* Teorik olarak veride 4 boyut bulunmaktadır. Ama dört boyutun çizilmesi mümkün değildir. 3 boyuta kadar veriler çizilebilir. 4 Boyutlunun çizilmesi zor olduğu kadar hesaplanması da çok zordur. 
+
+* Veri kümelerine benziyor denebilmesi için en az 2 boyutta da benzerlik olmalıdır.
+
+* Market Basket Analizi : Birliktelik kuralı(Association rule) ile öğrenme. Ne, ne ile gider? sorusuna cevao bulunmalıdır.
+
+* np.random.seed() : buraya yazılan sayı ile aynı verilerin tekrardan getirilmesi için gereken kod. 
+
+* Standard Scalar: Sayısal çokluk ifade etmeyen verileri çokluk ifade edebilecek hale getiriyor.
+
+* LabelEncoder : Metni sayıya dönüştürme.
+
+* .shape () : Verinin şeklini veren kod.
+
+* Softmax: Verdiğin sayıların hepsinin olasılığının toplamını 1 olacak şekilde o aralığa sıkıştırıyor.
+
 ## Yapay Zeka Nedir?
 
 Yapay zeka, verilen bilgilere göre bir sonraki adımı tahmin eden bir sistemdir. 
@@ -87,7 +115,7 @@ Veri : Sahip olduğumuz probleme göre edindiğimiz her türlü bilgiye veri diy
 
 Sentetik Veri : Rastgele veri olmayıp gerçek hayata yakın veriler. Gerçeğe benziyor ama tamamen gerçek değil.
 
-Nereden nasıl veri bulabiliriz?
+## Nereden nasıl veri bulabiliriz?
 
 Öncelikle problemimizin ne olduğuna karar vermeli ve problemi çözmek için doğru modeli kurmak için hangi verilere ihtiyacımız olduğunu bilmeliyiz. 
 
@@ -106,11 +134,27 @@ Veri Analizi : Günümüz dilinde eldeki olayı anlamak olarak kullanılabilmekl
 
 Veri Bilimi : Veri analizinin yanısıra veri analizinde elimizde bir bilgiyi analiz edebilirken, veri biliminde amaç elde olmayanı tahmin etmektir.
 
+## Sigmoid Fonksiyonu :
+
+Matematikte ve makine öğrenmesinde yaygın olarak kullanılan, S şeklindeki  bir eğriye sahip olan ve özellikle lojistik regresyon ve sinir ağlarında kullanılan bir fonksiyondur. 
+Fonksiyonun matematiksel formülü şu şekildedir: 
+
+![](https://www.gstatic.com/education/formulas2/553212783/tr/sigmoid_function.svg)
+
+x : Sigmoid fonksiyonuna koymak istediğimiz sayıdır. 0 ile 1 arasında yer almaktadır. 
+e : Doğal logaritma tabanı olan eular sayısıdır, yaklaşık değeri 2.71828'e eşittir.
+
+Yukarıda verilen formülün amacı sayıları bir düzene oturtmaktır. 
+
 ## Makine Öğrenmesinin Temelleri
 
 Makine Öğrenmesi : Elde edilen bilgiden öğrenilebilen, algoritmalarla ilgilenen yapay zekanın bir alt dalıdır. 
 
 o	Makine öğrenmesi vs Geleneksel Programlama: Geleneksel programlamada kurallar açıkça yazılırken, makine öğrenmesinde veri ile öğrenme sağlanır. Bu sayede, makine öğrenmesi farklı verilerle uyum sağlayabilir.
+
+## o	Hangi durumlarda kullanılabilir?
+
+Makine öğrenmesi, tahmin, sınıflandırma ve örüntü tanıma gibi veri analizlerinde etkilidir. Özellikle veri yoğun işlerde kullanımı avantaj sağlar. Verinin elle kodlanmasının zor olduğu durumlarda makine öğrenmesi kullanılabilir.
 
 Makine öğrenmesi bir modeldir ve o modeldeki sayılardan oluşmaktadır. Modelin tamamı demek için sonsuz bir gözlem olmalıdır. Tam sonsuza vardığımız noktada biz o modeli tamamlamış oluruz.
 
@@ -128,7 +172,6 @@ Makine öğrenmesi bir modeldir ve o modeldeki sayılardan oluşmaktadır. Model
      
      - Kullanacağımız algoritmaya göre verilerin ayıklanması, boş veri sütunlarının gerekli doldurma yöntemleri ile doldurulması veya değeri bulunamayan değişkenlerin algoritmadan çıkarılması ve modelin oluşturulabilmesi için verinin hazır hale getirilmesi. Orantısız veri ile uğraşmak (imbalanced data set): Verilerde dengesizlik varsa, modelin hatalı öğrenmesini önlemek için veri dengelenir. Bu işlem, doğru ve adil tahminler yapmayı sağlar.
 
-     
   4. Özellik Mühendisliği :
      
      - Özellik çıkarımı teknikleri: Özellik çıkarımı, verinin önemli kısımlarını analiz için öne çıkarır. Bu süreç, veriyi daha anlamlı hale getirir.
@@ -137,44 +180,362 @@ Makine öğrenmesi bir modeldir ve o modeldeki sayılardan oluşmaktadır. Model
   5. Modelin Değerlendirilmesi :
      
      - Validasyon ve test seti seçmenin önemi: Doğruluğu ölçmek için model, eğitim dışında farklı veriyle test edilmelidir. Bu sayede, modelin genel veri üzerinde ne kadar iyi performans gösterdiği anlaşılır.
+       
      - Sub-sample ile veri seçimini hızlandırmak: Büyük veri kümelerinde küçük örneklerle hızla test yapılır. Bu işlem, daha büyük veriler üzerinde hızlı sonuç almak için etkilidir.
+       
      - Sub-sample seçim yöntemi: Veri, küçük örnek gruplar halinde seçilerek analiz edilir. Sub-sampling, verinin hızlıca incelenmesini sağlar.
+       
      - Cross-Validation: Modelin performansını ölçmek için veriler farklı parçalara ayrılarak test edilir. Bu yöntem, modelin farklı veri kümelerinde ne kadar iyi çalıştığını gösterir.
+       
      - Model karşılaştırma metrikleri: Farklı modellerin doğruluk, hassasiyet gibi ölçütlerle kıyaslanması yapılır. Bu karşılaştırmalar, en iyi modeli seçmek için kullanılır.
   
   6. Sonuçların Sunulması ve Aksiyon Alınması
   
     - Makine öğrenmesi, yapay zekanın alt alanıdır ve veriden öğrenme yeteneğine odaklanır. Supervised ve unsupervised learning, makine öğrenmesinin alt kategorileridir.
 
-## Bilinmesi Gereken Genel Terimlerden Bazıları:
+# Değişkenler
 
-* Veritabanı (Database) : Verilerin toplandığı yer. Örnek veritabanlarından biri SQL(Structured Query Language(Düzenli Sorgu Dİli))'dir. Veritabanı kullanmanın avantajı verileri excele kıyasla saniyeler içinde sisteme işlemesidir.Daha hızlıdır.
+Veri biliminde değişkenler ele alınan gözlemlerdir. 
 
-* İlişkisel Veritabanı : Bir sayfadaki bilgi, diğer sayfalardaki bilgilere referans veriyorsa, tablolar arası ilişki varsa bu ilişkisel veritabanıdır. 
+Örnek : isim = "Ece"
 
-* Composition : Belirli aralıklardaki bilgiyi daha dar başka aralıklara sıkıştırmak için kullanılır. 
+Bu örnek ele alındığında değişkenin adı isim, değişkene atanan değer Ece, atama operatörü ise ='dir.İsim değişkenini Ece'ye atıyoruz.  Değişken ve değer ile birlikte tanımlama işlemi yapılmaktadır. 
 
-* Feature_Selection : Hangi özellik veriler için daha gerekli. Verideki özelliklerin her biri verinin boyutudur. 
+## Değişken Tanımlama 
 
-* (.*?) : Herhangi bir şey olabilir anlamına gelen kod. Diyelim ki tarih, saat,başlık, bilgi sütunları mevcutbilgilerin değişeceği yerlere bu ifadeyi kullanabiliriz.
+Değişkenler tanımlanırken iki tane fonksiyon kullanılabilir. Bunlardan biri define(), diğeri ise declare() fonksiyonudur. Tanımlanmak istenen değişkenler parantez içlerine yazılmalıdır. 
 
-* Teorik olarak veride 4 boyut bulunmaktadır. Ama dört boyutun çizilmesi mümkün değildir. 3 boyuta kadar veriler çizilebilir. 4 Boyutlunun çizilmesi zor olduğu kadar hesaplanması da çok zordur. 
+## Değişken Türleri 
 
-* Veri kümelerine benziyor denebilmesi için en az 2 boyutta da benzerlik olmalıdır. 
+1. String : Metinsel ifadeleri tanımlamak için kullanılmaktadır. Örneğin ; "Ali" , string türünde tanımlanmış ve Ali değeri atanmış bir değişkendir. Bir ifadenin tırnak içinde ("") belirtilmiş olması, string ifade olduğu anlamına gelmektedir. Python'da tırnak içinde yazılmış her ifade string veri türüne girmektedir.
 
-* np.random.seed() : buraya yazılan sayı ile aynı verilerin tekrardan getirilmesi için gereken kod. 
+2. Integer : Tam sayıları tanımlamak için kullanılmaktadır. Örneğin; yas = 25, yaş değişkenine 25 sayısı atanmıştır. 
 
-* Standard Scalar: Sayısal çokluk ifade etmeyen verileri çokluk ifade edebilecek hale getiriyor.
+3. Float : Ondalıklı sayıların tanımlanmasında kullanılır. Örneğin; sicaklik = 25,5.  Sıcaklık değişkenine 25,5 atanmıştır. 
 
-* LabelEncoder : Metni sayıya dönüştürme.
+4. Boolean : 2'li ifadelerde True, False olarak atanmaktadır.
 
-* .shape () : Verinin şeklini veren kod.
+Veri tipinin ne olduğundan emin olunamadığında type() ifadesi kullanılıp parantez içine değişken yazılarak değişkenin türünü öğrenebiliriz. 
 
-* Softmax: Verdiğin sayıların hepsinin olasılığının toplamını 1 olacak şekilde o aralığa sıkıştırıyor.
+!! Dikkat edilmesi gereken bir diğer husus ise kodlama dillerinde türkçe karakter kullanımına önem verilmesi ve ingilizce karakterle kodlama yapılmasıdır. Buna ek olarak ise bütün adımları gerçekleştirip hiçbir zaman çalışmayan kodlara ise ölü kod denir. Örneğin return ile başlayan bir kod bloğunun altına başka bir kod yazarsak o kod çalışmayacaktırç Ölü kod olarak adlandırılacaktır. Çünkü return komutu sadece döngüdeki emri ekrana yansıtır.
 
-## o	Hangi durumlarda kullanılabilir?
+## Koleksiyonlar (Collections)
 
-Makine öğrenmesi, tahmin, sınıflandırma ve örüntü tanıma gibi veri analizlerinde etkilidir. Özellikle veri yoğun işlerde kullanımı avantaj sağlar. Verinin elle kodlanmasının zor olduğu durumlarda makine öğrenmesi kullanılabilir.
+Birden çok veriyi bir arada tutmak için kullanılan veri koleksiyonlarıdır. 
+
+## 1. Listeler (Lists)
+
+- Stringlerden oluşan listeler ve dinamik listeler olarak ikiye ayrılmaktadır. 
+
+- Sıralı ifadelerden oluşurlar.
+
+- Değiştirilebilir (Mutable) elemanlara sahiptirler. 
+
+- Aynı listede farklı türde elemanlar bulunabilir.
+
+- Yinelenen (duplicate) elemanlara izin verir.
+
+- Python dilinde listeler köşeli paratez ile belirtilmektedir. 
+
+Örnek: 
+```bash
+alinacak = ["elma","armut","muz","çilek"]
+```
+
+## 2. Demetler (Tuples)
+
+- Demetler değişmeyecek verilerin kümelenmesinde kullanılırlar.
+
+- Demetler de listeler de olduğu gibi sıralı ifadelerden oluşmaktadır. 
+
+- Elemanlar değiştirilemez (immutable).
+
+- Farklı türde elemanlar içerebilirler.
+
+- Yinelenen elemanlara izin verilir.
+
+- Python dilinde demetler yuvarlak paratez ile belirtilmektedir. 
+
+Örnek: 
+```bash
+alinacak = ("elma","armut","muz","çilek")
+```
+
+## 3. Kümeler (Sets)
+
+- Sırasız veri setleridir.
+
+- Elemanlar değiştirilebilir (mutable).
+
+- Yinelenen elemanlara izin verilmez.
+
+- Benzersiz elemanların saklanmasında kullanılmaktadır. 
+
+- Python dilinde kümeler süslü parantez ile ifade edilmektedir.
+
+Örnek: 
+```bash
+alinacak = {"elma","armut","muz","çilek"}
+```
+
+## 4. Diziler (Arrays)
+
+- Diziler de birden fazla veriyi saklayan yapılardır.
+
+- Aynı türden elemanları içerir.
+
+- Koleksiyonların alt kümesi olarak görülebilir.
+
+- Sıra sayıları ve aynı olan verilerin bulundukları yerler farklıdır.
+
+Örnek: 
+```bash
+alinacak = {"elma","armut","muz","çilek","elma"}
+```
+
+```bash
+import numpy as np
+dizi = np.array([1, 2, 3, 4, 5])
+```
+
+Not: Numpy Python'ın sayısalıdır. 
+
+"as" takma isimler için kullanılmaktadır. 
+
+"import" komutu ise kütüphaneden fonksiyonları çağırıyoruz.
+
+
+## 5. Dictionary (Sözlükler)
+
+- Elemanlar anahtar ve değer olarak tutulmaktadır. 
+
+- Sırasızdır (Python 3.6+ itibariyle sıralıdır).
+
+- Anahtar-değer (key-value) çiftleri şeklinde veriler saklanmaktadır.
+
+- Anahtarlar benzersizdir; ancak değerler tekrarlanabilir.
+
+- Etiketli veri saklama (örneğin, JSON formatı) gibi durumlarda kullanılmaktadırlar. 
+
+- {süslü parantez ile başlar, elemanlar virgül ile ayrılır.}
+
+Örnek:
+
+```bash
+my_dict = {"isim": "Ali", "yaş": 25, "meslek": "mühendis"}
+```
+
+# Döngüler
+
+## 1. For Döngüsü
+
+For döngüsünde sayısal değeri döngüye sokmak için "in range" ifadesi kullanılmaktadır. 
+
+Örnek:
+
+```bash
+for i in range (1000):
+  print ("Beni affet.")
+```
+
+- Bu döngü, range(1000) ifadesi sayesinde 0'dan başlayarak 999'a kadar toplamda 1000 kez tekrarlanır.
+- Her döngüde i değişkeni bir önceki değerden bir artırılır.
+- İlk döngüde i = 0
+- İkinci döngüde i = 1
+...
+- Son döngüde i = 999
+  
+Her döngü iterasyonunda, ekrana "Beni affet." yazdırılır.
+Bu işlem, toplamda 1000 kez tekrarlanır.
+
+```bash
+for i in range (1000):
+i = 0
+while i<1000:
+  print ("Beni affet.")
+```
+
+- Bu bir for döngüsü, 0'dan 999'a kadar toplamda 1000 kez çalışır.
+- Ancak, i = 0 satırı, i değişkenini her döngüde sıfırlamaktadır. Bu, for döngüsünün anlamını kaybetmesine neden olur.
+- while i < 1000:
+
+- For döngüsünün her iterasyonunda, i = 0 ile sıfırlandığından, bu while döngüsü sonsuza kadar çalışır.
+- Çünkü i < 1000 her zaman doğru olur ve i hiçbir zaman artmaz (veya while döngüsü içinde artırılmaz).
+
+- Sonsuz Döngü: Bu kod, sonsuz bir döngüye girer ve sürekli olarak "Beni affet." yazdırır. Çıkış tuşuna basmadıkça programdan çıkamazsınız.
+
+Örnek :
+```bash
+for alinacaklar in alinacaklar_listesi:
+```
+Yukarıdaki örnek kodda kod listenin uzunluğu kadar döngüye girer. 
+
+Koleksiyonun bütün elemanları için çalıştırırken kullanılır. 
+
+# Koşul İfadeleri 
+
+Koşul : Değişen durumun kontrolü için geçerlidiri kontrolün sağlanması için kullanılır.
+
+## 1. If Koşul İfadesi
+
+En temel koşul ifadesidir.
+
+Döngü kapsamında olay gerçekleşir ve son bulur. 
+
+Her "if" gördüğümüzde bir koşul kontrol ediyoruz. 
+
+Else , hiçbir koşul sağlanmazsa çalışacak komuttur.
+
+elif = diğer yazılım dillerinde ise else if olarak kullanılmaktadır.
+
+Örnek :
+
+```bash
+if len(isim)<5:
+  print ("İsim 5 karakterden küçüktür.")
+else :
+  print ("İsim 5 karakterden küçük değildir.")
+```
+
+Not: len() fonksiyonu, verilen bir dizinin (örneğin bir string'in) uzunluğunu döndürür.
+
+
+## Komutlar 
+
+Continue Komutu : Net olarak döngü içinde koşul sağlanırsa adım atlama komutudur. Her koşulda kullanılan bir komut değildir, belli koşullarda yazılmaktadır. 
+
+Break Komutu : Döngüyü bitir komutudur. Döngü dışında da yazılabilir.
+
+Continue ve break komutları döngü içinde yazılırlar ve genelde koşul içinde kullanılırlar.
+
+## Operatörler
+
+Operatörler değerleri değişkene atarlar. 
+
+= : Atama operatörüdür.
+== :Koşul durum sorgulama operatörüdür.
+
+Operatörler koşul, matematiksel, mantıksal operatörler olmak üzere üçe ayrılmaktadırlar.
+
+## Koşul Operatörleri
+
+Koşul şu anda bilmediğimiz bir şey, koşul bir durum kontrolüdür.
+
+Koşul operatörlerinde elde edilen cevap True veya False'dur. 
+
+Ünlem(!) işaretini hangi operatörün başına koyarsak tersi anlamına gelmektedir.
+
+Eşittir (==): İki değeri karşılaştırır ve eşit olup olmadığını kontrol eder. Örnek: a == b
+
+Eşit Değildir (!=): İki değerin eşit olup olmadığını kontrol eder. Örnek: a != b
+
+Not: Eşit (==) ve Eşit değil (!=) operatörleri bütün veri tipleri ile kullanılmaz fakat çoğu veri tipinde kullanılabilir. Bazı veri tipleri (örneğin, float ve int) karşılaştırıldığında küçük farklar nedeniyle beklenmedik sonuçlar verebilir. Bu nedenle, örneğin kayan noktalı sayılarla çalışırken dikkatli olunmalıdır.
+
+Büyüktür (>): Bir değerin diğerinden büyük olup olmadığını kontrol eder. Örnek: a > b
+
+Küçüktür (<): Bir değerin diğerinden küçük olup olmadığını kontrol eder. Örnek: a < b
+
+Büyüktür veya Eşittir (>=): Bir değerin diğerinden büyük veya eşit olup olmadığını kontrol eder. Örnek: a >= b
+
+Küçüktür veya Eşittir (<=): Bir değerin diğerinden küçük veya eşit olup olmadığını kontrol eder. Örnek: a <= b
+
+Bir şeyin birden fazla koşulunun sağlanmasını isteriz.
+
+## Matematiksel Operatörler
+
+Toplama (+): İki sayıyı toplar. Örnek: a + b
+
+Çıkarma (-): Bir sayıdan diğerini çıkarır. Örnek: a - b
+
+Çarpma (*): İki sayıyı çarpar. Örnek: a * b
+
+Bölme (/): Bir sayıyı diğerine böler. Örnek: a / b
+
+Üs () veya Pow()**: Bir sayıyı üssünü alır. Örnek: a ** b
+
+Mod Alma (%): Bölümün kalanını verir. Örnek: a % b
+
+Örnek :
+
+```bash
+i = 4 
+if i % 2 == 0:
+    print("Çift sayı")
+else:
+    print("Tek sayı")
+```
+
+## Mantıksal Operatörleri
+
+Koşul ifadeleriyle çalışırken kullanılan operatörlerdir.
+
+Genellikle koşul ifadelerinde birden fazla koşulu birleştirirken kullanılır.
+
+3 ana mantıksal operatör vardır: 
+
+- Ve (and(∧)), koşulun gerçekleşmesi için iki tarafında doğru olması gerekmektedir.
+
+- Veya (or(∨)), koşullardan birinin sağlanması doğruluk açısından yeterlidir.
+
+- Değil (not(')), koşulların sağlanamadığı durumlarda kullanılmaktadır.
+
+Bunlar, koşul ifadelerinin (if-else gibi) sonucunu kontrol etmek ve daha karmaşık mantıksal ifadeler oluşturmak için kullanılır.
+
+Örnek:
+
+```bash
+i = 8  
+if i % 2 == 0 and i > 6:
+    print("Çift ve 6'dan büyük")
+else:
+    print("Koşul sağlanmadı")
+```
+
+# Veri Bilimi Modelleri (Problemleri)
+
+Veri biliminin 3 modeli(problemi) mevcuttur.
+
+1. Regresyon(Regression) : Geçmiş dataya bakıp, tarihsel tahminlerde bulunup yorumlama ve sayısal tahminleme yapar.
+
+   Regresyon Algoritmaları : Lineer Regresyon
+   
+                             Lasso/Ridge Regresyon
+   
+                             Polinomsal Regresyon
+   
+   Regresyon Örnekleri : Bir evin fiyatını tahmin etmek.
+   
+                         Hisse senedi fiyatlarını tahmin etmek.
+
+2. Sınıflandırma(Classification) : Elimizde olan verileri sınıflandırmak için kullanılan bir methoddur. Cevabımız numerik değil kategoriktir.
+
+Sınıflandırma Algoritmaları : Logistic Regression
+
+                              Decision Trees 
+                              
+                              Random Forest
+                              
+                              Support Vector Machines (SVM)
+                              
+                              Neural Networks
+                              
+
+Sınıflandırma Örnekleri : Müşterinin kredi almaya uygun olup olmaması. Belirli sayıda sınıf içine sokacaksak bu bir sınıflandırma örneğidir.
+
+                          Hastanın hasta olup olmadığını sınıflandırmak.
+                          
+3. Kümeleme (Clustering) : Etiketlenmemiş verilerde, benzer özelliklere sahip örnekleri bir araya toplamak için kullanılır.
+
+Kümeleme Algoritmaları:  
+                        K-Means : Veriyi kaç gruba ayırmak istediğimiz ile alakaladır. Örneğin bir sınıf listesi mevcut. Listede öğrencilerin özellikleri yazmakta, yaş, boy, kilo vb. Rasgele gruplar atıyoruz. Kaç küme atayacaksak "K" değeri o olacak.
+                        
+                        DBSCAN
+                        
+                        Hierarchical Clustering
+
+Kümeleme Örnekleri : Müşterileri alışveriş alışkanlıklarına göre segmentlere ayırmak.
+
+                     Sosyal medya verilerinde benzer kullanıcı grupları bulmak.
 
 # Makine Öğrenmesi Çeşitleri
 
@@ -284,6 +645,7 @@ model = LinearRegression()
 - Modeli Eğitelim 
 
 Modellerin ilk eğitilmesine pre-train denilmektedir. 
+
 Elimizdeki verilerle bulduğumuz lineer regresyon denklemindeki (Y=ax+b+ϵ) a ve b'nin güncellenip doğru sonuca ulaşabilmemiz için a ve b'yi doğru şekilde bulmak için datayı fit ediyoruz. a ve b değişkenlei modelimizin parametreleri olarak adlandırılmaktadırlar.
 
 ```bash
@@ -375,15 +737,13 @@ NN yapısı: Yapay sinir ağları, nöron adı verilen birimlerin katmanlar hali
 Bir fonksiyon tanımlıyoruz.
 
 ```bash
-
 def lineer_regression(X):
-
 ```
+
 ```bash
 Y = a*x+b
 ```
-
-bu benim lineer regresyon modelim,bir örnek üzerinden bakacak olursak  a=3 ve b=5 dışarıda tanımlı modelin birer parametresi olsun.
+Bu benim lineer regresyon modelim,bir örnek üzerinden bakacak olursak  a=3 ve b=5 dışarıda tanımlı modelin birer parametresi olsun.
 
 ```bash
 return y
@@ -441,8 +801,7 @@ Sigmoidin türevini almak için fonksiyon yazmıştık bu sayede tekrar tekrar a
 
 Ağırlıklarımız var bir sonraki adımda bunlar ne olacak?
 
-
-10.	İleri Sınıflandırma Teknikleri
+6. İleri Sınıflandırma Teknikleri
 •	Ensemble Methods: Birden fazla modelin bir araya gelerek daha iyi sonuçlar vermesini sağlar. Bu yöntem, farklı modellerin avantajlarını birleştirir.
 •	Imbalanced Datasets: Verilerde dengesizlik varsa, modelin doğru sonuç vermesi zorlaşır. Bu durumda, dengesiz veri kümeleri özel yöntemlerle ele alınır.
 
@@ -452,7 +811,7 @@ Verilerin etiketlenmediği durumlarda kullanılır. Model, verilerdeki desenleri
 
 Örnek: Müşteri segmentasyonu, kümeleme analizi.
 
-Algoritmalar:
+## Algoritmalar:
 
 ## 1. K-Means Kümeleme
 
@@ -460,9 +819,7 @@ K-Means kümeleme, verileri anlamlı gruplara ayırmak için kullanılır.
 
 Bir K-Means Modeli olduğunu varsayalım. Başlangıçta k adet küme belirlenir. Her veri kümesinde en yakın merkez nokta atanır. 
 
-Örnek : 1. kümenin merkezi belirli bir koordinatta yer almaktadır. 
-Kaç sayıda küme varsa hepsinin merkez koordinatları belirlenir.
-Merkezler bulunduğunda model kurulabilir hale gelmektedir. Lineer regresyonda noktaları verdiğinde modeli kurarken burada da merkez koordinatlar bulunduğunda model kurulmaktadır. 
+Örnek : 1. kümenin merkezi belirli bir koordinatta yer almaktadır. Kaç sayıda küme varsa hepsinin merkez koordinatları belirlenir. Merkezler bulunduğunda model kurulabilir hale gelmektedir. Lineer regresyonda noktaları verdiğinde modeli kurarken burada da merkez koordinatlar bulunduğunda model kurulmaktadır. 
 
 
 ## 2. Hiyerarşik Kümeleme:
@@ -470,15 +827,20 @@ Merkezler bulunduğunda model kurulabilir hale gelmektedir. Lineer regresyonda n
 Hiyerarşik kümeleme, verileri alt kümelere (dendrogram) ayrılmış bir ağaç yapısı içinde organize eden bir kümeleme yöntemidir. İki türü vardır:
 
 - Aglomeratif (Birleştirici):
+  
   o	Küçük kümelerden başlayarak daha büyük kümeler oluşturur.
   o	Tüm veri noktaları başlangıçta ayrı bir küme olarak değerlendirilir ve benzer kümeler birleştirilir.
 
 Senaryo:
+
 Bir e-ticaret sitesinin müşterilerini satın alma davranışlarına göre segmentlere ayırmak istiyoruz. Elimizde her müşteriye ait şu bilgiler var:
+
 •	Ortalama harcama tutarı.
 •	Alışveriş sıklığı (yılda kaç kez alışveriş yaptığı).
+
 Yaklaşım:
 Birleştirici kümeleme, her müşteriyi başta kendi başına bir küme olarak değerlendirir ve aşağıdaki gibi çalışır:
+
 1.	Her müşteri, başlangıçta kendi başına bir küme (20 müşteri = 20 küme).
 2.	En yakın iki müşteri (örneğin benzer harcama tutarına ve alışveriş sıklığına sahip olanlar) birleştirilir.
 3.	Birleştirme işlemi, tüm müşteriler tek bir küme haline gelene kadar devam eder.
@@ -506,13 +868,17 @@ plt.xlabel('Müşteriler')
 plt.ylabel('Mesafe')
 plt.show()
 
-- 2.	Divisive (Bölücü):
+Divisive (Bölücü):
+
 o	Tüm veri setini tek bir küme olarak değerlendirerek başlar ve sonra bölünür.
 o	Daha az yaygındır.
+
 Senaryo:
 Bir üniversitenin bölümlerini, öğrenci başarıları (ortalama not) ve bölümlerdeki derslerin zorluk seviyesine göre gruplamak istiyoruz.
+
 Yaklaşım:
 Bölücü kümeleme, tüm bölümleri başta tek bir küme olarak değerlendirir ve aşağıdaki gibi çalışır:
+
 1.	Tüm veriler tek bir küme olarak başlar (örneğin, 10 bölüm = 1 küme).
 2.	Küme içerisindeki en uzak noktalar (en çok farklılık gösteren bölümler) belirlenir.
 3.	Bu noktalar temel alınarak küme ikiye bölünür.
@@ -543,6 +909,48 @@ plt.show()
 
 ![Resim1](https://github.com/user-attachments/assets/8b5265a3-dc23-4042-be1d-460ff41c192b)
 
+Adım Adım Hiyerarşik Kümeleme Süreci
+1.	Mesafe Matrisi Oluşturma:
+o	Veri noktaları arasındaki mesafeler (ör. Öklid, Manhattan) hesaplanır.
+2.	Bağlantı Metodunun Seçilmesi:
+o	Kümeleme sırasında iki küme arasındaki mesafeyi belirlemek için bir bağlantı ölçütü seçilir:
+	Tek bağ (Minimum mesafe)
+	Tam bağ (Maksimum mesafe)
+	Ortalama bağ
+	Uzaklık merkezi
+3.	Kümelerin Birleştirilmesi:
+o	Başlangıçta her veri noktası kendi kümesindedir.
+o	Mesafe matrisine dayanarak en yakın iki küme birleştirilir.
+o	Bu işlem tüm veri noktaları tek bir küme haline gelene kadar tekrarlanır.
+4.	Dendrogram Çizimi:
+o	Kümeleme sonucunda dendrogram adı verilen bir ağaç yapısı elde edilir.
+o	Kullanıcı dendrogramı inceleyerek uygun küme sayısını seçebilir.
+import numpy as np
+import pandas as pd
+from scipy.cluster.hierarchy import dendrogram, linkage
+from sklearn.datasets import make_blobs
+import matplotlib.pyplot as plt
+
+# Örnek veri oluşturma
+X, _ = make_blobs(n_samples=20, centers=3, random_state=42)
+
+# Hiyerarşik kümeleme
+Z = linkage(X, method='ward')  # Ward bağlantı metodu
+
+# Dendrogram çizimi
+plt.figure(figsize=(10, 5))
+dendrogram(Z)
+plt.title('Hiyerarşik Kümeleme - Dendrogram')
+plt.xlabel('Veri Noktaları')
+plt.ylabel('Mesafe')
+plt.show()
+Avantajlar
+•	Küme sayısını önceden belirtmeye gerek yoktur.
+•	Sonuçlar dendrogram üzerinden görselleştirilebilir ve yorumlanabilir.
+Dezavantajlar
+•	Büyük veri setlerinde yüksek hesaplama maliyeti.
+•	Kümeleme sırasında yapılan hataları geri almak zordur.
+![image](https://github.com/user-attachments/assets/fbec98bc-3ce2-4dce-a884-3f034e6ca478)
 
 ## 3. Apriori Algoritması
 
@@ -560,22 +968,6 @@ Bir sistemin sürekli olarak çevresinden aldığı geri bilidirimlerle en iyi h
 
 Yarı denetimli öğrenmede az sayıda etiketli veri, çok sayıda etiketlenmemiş veri ile birlikte kullanılır. Kendinden denetimli öğrenme ise örnekler arası ilişkilerle öğrenir.
 
-## Market Basket Analizi :
-Birliktelik kuralı(Association rule) ile öğrenme. 
-
-Ne, ne ile gider? sorusuna cevao bulunmalıdır.
-
-## Sigmoid Fonksiyonu :
-
-Matematikte ve makine öğrenmesinde yaygın olarak kullanılan, S şeklindeki  bir eğriye sahip olan ve özellikle lojistik regresyon ve sinir ağlarında kullanılan bir fonksiyondur. 
-Fonksiyonun matematiksel formülü şu şekildedir: 
-
-![](https://www.gstatic.com/education/formulas2/553212783/tr/sigmoid_function.svg)
-
-x : Sigmoid fonksiyonuna koymak istediğimiz sayıdır. 0 ile 1 arasında yer almaktadır. 
-e : Doğal logaritma tabanı olan eular sayısıdır, yaklaşık değeri 2.71828'e eşittir.
-
-Yukarıda verilen formülün amacı sayıları bir düzene oturtmaktır. 
 
 ## Sınıflandırma modellerinde tahminlerin doğruluğunu(accuracy) değerlendirmek için kullanılan temel kavramlar:
 
@@ -622,347 +1014,45 @@ f) ROC-AUC (Receiver Operating Characteristic - Area Under Curve): Modelin farkl
 
 •	AUC: Eğrinin altındaki alan, modelin genel başarısını ölçer.
 
+## Regresyon Modelleri İçin Doğruluk Metrikleri
 
+Regresyon modelleri, sürekli değer tahmin eder (ör. bir evin fiyatı).
+
+## a) Mean Absolute Error (MAE)
+Gerçek ve tahmin değerleri arasındaki mutlak farkların ortalaması:
+MAE=1/n ∑_(i=1)^n▒|y_i-y_i^^ |  
+
+Avantaj: Kolay yorumlanabilir.
+	Dezavantaj: Büyük hataları aynı ağırlıkta değerlendirir.
+ 
+b) Mean Squared Error (MSE)
+Hataların karesinin ortalaması:
+MSE = 1/N ∑_(i=1)^n▒〖(y_,-〖y^〗_i)〗^2 
+	Avantaj: Büyük hatalara daha fazla ağırlık verir.
+	Dezavantaj: Birimlerden etkilenir.
+ 
+c) Root Mean Squared Error (RMSE)
+MSE’nin karekökü alınarak hesaplanır:
+RMSE =√MSE
+	Avantaj: MSE’nin birim sorununu çözer.
+ 
+d) R-Squared (R²)
+Modelin veri varyansını ne kadar açıkladığını gösterir:
+R^2=1-〖SS〗_residual/〖SS〗_total 
+	0 ile 1 arasında değer alır:
+	1: Mükemmel uyum.
+	0: Model, hiçbir şey açıklayamıyor.
+ 
+3. Öneriler
+	Sınıflandırmada: Veri dengesine dikkat ederek F1 Score veya ROC-AUC kullanın.
+	Regresyonda: Hedef birime göre MAE veya RMSE kullanın.
+![image](https://github.com/user-attachments/assets/cb0f96b9-dbf7-4ffb-8444-70d78f05e945)
 
 ## Kayıp Fonksiyonu (Loss Function)
 
 Makine öğrenmesi ve derin öğrenme modellerinde, modelin yaptığı tahminler ile gerçek değerler arasındaki farkı ölçmek için kullanılan matematiksel bir fonksiyondur. Modelin başarısızlık derecesini belirler ve amacı, bu hatayı minimize etmektir.
 
 Regresyon Analizlerinde Mean Square Error(MSE) ve Mean Absolute Error(MAE) sıklıkla kullanılmaktadır. 
-
-# Değişkenler
-
-Veri biliminde değişkenler ele alınan gözlemlerdir. 
-
-Örnek : isim = "Ece"
-
-Bu örnek ele alındığında değişkenin adı isim, değişkene atanan değer Ece, atama operatörü ise ='dir.İsim değişkenini Ece'ye atıyoruz.  Değişken ve değer ile birlikte tanımlama işlemi yapılmaktadır. 
-
-## Değişken Tanımlama 
-
-Değişkenler tanımlanırken iki tane fonksiyon kullanılabilir. Bunlardan biri define(), diğeri ise declare() fonksiyonudur. Tanımlanmak istenen değişkenler parantez içlerine yazılmalıdır. 
-
-## Değişken Türleri 
-
-1. String : Metinsel ifadeleri tanımlamak için kullanılmaktadır. Örneğin ; "Ali" , string türünde tanımlanmış ve Ali değeri atanmış bir değişkendir. Bir ifadenin tırnak içinde ("") belirtilmiş olması, string ifade olduğu anlamına gelmektedir. Python'da tırnak içinde yazılmış her ifade string veri türüne girmektedir.
-
-2. Integer : Tam sayıları tanımlamak için kullanılmaktadır. Örneğin; yas = 25, yaş değişkenine 25 sayısı atanmıştır. 
-
-3. Float : Ondalıklı sayıların tanımlanmasında kullanılır. Örneğin; sicaklik = 25,5.  Sıcaklık değişkenine 25,5 atanmıştır. 
-
-4. Boolean : 2'li ifadelerde True, False olarak atanmaktadır.
-
-Veri tipinin ne olduğundan emin olunamadığında type() ifadesi kullanılıp parantez içine değişken yazılarak değişkenin türünü öğrenebiliriz. 
-
-!! Dikkat edilmesi gereken bir diğer husus ise kodlama dillerinde türkçe karakter kullanımına önem verilmesi ve ingilizce karakterle kodlama yapılmasıdır. Buna ek olarak ise bütün adımları gerçekleştirip hiçbir zaman çalışmayan kodlara ise ölü kod denir. Örneğin return ile başlayan bir kod bloğunun altına başka bir kod yazarsak o kod çalışmayacaktırç Ölü kod olarak adlandırılacaktır. Çünkü return komutu sadece döngüdeki emri ekrana yansıtır.
-
-## Koleksiyonlar (Collections)
-
-Birden çok veriyi bir arada tutmak için kullanılan veri koleksiyonlarıdır. 
-
-## 1. Listeler (Lists)
-
-Stringlerden oluşan listeler ve dinamik listeler olarak ikiye ayrılmaktadır. 
-
-Sıralı ifadelerden oluşurlar.
-
-Değiştirilebilir (Mutable) elemanlara sahiptirler. 
-
-Aynı listede farklı türde elemanlar bulunabilir.
-
-Yinelenen (duplicate) elemanlara izin verir.
-
-Python dilinde listeler köşeli paratez ile belirtilmektedir. 
-
-Örnek: 
-```bash
-alinacak = ["elma","armut","muz","çilek"]
-```
-
-## 2. Demetler (Tuples)
-
-Demetler değişmeyecek verilerin kümelenmesinde kullanılırlar.
-
-Demetler de listeler de olduğu gibi sıralı ifadelerden oluşmaktadır. 
-
-Elemanlar değiştirilemez (immutable).
-
-Farklı türde elemanlar içerebilirler.
-
-Yinelenen elemanlara izin verilir.
-
-Python dilinde demetler yuvarlak paratez ile belirtilmektedir. 
-
-Örnek: 
-```bash
-alinacak = ("elma","armut","muz","çilek")
-```
-
-## 3. Kümeler (Sets)
-
-Sırasız veri setleridir.
-
-Elemanlar değiştirilebilir (mutable).
-
-Yinelenen elemanlara izin verilmez.
-
-Benzersiz elemanların saklanmasında kullanılmaktadır. 
-
-Python dilinde kümeler süslü parantez ile ifade edilmektedir.
-
-Örnek: 
-```bash
-alinacak = {"elma","armut","muz","çilek"}
-```
-## 4. Diziler (Arrays)
-
-Diziler de birden fazla veriyi saklayan yapılardır.
-
-Aynı türden elemanları içerir.
-
-Koleksiyonların alt kümesi olarak görülebilir.
-
-Sıra sayıları ve aynı olan verilerin bulundukları yerler farklıdır.
-
-Örnek: 
-```bash
-alinacak = {"elma","armut","muz","çilek","elma"}
-```
-
-```bash
-import numpy as np
-dizi = np.array([1, 2, 3, 4, 5])
-```
-
-Not: Numpy Python'ın sayısalıdır. 
-as takma isimler için kullanılmaktadır. 
-import komutu ise kütüphaneden fonksiyonları çağırıyoruz.
-
-
-## 5. Dictionary (Sözlükler)
-
-Elemanlar anahtar ve değer olarak tutulmaktadır. 
-
-Sırasızdır (Python 3.6+ itibariyle sıralıdır).
-
-Anahtar-değer (key-value) çiftleri şeklinde veriler saklanmaktadır.
-
-Anahtarlar benzersizdir; ancak değerler tekrarlanabilir.
-
-Etiketli veri saklama (örneğin, JSON formatı) gibi durumlarda kullanılmaktadırlar. 
-
-{süslü parantez ile başlar, elemanlar virgül ile ayrılır.}
-
-Örnek:
-```bash
-my_dict = {"isim": "Ali", "yaş": 25, "meslek": "mühendis"}
-```
-
-# Döngüler
-
-## 1. For Döngüsü
-
-For döngüsünde sayısal değeri döngüye sokmak için "in range" ifadesi kullanılmaktadır. 
-
-Örnek:
-```bash
-for i in range (1000):
-  print ("Beni affet.")
-```
-
-- Bu döngü, range(1000) ifadesi sayesinde 0'dan başlayarak 999'a kadar toplamda 1000 kez tekrarlanır.
-- Her döngüde i değişkeni bir önceki değerden bir artırılır.
-- İlk döngüde i = 0
-- İkinci döngüde i = 1
-...
-- Son döngüde i = 999
-  
-Her döngü iterasyonunda, ekrana "Beni affet." yazdırılır.
-Bu işlem, toplamda 1000 kez tekrarlanır.
-
-```bash
-for i in range (1000):
-i = 0
-while i<1000:
-  print ("Beni affet.")
-```
-
-- Bu bir for döngüsü, 0'dan 999'a kadar toplamda 1000 kez çalışır.
-- Ancak, i = 0 satırı, i değişkenini her döngüde sıfırlamaktadır. Bu, for döngüsünün anlamını kaybetmesine neden olur.
-- while i < 1000:
-
-- For döngüsünün her iterasyonunda, i = 0 ile sıfırlandığından, bu while döngüsü sonsuza kadar çalışır.
-- Çünkü i < 1000 her zaman doğru olur ve i hiçbir zaman artmaz (veya while döngüsü içinde artırılmaz).
-
-- Sonsuz Döngü: Bu kod, sonsuz bir döngüye girer ve sürekli olarak "Beni affet." yazdırır. Çıkış tuşuna basmadıkça programdan çıkamazsınız.
-
-Örnek :
-```bash
-for alinacaklar in alinacaklar_listesi:
-```
-
-Yukarıdaki örnek kodda kod listenin uzunluğu kadar döngüye girer. 
-Koleksiyonun bütün elemanları için çalıştırırken kullanılır. 
-
-# Koşul İfadeleri 
-
-Koşul : Değişen durumun kontrolü için geçerlidiri kontrolün sağlanması için kullanılır.
-
-## 1. If Koşul İfadesi
-
-En temel koşul ifadesidir.
-
-Döngü kapsamında olay gerçekleşir ve son bulur. 
-
-Her "if" gördüğümüzde bir koşul kontrol ediyoruz. 
-
-Else , hiçbir koşul sağlanmazsa çalışacak komuttur.
-
-elif = diğer yazılım dillerinde ise else if olarak kullanılmaktadır.
-
-Örnek :
-
-```bash
-if len(isim)<5:
-  print ("İsim 5 karakterden küçüktür.")
-else :
-  print ("İsim 5 karakterden küçük değildir.")
-```
-
-Not: len() fonksiyonu, verilen bir dizinin (örneğin bir string'in) uzunluğunu döndürür.
-
-
-## Komutlar 
-
-Continue Komutu : Net olarak döngü içinde koşul sağlanırsa adım atlama komutudur. Her koşulda kullanılan bir komut değildir, belli koşullarda yazılmaktadır. 
-
-Break Komutu : Döngüyü bitir komutudur. Döngü dışında da yazılabilir.
-
-Continue ve break komutları döngü içinde yazılırlar ve genelde koşul içinde kullanılırlar.
-
-## Operatörler
-
-Operatörler değerleri değişkene atarlar. 
-
-= : Atama operatörüdür.
-== :Koşul durum sorgulama operatörüdür.
-
-Operatörler koşul, matematiksel, mantıksal operatörler olmak üzere üçe ayrılmaktadırlar.
-
-## Koşul Operatörleri
-Koşul şu anda bilmediğimiz bir şey, koşul bir durum kontrolüdür.
-
-Koşul operatörlerinde elde edilen cevap True veya False'dur. 
-Ünlem(!) işaretini hangi operatörün başına koyarsak tersi anlamına gelmektedir.
-
-Eşittir (==): İki değeri karşılaştırır ve eşit olup olmadığını kontrol eder. Örnek: a == b
-
-Eşit Değildir (!=): İki değerin eşit olup olmadığını kontrol eder. Örnek: a != b
-
-Not: Eşit (==) ve Eşit değil (!=) operatörleri bütün veri tipleri ile kullanılmaz fakat çoğu veri tipinde kullanılabilir. Bazı veri tipleri (örneğin, float ve int) karşılaştırıldığında küçük farklar nedeniyle beklenmedik sonuçlar verebilir. Bu nedenle, örneğin kayan noktalı sayılarla çalışırken dikkatli olunmalıdır.
-
-Büyüktür (>): Bir değerin diğerinden büyük olup olmadığını kontrol eder. Örnek: a > b
-
-Küçüktür (<): Bir değerin diğerinden küçük olup olmadığını kontrol eder. Örnek: a < b
-
-Büyüktür veya Eşittir (>=): Bir değerin diğerinden büyük veya eşit olup olmadığını kontrol eder. Örnek: a >= b
-
-Küçüktür veya Eşittir (<=): Bir değerin diğerinden küçük veya eşit olup olmadığını kontrol eder. Örnek: a <= b
-
-Bir şeyin birden fazla koşulunun sağlanmasını isteriz.
-
-## Matematiksel Operatörler
-
-Toplama (+): İki sayıyı toplar. Örnek: a + b
-
-Çıkarma (-): Bir sayıdan diğerini çıkarır. Örnek: a - b
-
-Çarpma (*): İki sayıyı çarpar. Örnek: a * b
-
-Bölme (/): Bir sayıyı diğerine böler. Örnek: a / b
-
-Üs () veya Pow()**: Bir sayıyı üssünü alır. Örnek: a ** b
-
-Mod Alma (%): Bölümün kalanını verir. Örnek: a % b
-
-Örnek : 
-```bash
-i = 4 
-if i % 2 == 0:
-    print("Çift sayı")
-else:
-    print("Tek sayı")
-```
-## Mantıksal Operatörleri
-
-Koşul ifadeleriyle çalışırken kullanılan operatörlerdir.
-
-Genellikle koşul ifadelerinde birden fazla koşulu birleştirirken kullanılır.
-
-3 ana mantıksal operatör vardır: 
-
-- Ve (and(∧)), koşulun gerçekleşmesi için iki tarafında doğru olması gerekmektedir.
-
-- Veya (or(∨)), koşullardan birinin sağlanması doğruluk açısından yeterlidir.
-
-- Değil (not(')), koşulların sağlanamadığı durumlarda kullanılmaktadır.
-
-Bunlar, koşul ifadelerinin (if-else gibi) sonucunu kontrol etmek ve daha karmaşık mantıksal ifadeler oluşturmak için kullanılır.
-
-Örnek:
-
-```bash
-i = 8  
-if i % 2 == 0 and i > 6:
-    print("Çift ve 6'dan büyük")
-else:
-    print("Koşul sağlanmadı")
-```
-
-# Veri Bilimi Modelleri (Problemleri)
-
-1. Regresyon(Regression) : Geçmiş dataya bakıp, tarihsel tahminlerde bulunup yorumlama ve sayısal tahminleme yapar.
-
-   Regresyon Algoritmaları : Lineer Regresyon
-   
-                             Lasso/Ridge Regresyon
-   
-                             Polinomsal Regresyon
-   
-   Regresyon Örnekleri : Bir evin fiyatını tahmin etmek.
-   
-                         Hisse senedi fiyatlarını tahmin etmek.
-
-2. Sınıflandırma(Classification) : Elimizde olan verileri sınıflandırmak için kullanılan bir methoddur. Cevabımız numerik değil kategoriktir.
-
-Sınıflandırma Algoritmaları : Logistic Regression
-
-                              Decision Trees : 
-                              
-                              Random Forest
-                              
-                              Support Vector Machines (SVM)
-                              
-                              Neural Networks
-                              
-
-Sınıflandırma Örnekleri : Müşterinin kredi almaya uygun olup olmaması. Belirli sayıda sınıf içine sokacaksak bu bir sınıflandırma örneğidir.
-
-                          Hastanın hasta olup olmadığını sınıflandırmak.
-                          
-3. Kümeleme (Clustering) : Etiketlenmemiş verilerde, benzer özelliklere sahip örnekleri bir araya toplamak için kullanılır.
-
-Kümeleme Algoritmaları: 
-                        
-                        K-Means : Veriyi kaç gruba ayırmak istediğimiz ile alakaladır. Örneğin bir sınıf listesi mevcut. Listede öğrencilerin özellikleri yazmakta, yaş, boy, kilo vb. Rasgele gruplar atıyoruz. Kaç küme atayacaksak "K" değeri o olacak.
-                        
-                        DBSCAN
-                        
-                        Hierarchical Clustering
-
-Kümeleme Örnekleri : Müşterileri alışveriş alışkanlıklarına göre segmentlere ayırmak.
-
-                     Sosyal medya verilerinde benzer kullanıcı grupları bulmak.
 
 
 ## Çalıştığımız ortamda internetten veri çekebilme
