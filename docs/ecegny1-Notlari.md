@@ -15,6 +15,7 @@ Peki nerede pratik yapacak, kodlarınızı nerede mi yazacaksınız? İşte size
 ## Google Colab 
 
 https://colab.research.google.com/ 
+
 Bu linkten gmail adresiniz ile hesap oluşturabilir ve kod çalışmalarınızı burada gerçekleştirebilirsiniz.
 
 Google Colab'e ek olarak;
@@ -22,6 +23,7 @@ Google Colab'e ek olarak;
 ## VsCode Uygulaması
 
 Bu uygulamayı bilgisayarınıza indirerek de yine kod çalışmalarınızı buradan da gerçekleştireebilirsiniz. 
+
 VsCode için ise "https://code.visualstudio.com/download" bu linki kullanabilir, bilgisayarınız için uygun sürümü indirebilirsiniz. 
 
 Dosyalarınızı kaydederken kullanmış olduğunuz programlama diline göre kaydetmelisiniz. Örneğin, Python ile bir kod yazdıysanız kayıt edeceğiniz dosya uzantısı .py olmalıdır. 
@@ -30,7 +32,9 @@ Kodlarınızı açıklamak için kod bloklarınızın içine açıklamalar eklem
 
 VsCode Jupyter Notebook ile çalışıyorsanız, uzantınız .ipynb olmalıdır.
 
-Bunlara ek olarak kodlama sayfasındaki code bloğunda hem code hem markdown kısmı bulunmaktadır. Kod bloğuna kodunuzu yazıp, açıklamalarınızı markdown kısmına yazabilirsiniz. Buna ek olarak da markdown kısmına istediğiniz resmi ekleyip resim üzerinden kodlama yapıyorsanız ona göre kodlarınızı yazıp, açıklamalarınızı ekleyebilirsiniz.
+Bunlara ek olarak kodlama sayfasındaki code bloğunda hem code hem markdown kısmı bulunmaktadır.
+
+Kod bloğuna kodunuzu yazıp, açıklamalarınızı markdown kısmına yazabilirsiniz. Buna ek olarak da markdown kısmına istediğiniz resmi ekleyip resim üzerinden kodlama yapıyorsanız ona göre kodlarınızı yazıp, açıklamalarınızı ekleyebilirsiniz.
 
 Tavsiyemiz her türlü platforma aşina olmanız ve kullanılabilirliğinizi ne kadar arttırabilirseniz konfor alanınız genişleyecek, çalışmalarınız ise daha üst kademelere taşınacaktır. 
 
@@ -42,14 +46,18 @@ Bunlara ek olarak amacımız makine öğrenmesini, derin öğrenmeyi anlamak ve 
 Bu projelerimizin yapıtaşlarından biri ise elde ettiğimiz verilerdir. Başlangıç düzeyindeki bir veri bilimci için en büyük problem "Nasıl veri bulacağım, nasıl verilerle, neler yapacağım?" sorularına yanıt bulmaktır.
 
 Öncelikli olarak hazır çalışmaları inceleyebilir, hazır veri setleri üzerinden çalışmalarınızı gerçekleştirebilirsiniz. 
+
 Bunun için ise "Kaggle" : https://www.kaggle.com  ve "Hugging Face" :https://huggingface.co/ platformlarını inceleyebilir, verisetlerini indirebilir ve kendi çalışmalarınızı yapabilirsiniz.
 Dilerseniz kaynak erişimine açık sitelerden örneğin "TÜİK, KAP, IETT, vb. veri sitelerinden kendi ihtiyaçlarınız doğrultusunda verilerinizi excel formatında kendinize göre düzenleyebilir ve excel formatını ".csv" olarak kaydederek yazacağınız kodlar için veri seti olarak kullanabilirsiniz.
 
 ## Yapay Zeka Nedir?
 
 Yapay zeka, verilen bilgilere göre bir sonraki adımı tahmin eden bir sistemdir. 
+
 Belli bir yapıyı, belli bir bütünü oluşturan dallardan, birimlerden her birine örüntü denir. 
+
 Sentez ise bir araya getirmek, parçalardan bütün oluşturmaktır. 
+
 Örüntü bulmaya çalıştığımız şey, ulaşmaya çalıştığımız hedef olarak adlandırılabilir. Örüntü olmazsa yapay zeka olamaz.
 
 
@@ -65,7 +73,7 @@ Sentez ise bir araya getirmek, parçalardan bütün oluşturmaktır.
 * sider
 * Dora
 * Bytez
-* notebookLM
+* NotebookLM
 
 Yapay zeka zihinsel işklerimizi yapıyor diyebiliriz. Fikri bul, karışık olarak ifade etsen bile yapay zeka kontrol eder. Fakat işimizi sağlama almak adına yapay zekanında çıkardığı çıktıyı yine de kontrol etmek gerekmektedir. Bir yapay zeka modeli çok fazla veri ile test edilip çalışıyorsa bir terslik var demektir.
 
@@ -85,7 +93,8 @@ Nereden nasıl veri bulabiliriz?
 
 Örneğin ; ekonomik verilere ihtiyacımız var.  Dünya Bankası, OECD, TUIK, IBB Open Data vb. sitelerden veriler elde edilebilir.
 
-İstatistikte Veri ikiye ayrılmaktadır:
+İstatistikte veri ikiye ayrılmaktadır:
+
   1. Numerik Veri
   2. Kategorik Veri
      
@@ -103,11 +112,26 @@ Makine Öğrenmesi : Elde edilen bilgiden öğrenilebilen, algoritmalarla ilgile
 
 6 adımdan oluşmaktadır.
 
-  1. Problemin Belirlenmesi : Çözülmek istenen temel sorun nedir?
-  2. Veri Toplama
-  3. Veri Temizleme/ Hazırlama
-  4. Özellik Mühendisliği
-  5. Modelin Değerlendirilmesi
+  1. Problemin Belirlenmesi :
+     - Çözülmek istenen temel sorun nedir?
+     
+  2. Veri Toplama :
+     - Problem için gerekli olan verilerin gerekli platformlardan elde edilerek , uygun formatta depolanması durumudur.
+     
+  3. Veri Temizleme/ Hazırlama :
+     - Kullanacağımız algoritmaya göre verilerin ayıklanması, boş veri sütunlarının gerekli doldurma yöntemleri ile doldurulması veya değeri bulunamayan değişkenlerin algoritmadan çıkarılması ve modelin oluşturulabilmesi için verinin hazır hale getirilmesi.
+     
+  4. Özellik Mühendisliği :
+     - Özellik çıkarımı teknikleri: Özellik çıkarımı, verinin önemli kısımlarını analiz için öne çıkarır. Bu süreç, veriyi daha anlamlı hale getirir.
+     - Özellik seçim yöntemleri: En etkili özellikler seçilerek analiz kalitesi artırılır. Özellik seçim yöntemleri, modelin karmaşıklığını azaltır.
+
+  5. Modelin Değerlendirilmesi :
+     - Validasyon ve test seti seçmenin önemi: Doğruluğu ölçmek için model, eğitim dışında farklı veriyle test edilmelidir. Bu sayede, modelin genel veri üzerinde ne kadar iyi performans gösterdiği anlaşılır.
+     - Sub-sample ile veri seçimini hızlandırmak: Büyük veri kümelerinde küçük örneklerle hızla test yapılır. Bu işlem, daha büyük veriler üzerinde hızlı sonuç almak için etkilidir.
+     - Sub-sample seçim yöntemi: Veri, küçük örnek gruplar halinde seçilerek analiz edilir. Sub-sampling, verinin hızlıca incelenmesini sağlar.
+     - Cross-Validation: Modelin performansını ölçmek için veriler farklı parçalara ayrılarak test edilir. Bu yöntem, modelin farklı veri kümelerinde ne kadar iyi çalıştığını gösterir.
+     - Model karşılaştırma metrikleri: Farklı modellerin doğruluk, hassasiyet gibi ölçütlerle kıyaslanması yapılır. Bu karşılaştırmalar, en iyi modeli seçmek için kullanılır.
+  
   6. Sonuçların Sunulması ve Aksiyon Alınması
 
 Makine öğrenmesi, yapay zekanın alt alanıdır ve veriden öğrenme yeteneğine odaklanır. Supervised ve unsupervised learning, makine öğrenmesinin alt kategorileridir.
@@ -167,6 +191,7 @@ Aşağıdaki kod bloğunda parantez içine herhangi bir sayı yazarsak tablomuzd
 veri_adi.head()
 ```
 - Eğer verilerimizle grafik çizdirmek istersek aşağıdaki kodu kullanabiliriz. Fakat öncesinde grafik çizdirmek için sahip olmamız gereken kütüphanenin yüklü olduğundan emin olmalıyız, eğer yüklü değilse ;
+  
 ```bash
 pip install matplotlib
 ```
@@ -247,6 +272,9 @@ Her bir x(boyut) için ayrı ayrı değerlendirme gerçekleştirilir.
 Örnek :
 
 ```bash
+
+import math
+
 a1 = 2.5
 a2 = 3.6
 a3 = 4.6
@@ -255,10 +283,16 @@ a5 = 9.6
 
 b = 8.8
 
-def lojistik_regresyon_(x, a1, a2, a3, a4, a5, b):
-    #Doğrusal model: x[0] * a1 + x[1] * a2 + ... + x[4] * a5 + b
-    y = a1 * x[0] + a2 * x[1] + a3 * x[2] + a4 * x[3] + a5 * x[4] + b
+def lojistik_regresyon(x, a1, a2, a3, a4, a5, b):
+
+    # Doğrusal model: x[0] * a1 + x[1] * a2 + ... + x[4] * a5 + b
+    z = a1 * x[0] + a2 * x[1] + a3 * x[2] + a4 * x[3] + a5 * x[4] + b
+    
+    # Lojistik fonksiyon: 1 / (1 + e^(-z))
+    y = 1 / (1 + math.exp(-z))
+
     return y
+
 ```
 
 ## Bilinmesi Gereken Genel Terimlerden Bazıları:
@@ -285,7 +319,7 @@ def lojistik_regresyon_(x, a1, a2, a3, a4, a5, b):
 
 * .shape () : Verinin şeklini veren kod.
 
-* softmax: Verdiğin sayıların hepsinin olasılığının toplamını 1 olacak şekilde o aralığa sıkıştırıyor.
+* Softmax: Verdiğin sayıların hepsinin olasılığının toplamını 1 olacak şekilde o aralığa sıkıştırıyor.
 
 ## 3. Destek Vektör Makineleri (SVM)
 
@@ -313,13 +347,23 @@ Sinir ağlarında, aynı şeye farklı açılarla bakıyoruz.
 
 Bir şeye ne kadar çok açıdan bakarsak o kadar o şey hakkında konuşma ve fikir beyan etme hakkımız olur.
 
-Bir fonksiyon tanımlıyoruz
-Def lineer_regression(X):
-Y = a*x+b bu benim lineer regresyon modelim a dışarıda tanımlı bir şeydş
-a=3
-b=5 
-bunlar dışarıda tanımlı parametreler
-return y dedik şu anda bunu grafikte görmek istersek ya da y_23=lineer_regression(23)
+Bir fonksiyon tanımlıyoruz.
+
+```bash
+
+def lineer_regression(X):
+
+```
+```bash
+Y = a*x+b
+```
+
+bu benim lineer regresyon modelim,bir örnek üzerinden bakacak olursak  a=3 ve b=5 dışarıda tanımlı modelin birer parametresi olsun.
+
+```bash
+return y
+```
+dedik şu anda bunu grafikte görmek istersek ya da y_23=lineer_regression(23)
 çizgiyi çizdirdik plt ile 
 bir boyut veriyoruz bize diğer boyutu veriyor bu çizgi
 
