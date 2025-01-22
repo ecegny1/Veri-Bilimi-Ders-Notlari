@@ -78,6 +78,8 @@ Dilerseniz kaynak erişimine açık sitelerden örneğin "TÜİK, KAP, IETT, vb.
 
 * Softmax: Verdiğin sayıların hepsinin olasılığının toplamını 1 olacak şekilde o aralığa sıkıştırıyor.
 
+* Maxpulling : Bir resmi küçültelim ama resmin görünümünü minimumda bozmak için kullanılan bir yöntem.  2'ye 2'lik bir piksel ise 1'e 1'liğe düşürüyor. 
+
 ## Yapay Zeka Nedir?
 
 Yapay zeka, verilen bilgilere göre bir sonraki adımı tahmin eden bir sistemdir. 
@@ -497,7 +499,8 @@ else:
 # Veri Bilimi Modelleri (Problemleri)
 Veri biliminin 3 modeli(problemi) mevcuttur.
 
-1. Regresyon(Regression) : Geçmiş dataya bakıp, tarihsel tahminlerde bulunup yorumlama ve sayısal tahminleme yapar.
+## 1. Regresyon(Regression) : 
+Geçmiş dataya bakıp, tarihsel tahminlerde bulunup yorumlama ve sayısal tahminleme yapar.
  
 Algoritmaları :
    
@@ -513,7 +516,8 @@ Regresyon Örnekleri :
    
 - Hisse senedi fiyatlarını tahmin etmek.
   
-2. Sınıflandırma(Classification) : Elimizde olan verileri sınıflandırmak için kullanılan bir methoddur. Cevabımız numerik değil kategoriktir. Belirli sayıda sınıf içine sokacaksak bu bir sınıflandırma örneğidir.
+## 2. Sınıflandırma(Classification) : 
+Elimizde olan verileri sınıflandırmak için kullanılan bir methoddur. Cevabımız numerik değil kategoriktir. Belirli sayıda sınıf içine sokacaksak bu bir sınıflandırma örneğidir.
 
 Algoritmaları : 
 
@@ -534,7 +538,8 @@ Sınıflandırma Örnekleri :
 - Hastanın hasta olup olmadığını sınıflandırmak.
   
                           
-3. Kümeleme (Clustering) : Etiketlenmemiş verilerde, benzer özelliklere sahip örnekleri bir araya toplamak için kullanılır.
+## 3. Kümeleme (Clustering) : 
+Etiketlenmemiş verilerde, benzer özelliklere sahip örnekleri bir araya toplamak için kullanılır.
 
 Algoritmaları:  
 
@@ -740,6 +745,8 @@ Yapay sinir ağı, bir sürü çeşit çeşit düzgün çizgiler çizme sanatıd
 
 <img width="544" alt="image" src="https://github.com/user-attachments/assets/7bdcefaf-eb8e-4928-854e-553a7fe0529e" />
 
+Bir sinir ağı tasarlarken giriş ağına biz karar vermiyoruz. Problem karar veriyor.
+
 Sinir ağlarında, aynı şeye farklı açılarla bakıyoruz.
 
 Bir şeye ne kadar çok açıdan bakarsak o kadar o şey hakkında konuşma ve fikir beyan etme hakkımız olur.
@@ -802,9 +809,15 @@ Vizeyi bir başka hoca değerlendiriyor, sonra bir başka hoca değerlendiriyor.
 
 Vize ve finalleri hocalar ayrı ayrı değerlendiriyor.
 
-## - Back Propogation
+## - Back Propogation(Geriye Yayılım Algoritması)
 
-Ortada bir hata var önce bu hatayı hesaplıyoruz.
+Ortada bir işlem,hata var, önce bunu hesaplıyoruz. Bu fonksiyon aslında bir değişim fonksiyonudur. Girişten etkilenmediğinde düzeltilecek bir şey yoktur, fakat giriş de hata olduğu durumda geriye(girişe doğru) düzeltme işlemi yapılıyor. 
+
+## Kayıp Fonksiyonu (Loss Function)
+
+Makine öğrenmesi ve derin öğrenme modellerinde, modelin yaptığı tahminler ile gerçek değerler arasındaki farkı ölçmek için kullanılan matematiksel bir fonksiyondur. Modelin başarısızlık derecesini belirler ve amacı, bu hatayı minimize etmektir. Maliyet fonksiyonu olarak da bilinmektedir. bu fonksiyona 2 değer atanır ; actual  ve predicted değerleri).
+
+Regresyon Analizlerinde Mean Square Error(MSE) ve Mean Absolute Error(MAE) sıklıkla kullanılmaktadır. 
 
 Sigmoid e sayısı 2.71 biz oraya 1.5, 3.7, 10 yazsak da çalışıyor. 
 
@@ -813,6 +826,17 @@ Sigmoid e sayısı 2.71 biz oraya 1.5, 3.7, 10 yazsak da çalışıyor.
 Sigmoidin türevini almak için fonksiyon yazmıştık, bu sayede tekrar tekrar almamıza gerek kalmayacak.
 
 Ağırlıklarımız var bir sonraki adımda bunlar ne olacak?
+
+Örnek :
+
+<img width="87" alt="Ekran Resmi 2025-01-22 15 20 34" src="https://github.com/user-attachments/assets/d92a88ad-c4cc-4043-9746-302a092d8ca6" />
+
+Bu bir kare alma fonksiyonudur.
+
+Sisteme 1 yazarsan karesini aldığında geriye çıkardığı çıktısı 1 olur. 2 yazarsak 4, 3 yazarsak 9, 4 yazarsak 16 vb. şekilde çıktılar elde ederiz.
+
+Elimizdeki fonksiyon değişim fonksiyonudur. Yukarı giderken ne kadar değişim oluyorsa bulup ekleniyor. 
+
 
 ## 6. İleri Sınıflandırma Teknikleri
 
@@ -849,9 +873,7 @@ Hiyerarşik kümeleme, verileri alt kümelere (dendrogram) ayrılmış bir ağa�
   o	Küçük kümelerden başlayarak daha büyük kümeler oluşturur.
   o	Tüm veri noktaları başlangıçta ayrı bir küme olarak değerlendirilir ve benzer kümeler birleştirilir.
 
-Senaryo:
-
-Bir e-ticaret sitesinin müşterilerini satın alma davranışlarına göre segmentlere ayırmak istiyoruz. Elimizde her müşteriye ait şu bilgiler var:
+Senaryo: Bir e-ticaret sitesinin müşterilerini satın alma davranışlarına göre segmentlere ayırmak istiyoruz. Elimizde her müşteriye ait şu bilgiler var:
 
 •	Ortalama harcama tutarı.
 •	Alışveriş sıklığı (yılda kaç kez alışveriş yaptığı).
@@ -870,7 +892,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 ```
 
-# Örnek müşteri verisi
+## Örnek Müşteri Verisi
 
 ```bash
 data = np.array([
@@ -897,8 +919,7 @@ Divisive (Bölücü):
 o	Tüm veri setini tek bir küme olarak değerlendirerek başlar ve sonra bölünür.
 o	Daha az yaygındır.
 
-Senaryo:
-Bir üniversitenin bölümlerini, öğrenci başarıları (ortalama not) ve bölümlerdeki derslerin zorluk seviyesine göre gruplamak istiyoruz.
+Senaryo: Bir üniversitenin bölümlerini, öğrenci başarıları (ortalama not) ve bölümlerdeki derslerin zorluk seviyesine göre gruplamak istiyoruz.
 
 Yaklaşım:
 Bölücü kümeleme, tüm bölümleri başta tek bir küme olarak değerlendirir ve aşağıdaki gibi çalışır:
@@ -917,22 +938,21 @@ import matplotlib.pyplot as plt
 import numpy as np
 ```
 
-Örnek veri
+Örnek Veri
 
-
+```bash
 data = np.array([
     [3.5, 7], [3.8, 6.5], [4.2, 5.8], [4.0, 6.2],
     [2.5, 8], [2.8, 7.5], [1.5, 9], [2.0, 8.8]
 ])
 ```
-
 İlk kümeleme: KMeans ile tek kümeden bölünmeye başlama.
 
 ```bash
 kmeans = KMeans(n_clusters=2, random_state=0).fit(data)
 ```
 
-Küme etiketlerini görselleştirme
+Küme Etiketlerini Görselleştirme
 
 ```bash
 plt.scatter(data[:, 0], data[:, 1], c=kmeans.labels_, cmap='viridis')
@@ -960,7 +980,7 @@ Adım Adım Hiyerarşik Kümeleme Süreci
 	- Mesafe matrisine dayanarak en yakın iki küme birleştirilir.
 	- Bu işlem tüm veri noktaları tek bir küme haline gelene kadar tekrarlanır.
   
-4.	- Dendrogram Çizimi:
+4.	 Dendrogram Çizimi:
 
 	- Kümeleme sonucunda dendrogram adı verilen bir ağaç yapısı elde edilir.
 	- Kullanıcı dendrogramı inceleyerek uygun küme sayısını seçebilir.
@@ -972,17 +992,18 @@ from scipy.cluster.hierarchy import dendrogram, linkage
 from sklearn.datasets import make_blobs
 import matplotlib.pyplot as plt
 ```
-Örnek veri oluşturma
+
+Örnek Veri Oluşturma
 
 ```bash
 X, _ = make_blobs(n_samples=20, centers=3, random_state=42)
 ```
-Hiyerarşik kümeleme
+Hiyerarşik Kümeleme
 
 ```bash
 Z = linkage(X, method='ward')  # Ward bağlantı metodu
 ```
-Dendrogram çizimi
+Dendrogram Çizimi
 
 ```bash
 plt.figure(figsize=(10, 5))
@@ -1023,7 +1044,7 @@ Bir sistemin sürekli olarak çevresinden aldığı geri bilidirimlerle en iyi h
 Yarı denetimli öğrenmede az sayıda etiketli veri, çok sayıda etiketlenmemiş veri ile birlikte kullanılır. Kendinden denetimli öğrenme ise örnekler arası ilişkilerle öğrenir.
 
 
-## Sınıflandırma modellerinde tahminlerin doğruluğunu(accuracy) değerlendirmek için kullanılan temel kavramlar:
+# Sınıflandırma modellerinde tahminlerin doğruluğunu(accuracy) değerlendirmek için kullanılan temel kavramlar:
 
 Bir sınıflandırma modelinin çıktısını değerlendirir.
 
@@ -1037,32 +1058,37 @@ Bir sınıflandırma modelinin çıktısını değerlendirir.
  
   * False Negative (FN) : Yanlış negatif tahmin. (Type 2 hatası: Gerçekte yanlış olan hipotezin doğru olarak kabul edilmesi.(Tehlikeyi gözden kaçırmak gibi düşünülebilir.)
 
-## b) Accuracy (Doğruluk Oranı ):Modelin doğru tahmin ettiği toplam veri oranı.
+## b) Accuracy (Doğruluk Oranı ):
+Modelin doğru tahmin ettiği toplam veri oranı.
 
                                 Fotmül: TP+TN/TP+TN+FP+FN 
 
 Kolay anlaşılır bir metriktir.Dengeli olmayan veri setinde yanıltıcı olabilir.
 
-## c) Precision (Kesinlik): Pozitif tahminlerin ne kadar doğru olduğunu ölçer.
+## c) Precision (Kesinlik): 
+Pozitif tahminlerin ne kadar doğru olduğunu ölçer.
 
                                 Formül : TP/(TP+FN)
 
 Önemli olduğu durum yanlış. Pozitiflerin maliyeti yüksekse.
 
-## d) Recall (Dayanaklılık ve Hassasiyet) : Gerçek pozitiflerin ne kadar doğru olduğunun göstergesidir. Önemli olduğu durum: Yanlış negatiflerin maliyeti yüksekse.
+## d) Recall (Dayanaklılık ve Hassasiyet) :
+Gerçek pozitiflerin ne kadar doğru olduğunun göstergesidir. Önemli olduğu durum: Yanlış negatiflerin maliyeti yüksekse.
 
                                 Formül: TP/(TP+FN)
     
 Yalnız bazı durumlarda doğruluk ölçütleri her zaman doğru olmayabilir.
 
 
-## e) F1 Score: Precision ve Recall’un harmonik ortalamasıdır.
+## e) F1 Score: 
+Precision ve Recall’un harmonik ortalamasıdır.
                                 
                                 Formül : F1=2*(Precision*Recall/Precision+Recall)
 
 Avantaj: Dengeli bir değerlendirme sunar.
 
-## f) ROC-AUC (Receiver Operating Characteristic - Area Under Curve): Modelin farklı eşik değerleri için doğruluğunu ölçer.
+## f) ROC-AUC (Receiver Operating Characteristic - Area Under Curve): 
+Modelin farklı eşik değerleri için doğruluğunu ölçer.
 
 •	ROC Eğrisi: TPR (True Positive Rate) ve FPR (False Positive Rate) ilişkisini gösterir.
 
@@ -1077,7 +1103,7 @@ Regresyon modelleri, sürekli değer tahmin eder (ör. bir evin fiyatı).
 
 Gerçek ve tahmin değerleri arasındaki mutlak farkların ortalaması:
 
-MAE=1/n ∑_(i=1)^n▒|y_i-y_i^^ |  
+![](https://www.gstatic.com/education/formulas2/553212783/tr/mean_absolute_error.svg)
 
 Avantaj: Kolay yorumlanabilir.
 
@@ -1085,19 +1111,21 @@ Dezavantaj: Büyük hataları aynı ağırlıkta değerlendirir.
  
 ## b) Mean Squared Error (MSE)
 
+Hatanın yönünü ortaya koymaktadır. 
+
 Hataların karesinin ortalaması:
 
-MSE = 1/N ∑_(i=1)^n▒〖(y_,-〖y^〗_i)〗^2 
+![](https://www.gstatic.com/education/formulas2/553212783/tr/mean_squared_error.svg)
 	
- Avantaj: Büyük hatalara daha fazla ağırlık verir.
+Avantaj: Büyük hatalara daha fazla ağırlık verir.
 	
- Dezavantaj: Birimlerden etkilenir.
+Dezavantaj: Birimlerden etkilenir.
  
 ## c) Root Mean Squared Error (RMSE)
 
 MSE’nin karekökü alınarak hesaplanır:
 
-RMSE =√MSE
+![](https://www.gstatic.com/education/formulas2/553212783/tr/root_mean_square_deviation.svg)
 
 Avantaj: MSE’nin birim sorununu çözer.
  
@@ -1105,27 +1133,23 @@ Avantaj: MSE’nin birim sorununu çözer.
 
 Modelin veri varyansını ne kadar açıkladığını gösterir:
 
-R^2=1-〖SS〗_residual/〖SS〗_total 
+![](https://www.gstatic.com/education/formulas2/553212783/tr/coefficient_of_determination.svg)
 	
- 0 ile 1 arasında değer alır:
+0 ile 1 arasında değer alır:
 	
- 1: Mükemmel uyum.
+1: Mükemmel uyum.
 	
- 0: Model, hiçbir şey açıklayamıyor.
+0: Model, hiçbir şey açıklayamıyor.
  
-## 3. Öneriler
+##  Öneriler
 	
  Sınıflandırmada, veri dengesine dikkat ederek F1 Score veya ROC-AUC kullanın.
  
  Regresyonda, hedef birime göre MAE veya RMSE kullanın.
 
-## Kayıp Fonksiyonu (Loss Function)
 
-Makine öğrenmesi ve derin öğrenme modellerinde, modelin yaptığı tahminler ile gerçek değerler arasındaki farkı ölçmek için kullanılan matematiksel bir fonksiyondur. Modelin başarısızlık derecesini belirler ve amacı, bu hatayı minimize etmektir.
 
-Regresyon Analizlerinde Mean Square Error(MSE) ve Mean Absolute Error(MAE) sıklıkla kullanılmaktadır. 
-
-## Çalıştığımız ortamda internetten veri çekebilme
+## Çalıştığımız ortamda İnternetten Veri Çekme
 
 Curl : URL üzerinde veri transferi gerçekleştirmek amacıyla gelişmiş komut satırıdır.
 "curlconverter.com" Gerekli URL'leri curl formatına çevirmek için bu siteyi kullanabilirsiniz.
@@ -1136,9 +1160,13 @@ Regex (Regular Expression) : Düzenli açıklamalar.
 
 HTML : Hyper Text Markup Language. Hiper metin işaretleme dili programlama dili değildir. Bazı HTML etiketleri;
 
-<a>HTML ile bir web sitesi tasarlarken link vermek istediğimizde bu etiketi kullanırız. </a> 
+```bash
+<a>HTML ile bir web sitesi tasarlarken link vermek istediğimizde bu etiketi kullanırız. </a>
+
 <li>Listeleme Etkiletidir.</li>
+
 <!--   --> : Html yorum satırı.
+```
 
 Örneğin VsCode'da çalıştığımızı varsayalım ve internetten veri çekmek için VsCode'u internete bağlamalıyız. VsCode python ortamında 
 internete bağlanmalıdır. 
@@ -1157,17 +1185,20 @@ else:
     print(f"İstek başarısız oldu. HTTP Durum Kodu: {response.status_code}")
 ```
 
-JSON: JavaScript Object Notation 
-JSON verisini ayrıştırma :
+# JSON: JavaScript Object Notation 
 
+## JSON verisini ayrıştırma :
+```bash
 data = response.json()
-
+```
 JSON verisini bir dosyaya kaydetme : 
-
+```bash
     with open("data.json", "w", encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
+```
         
 GET: URL'den verileri getirmek için kullanılan methodlardan biridir. Tarayıcıların adres çubuğu GET methodu ile çalışmaktadır. GET methodunda kaçıncı sayfayı istediğimizi belirtemiyoruz.
+
 POST: URL'den verileri getirmek için kullanılan methodlardan biridir. Kaçıncı sayfayı istediğimizi belirtebiliyoruz.
 
 response= request.pos --> response adında bir değişken tanımlıyoruz. İnternete bağlanıp değer getirecek. Methodu değiştirmek istediğimizde pos yazdığımız kısmı get ile değiştiriyoruz. Bir cevap bekliyorsak POS diyemeyiz, GET demeliyiz.
