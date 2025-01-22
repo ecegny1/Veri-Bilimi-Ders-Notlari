@@ -1044,11 +1044,13 @@ Bir sistemin sürekli olarak çevresinden aldığı geri bilidirimlerle en iyi h
 Yarı denetimli öğrenmede az sayıda etiketli veri, çok sayıda etiketlenmemiş veri ile birlikte kullanılır. Kendinden denetimli öğrenme ise örnekler arası ilişkilerle öğrenir.
 
 
-# Sınıflandırma modellerinde tahminlerin doğruluğunu(accuracy) değerlendirmek için kullanılan temel kavramlar:
+# Sınıflandırma Modellerinde Tahminlerin Doğruluğunu(accuracy) Değerlendirmek İçin Kullanılan Temel Kavramlar:
 
 Bir sınıflandırma modelinin çıktısını değerlendirir.
 
-## a) Confusion Matrix(Karmaşıklık Matrisi): Bir sınıflandırma modelinin çıktısını değerlendirir.
+## a) Confusion Matrix(Karmaşıklık Matrisi): 
+
+Bir sınıflandırma modelinin çıktısını değerlendirir.
 
   * True Positive (TP) : Doğru pozitif tahmini.
 
@@ -1059,6 +1061,7 @@ Bir sınıflandırma modelinin çıktısını değerlendirir.
   * False Negative (FN) : Yanlış negatif tahmin. (Type 2 hatası: Gerçekte yanlış olan hipotezin doğru olarak kabul edilmesi.(Tehlikeyi gözden kaçırmak gibi düşünülebilir.)
 
 ## b) Accuracy (Doğruluk Oranı ):
+
 Modelin doğru tahmin ettiği toplam veri oranı.
 
                                 Fotmül: TP+TN/TP+TN+FP+FN 
@@ -1066,6 +1069,7 @@ Modelin doğru tahmin ettiği toplam veri oranı.
 Kolay anlaşılır bir metriktir.Dengeli olmayan veri setinde yanıltıcı olabilir.
 
 ## c) Precision (Kesinlik): 
+
 Pozitif tahminlerin ne kadar doğru olduğunu ölçer.
 
                                 Formül : TP/(TP+FN)
@@ -1073,6 +1077,7 @@ Pozitif tahminlerin ne kadar doğru olduğunu ölçer.
 Önemli olduğu durum yanlış. Pozitiflerin maliyeti yüksekse.
 
 ## d) Recall (Dayanaklılık ve Hassasiyet) :
+
 Gerçek pozitiflerin ne kadar doğru olduğunun göstergesidir. Önemli olduğu durum: Yanlış negatiflerin maliyeti yüksekse.
 
                                 Formül: TP/(TP+FN)
@@ -1081,6 +1086,7 @@ Yalnız bazı durumlarda doğruluk ölçütleri her zaman doğru olmayabilir.
 
 
 ## e) F1 Score: 
+
 Precision ve Recall’un harmonik ortalamasıdır.
                                 
                                 Formül : F1=2*(Precision*Recall/Precision+Recall)
@@ -1149,7 +1155,7 @@ Modelin veri varyansını ne kadar açıkladığını gösterir:
 
 
 
-## Çalıştığımız ortamda İnternetten Veri Çekme
+## Çalıştığımız Ortamda Internetten Veri Çekme
 
 Curl : URL üzerinde veri transferi gerçekleştirmek amacıyla gelişmiş komut satırıdır.
 "curlconverter.com" Gerekli URL'leri curl formatına çevirmek için bu siteyi kullanabilirsiniz.
@@ -1187,7 +1193,8 @@ else:
 
 # JSON: JavaScript Object Notation 
 
-## JSON verisini ayrıştırma :
+## JSON Verisini Ayrıştırma :
+
 ```bash
 data = response.json()
 ```
@@ -1197,11 +1204,16 @@ JSON verisini bir dosyaya kaydetme :
         json.dump(data, f, ensure_ascii=False, indent=4)
 ```
         
-GET: URL'den verileri getirmek için kullanılan methodlardan biridir. Tarayıcıların adres çubuğu GET methodu ile çalışmaktadır. GET methodunda kaçıncı sayfayı istediğimizi belirtemiyoruz.
+## GET: 
 
-POST: URL'den verileri getirmek için kullanılan methodlardan biridir. Kaçıncı sayfayı istediğimizi belirtebiliyoruz.
+URL'den verileri getirmek için kullanılan methodlardan biridir. Tarayıcıların adres çubuğu GET methodu ile çalışmaktadır. GET methodunda kaçıncı sayfayı istediğimizi belirtemiyoruz.
+
+## POST:
+
+URL'den verileri getirmek için kullanılan methodlardan biridir. Kaçıncı sayfayı istediğimizi belirtebiliyoruz.
 
 response= request.pos --> response adında bir değişken tanımlıyoruz. İnternete bağlanıp değer getirecek. Methodu değiştirmek istediğimizde pos yazdığımız kısmı get ile değiştiriyoruz. Bir cevap bekliyorsak POS diyemeyiz, GET demeliyiz.
+
 Get ile bağlandığında Pos ile bağlanamazsın, Pos ile bağlandığında Get ile bağlantı kuramazsın.
 
 response.text : İşaretli dataları getirmektedir.
