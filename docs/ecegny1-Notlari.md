@@ -93,12 +93,12 @@ Sentez ise bir araya getirmek, parçalardan bütün oluşturmaktır.
 
 * Gemini
 * Perplexity.ai
-* open.ai
-* amazon
-* google
-* mister.ai
-* claude
-* sider
+* Open.ai
+* Amazon
+  Google
+* Mister.ai
+* Claude
+  Sider
 * Dora
 * Bytez
 * NotebookLM
@@ -189,15 +189,17 @@ Makine öğrenmesi bir modeldir ve o modeldeki sayılardan oluşmaktadır. Model
        
      - Model karşılaştırma metrikleri: Farklı modellerin doğruluk, hassasiyet gibi ölçütlerle kıyaslanması yapılır. Bu karşılaştırmalar, en iyi modeli seçmek için kullanılır.
   
-  6. Sonuçların Sunulması ve Aksiyon Alınması
-  
-    - Makine öğrenmesi, yapay zekanın alt alanıdır ve veriden öğrenme yeteneğine odaklanır. Supervised ve unsupervised learning, makine öğrenmesinin alt kategorileridir.
+  6. Sonuçların Sunulması ve Aksiyon Alınması :
+     - Makine öğrenmesi, yapay zekanın alt alanıdır ve veriden öğrenme yeteneğine odaklanır. Supervised ve unsupervised learning, makine öğrenmesinin alt kategorileridir.
 
 # Değişkenler
 
 Veri biliminde değişkenler ele alınan gözlemlerdir. 
 
-Örnek : isim = "Ece"
+Örnek : 
+```bash
+isim = "Ece"
+```
 
 Bu örnek ele alındığında değişkenin adı isim, değişkene atanan değer Ece, atama operatörü ise ='dir.İsim değişkenini Ece'ye atıyoruz.  Değişken ve değer ile birlikte tanımlama işlemi yapılmaktadır. 
 
@@ -413,7 +415,8 @@ Continue ve break komutları döngü içinde yazılırlar ve genelde koşul içi
 Operatörler değerleri değişkene atarlar. 
 
 = : Atama operatörüdür.
-== :Koşul durum sorgulama operatörüdür.
+
+== : Koşul durum sorgulama operatörüdür.
 
 Operatörler koşul, matematiksel, mantıksal operatörler olmak üzere üçe ayrılmaktadırlar.
 
@@ -492,50 +495,60 @@ else:
 ```
 
 # Veri Bilimi Modelleri (Problemleri)
-
 Veri biliminin 3 modeli(problemi) mevcuttur.
 
 1. Regresyon(Regression) : Geçmiş dataya bakıp, tarihsel tahminlerde bulunup yorumlama ve sayısal tahminleme yapar.
-
-   Regresyon Algoritmaları : Lineer Regresyon
+ 
+Algoritmaları :
    
-                             Lasso/Ridge Regresyon
+- Lineer Regresyon
    
-                             Polinomsal Regresyon
+- Lasso/Ridge Regresyon
    
-   Regresyon Örnekleri : Bir evin fiyatını tahmin etmek.
+- Polinomsal Regresyon
    
-                         Hisse senedi fiyatlarını tahmin etmek.
+Regresyon Örnekleri :
+   
+- Bir evin fiyatını tahmin etmek.
+   
+- Hisse senedi fiyatlarını tahmin etmek.
+  
+2. Sınıflandırma(Classification) : Elimizde olan verileri sınıflandırmak için kullanılan bir methoddur. Cevabımız numerik değil kategoriktir. Belirli sayıda sınıf içine sokacaksak bu bir sınıflandırma örneğidir.
 
-2. Sınıflandırma(Classification) : Elimizde olan verileri sınıflandırmak için kullanılan bir methoddur. Cevabımız numerik değil kategoriktir.
+Algoritmaları : 
 
-Sınıflandırma Algoritmaları : Logistic Regression
+- Logistic Regression
 
-                              Decision Trees 
+- Decision Trees 
                               
-                              Random Forest
+- Random Forest
                               
-                              Support Vector Machines (SVM)
+- Support Vector Machines (SVM)
                               
-                              Neural Networks
+- Neural Networks
                               
+Sınıflandırma Örnekleri :
 
-Sınıflandırma Örnekleri : Müşterinin kredi almaya uygun olup olmaması. Belirli sayıda sınıf içine sokacaksak bu bir sınıflandırma örneğidir.
+- Müşterinin kredi almaya uygun olup olmaması. 
 
-                          Hastanın hasta olup olmadığını sınıflandırmak.
+- Hastanın hasta olup olmadığını sınıflandırmak.
+  
                           
 3. Kümeleme (Clustering) : Etiketlenmemiş verilerde, benzer özelliklere sahip örnekleri bir araya toplamak için kullanılır.
 
-Kümeleme Algoritmaları:  
-                        K-Means : Veriyi kaç gruba ayırmak istediğimiz ile alakaladır. Örneğin bir sınıf listesi mevcut. Listede öğrencilerin özellikleri yazmakta, yaş, boy, kilo vb. Rasgele gruplar atıyoruz. Kaç küme atayacaksak "K" değeri o olacak.
-                        
-                        DBSCAN
-                        
-                        Hierarchical Clustering
+Algoritmaları:  
 
-Kümeleme Örnekleri : Müşterileri alışveriş alışkanlıklarına göre segmentlere ayırmak.
+- K-Means 
+                        
+- DBSCAN
+                        
+- Hierarchical Clustering
 
-                     Sosyal medya verilerinde benzer kullanıcı grupları bulmak.
+Kümeleme Örnekleri : 
+
+- Müşterileri alışveriş alışkanlıklarına göre segmentlere ayırmak.
+
+- Sosyal medya verilerinde benzer kullanıcı grupları bulmak.
 
 # Makine Öğrenmesi Çeşitleri
 
@@ -696,7 +709,6 @@ def lojistik_regresyon(x, a1, a2, a3, a4, a5, b):
     y = 1 / (1 + math.exp(-z))
 
     return y
-
 ```
 
 ## 3. Destek Vektör Makineleri (SVM)
@@ -709,7 +721,7 @@ Datayı en iyi sınıf sayısına ayıran doğruları bulmak ve aradaki doğrula
 
 Overfit : Amaç siyaj çizgiyi bulmak. Modeli belli bir başarının üzerinde tahmin ediyorsa çizgi maviyr yapışık olacaktır. Maviye yapışmamış olması gerekmektedir.
 
-Underfit : Çizgi veriye o kadar iyi yerleşti ki veriyi çok iyi yorumluyor. Veri dışı tahminleme yapamıyor. Veriden vazgeçtiğimizde tam olmadığında veriyi temsil edemiyorç
+Underfit : Çizgi veriye o kadar iyi yerleşti ki veriyi çok iyi yorumluyor. Veri dışı tahminleme yapamıyor. Veriden vazgeçtiğimizde tam olmadığında veriyi temsil edemiyor.
 
 ![image](https://i0.wp.com/spotintelligence.com/wp-content/uploads/2024/05/support-vector-machine-svm.jpg?resize=1024%2C576&ssl=1)
 
@@ -743,71 +755,76 @@ def lineer_regression(X):
 ```bash
 Y = a*x+b
 ```
-Bu benim lineer regresyon modelim,bir örnek üzerinden bakacak olursak  a=3 ve b=5 dışarıda tanımlı modelin birer parametresi olsun.
+Bu bir lineer regresyon modeli ,bir örnek üzerinden bakacak olursak  a=3 ve b=5 dışarıda tanımlı modelin birer parametresidir.
 
 ```bash
 return y
 ```
-dedik şu anda bunu grafikte görmek istersek ya da y_23=lineer_regression(23)
-çizgiyi çizdirdik plt ile 
-bir boyut veriyoruz bize diğer boyutu veriyor bu çizgi
+'Return y' ifaesini kullandık ve şu anda bunu grafikte görmek istersek ya da y_23=lineer_regression(23) çizgiyi çizdirdik, plt ile 
+bir boyut verebiliriz. Böylelikle de bu çizgi bize diğer boyutu vermiş olur.
 
+```bash
 def f(x):
-return a*x+b verdiğimiz x ten y yi verebiliyor bize
+return a*x+b
+```
 
-uzay 3 boyutlu olsaydı x ve y yi verecektik o da bize z yi verecekti 
+Verdiğimiz x değerinden, y değerini verebiliyor bize.
 
-biz 2 verecektik o bize tek verecekti
+Uzay 3 boyutlu olsaydı, x ve y yi verecektik, o da bize z yi verecekti.
 
-
+```bash
 def linner_regression_3d(x,y)
 return a*x+b*y
+```
+Bir şeyin yerini ölçmek için kaç boyutsa eğer o kadar üst çıkarız, a kare, a küp vs. 
 
+Bir sinir hücresi aslında bir fonksiyondur ve birden çok sinir ağını birbirine bağlamak fonksiyonları iç içe yazmak demektir.
 
-bir şeyin yerini ölçmek için kaç boyutsa eğer o kadar üst çıkarız 
-a kare vs gibi 
+Temelde dikkatimizi çekecek şey birkaç ağ ise birkaç fonksiyondan oluşuyor. İç içe yazılmış fonksiyonu iyi organize edersek, şekli çizdirebiliyoruz.
 
+Aktivasyon Fonksiyonu : Bir sinir hücresinin aktive olabilmesi için belli değerler arasında yer alması gerekiyor, buna aktivasyon fonksiyonu denmektedir.
 
-bir sinir hücresi aslında bir fonksiyon ve birden çok sinir ağını birbirine bağlamak fonksiyonları iç içe yazmak demek.
+Normal fonskyionumuz bir sinir hücresidir. Aktivasyon fonksiyonu ise akışı organize etmektedir. 
 
-temelde dikkatimizi çekecek şey birkaç ağ ise birkaç fonksiyondan oluşuyor iç içe yazılmış fonksiyonu iyi organize edersek şekli çizdirebiliyoruz 
-
-aktivasyon fonksiyonu : bir sinir hücresinin aktive olabilmesi için belli değerler arasında yer alması gerekiyor buna aktivasyon fonksiyonu denir
-
-normal fonskyionumuz bir sinir hücresi. Aktivasyon fonksiyonu organize ediyor. 
-Bir yapay sinir ağı bir sürü birleşmiş fonksiyonun bir araya gelmiş hali 
-![image](https://github.com/user-attachments/assets/a8d81257-9812-4a49-8fc4-8012baeedceb)
-
+Bir yapay sinir ağı bir sürü birleşmiş fonksiyonun bir araya gelmiş halidir.
 
 Bir örnekle olayı anlamaya çalışalım.
 
 ![image3](https://github.com/user-attachments/assets/945e81f1-e452-4efc-8b7e-fbf78ce461c2)
 
 Yukarıdajki şema bir sınıftaki notlar ve ağırlıkları olsun. 
-Vizeden 50
-Finalde 30 almış 
-Bu kısım bizim müdahale edeceğimiz bir ağ veya hücre değil
-Z1h1 z2h2 bunlarda dersin iki hocası olsun
-Vizeyi bir başka hoca değerlendiriyor bir başka hoca değerlendiriyor vizeye iki bakış açısı geliyor
-Vize ve finalleri hocalar ayrı ayrı değerlendiriyor
-![image](https://github.com/user-attachments/assets/98bdddad-75bd-4711-952e-5eae20c02091)
+
+Vizeden 50, finalde 30 almış. Bu kısım bizim müdahale edeceğimiz bir ağ veya hücre değil.
+
+Z1h1, z2h2 bunlarda dersin iki hocası olsun.
+
+Vizeyi bir başka hoca değerlendiriyor, sonra bir başka hoca değerlendiriyor. Vizeye iki bakış açısı geliyor.
+
+Vize ve finalleri hocalar ayrı ayrı değerlendiriyor.
 
 ## - Back Propogation
 
 Ortada bir hata var önce bu hatayı hesaplıyoruz.
-Sigmoid e sayısı 2.71 biz oraya 1.5 3.7 10 yazsak da çalışıyor. 
+
+Sigmoid e sayısı 2.71 biz oraya 1.5, 3.7, 10 yazsak da çalışıyor. 
+
 Üssel fonksiyonun türevi alınırken hep doğal log kullanılıyor. Doğal log un tabanı e sayısı. 
-Sigmoidin türevini almak için fonksiyon yazmıştık bu sayede tekrar tekrar almamıza gerek kalmayacak
+
+Sigmoidin türevini almak için fonksiyon yazmıştık, bu sayede tekrar tekrar almamıza gerek kalmayacak.
 
 Ağırlıklarımız var bir sonraki adımda bunlar ne olacak?
 
-6. İleri Sınıflandırma Teknikleri
+## 6. İleri Sınıflandırma Teknikleri
+
 •	Ensemble Methods: Birden fazla modelin bir araya gelerek daha iyi sonuçlar vermesini sağlar. Bu yöntem, farklı modellerin avantajlarını birleştirir.
+
 •	Imbalanced Datasets: Verilerde dengesizlik varsa, modelin doğru sonuç vermesi zorlaşır. Bu durumda, dengesiz veri kümeleri özel yöntemlerle ele alınır.
 
 ## b. Unsupervised Learning (Denetimsiz Öğrenme)
 
-Verilerin etiketlenmediği durumlarda kullanılır. Model, verilerdeki desenleri ve yapıları keşfetmeye çalışır.
+Verilerin etiketlenmediği durumlarda kullanılır. 
+
+Model, verilerdeki desenleri ve yapıları keşfetmeye çalışır.
 
 Örnek: Müşteri segmentasyonu, kümeleme analizi.
 
@@ -815,12 +832,13 @@ Verilerin etiketlenmediği durumlarda kullanılır. Model, verilerdeki desenleri
 
 ## 1. K-Means Kümeleme
 
-K-Means kümeleme, verileri anlamlı gruplara ayırmak için kullanılır. 
+K-Means kümeleme, verileri anlamlı gruplara ayırmak için kullanılır.  Veriyi kaç gruba ayırmak istediğimiz ile alakaladır.
 
 Bir K-Means Modeli olduğunu varsayalım. Başlangıçta k adet küme belirlenir. Her veri kümesinde en yakın merkez nokta atanır. 
 
 Örnek : 1. kümenin merkezi belirli bir koordinatta yer almaktadır. Kaç sayıda küme varsa hepsinin merkez koordinatları belirlenir. Merkezler bulunduğunda model kurulabilir hale gelmektedir. Lineer regresyonda noktaları verdiğinde modeli kurarken burada da merkez koordinatlar bulunduğunda model kurulmaktadır. 
 
+Örneğin bir sınıf listesi mevcut. Listede öğrencilerin özellikleri yazmakta, yaş, boy, kilo vb. Rasgele gruplar atıyoruz. Kaç küme atayacaksak "K" değeri o olacak.
 
 ## 2. Hiyerarşik Kümeleme:
 
@@ -845,19 +863,25 @@ Birleştirici kümeleme, her müşteriyi başta kendi başına bir küme olarak 
 2.	En yakın iki müşteri (örneğin benzer harcama tutarına ve alışveriş sıklığına sahip olanlar) birleştirilir.
 3.	Birleştirme işlemi, tüm müşteriler tek bir küme haline gelene kadar devam eder.
 4.	Sonuç dendrogram üzerinden incelenir ve kümeler belirlenir.
-   
+
+```bash
 from scipy.cluster.hierarchy import linkage, dendrogram
 import matplotlib.pyplot as plt
 import numpy as np
+```
 
 # Örnek müşteri verisi
+
+```bash
 data = np.array([
     [200, 15], [220, 20], [250, 10], [300, 5],
     [400, 12], [410, 8], [380, 6], [420, 25],
     [100, 40], [120, 45], [130, 50], [140, 48]
 ])
+```
 
 ## Hiyerarşik kümeleme (Ward metodu)
+```bash
 Z = linkage(data, method='ward')
 
 ## Dendrogram Çizimi 
@@ -867,7 +891,7 @@ plt.title('Birleştirici Kümeleme - Dendrogram')
 plt.xlabel('Müşteriler')
 plt.ylabel('Mesafe')
 plt.show()
-
+```
 Divisive (Bölücü):
 
 o	Tüm veri setini tek bir küme olarak değerlendirerek başlar ve sonra bölünür.
@@ -887,70 +911,100 @@ Bölücü kümeleme, tüm bölümleri başta tek bir küme olarak değerlendirir
 
 Python Uygulaması (Yaklaşık Benzerlik için): Bölücü kümeleme, SciPy gibi kütüphanelerde doğrudan desteklenmez, ancak sklearn ile benzetim yapılabilir.
 
+```bash
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 import numpy as np
+```
 
-# Örnek veri
+Örnek veri
+
+
 data = np.array([
     [3.5, 7], [3.8, 6.5], [4.2, 5.8], [4.0, 6.2],
     [2.5, 8], [2.8, 7.5], [1.5, 9], [2.0, 8.8]
 ])
+```
 
-# İlk kümeleme: KMeans ile tek kümeden bölünmeye başlama
+İlk kümeleme: KMeans ile tek kümeden bölünmeye başlama.
+
+```bash
 kmeans = KMeans(n_clusters=2, random_state=0).fit(data)
+```
 
-# Küme etiketlerini görselleştirme
+Küme etiketlerini görselleştirme
+
+```bash
 plt.scatter(data[:, 0], data[:, 1], c=kmeans.labels_, cmap='viridis')
 plt.title('Bölücü Kümeleme - İlk Adım')
 plt.xlabel('Ortalama Not')
 plt.ylabel('Zorluk Seviyesi')
 plt.show()
-
+```
 ![Resim1](https://github.com/user-attachments/assets/8b5265a3-dc23-4042-be1d-460ff41c192b)
 
 Adım Adım Hiyerarşik Kümeleme Süreci
-1.	Mesafe Matrisi Oluşturma:
-o	Veri noktaları arasındaki mesafeler (ör. Öklid, Manhattan) hesaplanır.
-2.	Bağlantı Metodunun Seçilmesi:
-o	Kümeleme sırasında iki küme arasındaki mesafeyi belirlemek için bir bağlantı ölçütü seçilir:
-	Tek bağ (Minimum mesafe)
-	Tam bağ (Maksimum mesafe)
-	Ortalama bağ
-	Uzaklık merkezi
+
+1.	Mesafe Matrisi Oluşturma:VVeri noktaları arasındaki mesafeler (ör. Öklid, Manhattan) hesaplanır.
+
+2.	Bağlantı Metodunun Seçilmesi: Kümeleme sırasında iki küme arasındaki mesafeyi belirlemek için bir bağlantı ölçütü seçilir:
+
+  	- Tek bağ (Minimum mesafe)
+	- Tam bağ (Maksimum mesafe)
+	- Ortalama bağ
+	- Uzaklık merkezi
+
 3.	Kümelerin Birleştirilmesi:
-o	Başlangıçta her veri noktası kendi kümesindedir.
-o	Mesafe matrisine dayanarak en yakın iki küme birleştirilir.
-o	Bu işlem tüm veri noktaları tek bir küme haline gelene kadar tekrarlanır.
-4.	Dendrogram Çizimi:
-o	Kümeleme sonucunda dendrogram adı verilen bir ağaç yapısı elde edilir.
-o	Kullanıcı dendrogramı inceleyerek uygun küme sayısını seçebilir.
+   
+ 	- Başlangıçta her veri noktası kendi kümesindedir.
+	- Mesafe matrisine dayanarak en yakın iki küme birleştirilir.
+	- Bu işlem tüm veri noktaları tek bir küme haline gelene kadar tekrarlanır.
+  
+4.	- Dendrogram Çizimi:
+
+	- Kümeleme sonucunda dendrogram adı verilen bir ağaç yapısı elde edilir.
+	- Kullanıcı dendrogramı inceleyerek uygun küme sayısını seçebilir.
+
+```bash
 import numpy as np
 import pandas as pd
 from scipy.cluster.hierarchy import dendrogram, linkage
 from sklearn.datasets import make_blobs
 import matplotlib.pyplot as plt
+```
+Örnek veri oluşturma
 
-# Örnek veri oluşturma
+```bash
 X, _ = make_blobs(n_samples=20, centers=3, random_state=42)
+```
+Hiyerarşik kümeleme
 
-# Hiyerarşik kümeleme
+```bash
 Z = linkage(X, method='ward')  # Ward bağlantı metodu
+```
+Dendrogram çizimi
 
-# Dendrogram çizimi
+```bash
 plt.figure(figsize=(10, 5))
 dendrogram(Z)
 plt.title('Hiyerarşik Kümeleme - Dendrogram')
 plt.xlabel('Veri Noktaları')
 plt.ylabel('Mesafe')
 plt.show()
-Avantajlar
+```
+
+Avantajlar:
+
 •	Küme sayısını önceden belirtmeye gerek yoktur.
+
 •	Sonuçlar dendrogram üzerinden görselleştirilebilir ve yorumlanabilir.
+
 Dezavantajlar
+
 •	Büyük veri setlerinde yüksek hesaplama maliyeti.
+
 •	Kümeleme sırasında yapılan hataları geri almak zordur.
-![image](https://github.com/user-attachments/assets/fbec98bc-3ce2-4dce-a884-3f034e6ca478)
+
 
 ## 3. Apriori Algoritması
 
@@ -973,7 +1027,7 @@ Yarı denetimli öğrenmede az sayıda etiketli veri, çok sayıda etiketlenmemi
 
 Bir sınıflandırma modelinin çıktısını değerlendirir.
 
-a) Confusion Matrix(Karmaşıklık Matrisi): Bir sınıflandırma modelinin çıktısını değerlendirir.
+## a) Confusion Matrix(Karmaşıklık Matrisi): Bir sınıflandırma modelinin çıktısını değerlendirir.
 
   * True Positive (TP) : Doğru pozitif tahmini.
 
@@ -983,77 +1037,93 @@ a) Confusion Matrix(Karmaşıklık Matrisi): Bir sınıflandırma modelinin çı
  
   * False Negative (FN) : Yanlış negatif tahmin. (Type 2 hatası: Gerçekte yanlış olan hipotezin doğru olarak kabul edilmesi.(Tehlikeyi gözden kaçırmak gibi düşünülebilir.)
 
-b) Accuracy (Doğruluk Oranı ):Modelin doğru tahmin ettiği toplam veri oranı.
+## b) Accuracy (Doğruluk Oranı ):Modelin doğru tahmin ettiği toplam veri oranı.
 
                                 Fotmül: TP+TN/TP+TN+FP+FN 
 
 Kolay anlaşılır bir metriktir.Dengeli olmayan veri setinde yanıltıcı olabilir.
 
-c) Precision (Kesinlik): Pozitif tahminlerin ne kadar doğru olduğunu ölçer.
+## c) Precision (Kesinlik): Pozitif tahminlerin ne kadar doğru olduğunu ölçer.
 
                                 Formül : TP/(TP+FN)
 
 Önemli olduğu durum yanlış. Pozitiflerin maliyeti yüksekse.
 
-d) Recall (Dayanaklılık ve Hassasiyet) : Gerçek pozitiflerin ne kadar doğru olduğunun göstergesidir. Önemli olduğu durum: Yanlış negatiflerin maliyeti yüksekse.
+## d) Recall (Dayanaklılık ve Hassasiyet) : Gerçek pozitiflerin ne kadar doğru olduğunun göstergesidir. Önemli olduğu durum: Yanlış negatiflerin maliyeti yüksekse.
 
                                 Formül: TP/(TP+FN)
     
 Yalnız bazı durumlarda doğruluk ölçütleri her zaman doğru olmayabilir.
 
 
-e) F1 Score: Precision ve Recall’un harmonik ortalamasıdır.
+## e) F1 Score: Precision ve Recall’un harmonik ortalamasıdır.
                                 
                                 Formül : F1=2*(Precision*Recall/Precision+Recall)
 
 Avantaj: Dengeli bir değerlendirme sunar.
 
-f) ROC-AUC (Receiver Operating Characteristic - Area Under Curve): Modelin farklı eşik değerleri için doğruluğunu ölçer.
+## f) ROC-AUC (Receiver Operating Characteristic - Area Under Curve): Modelin farklı eşik değerleri için doğruluğunu ölçer.
 
 •	ROC Eğrisi: TPR (True Positive Rate) ve FPR (False Positive Rate) ilişkisini gösterir.
 
 •	AUC: Eğrinin altındaki alan, modelin genel başarısını ölçer.
+
 
 ## Regresyon Modelleri İçin Doğruluk Metrikleri
 
 Regresyon modelleri, sürekli değer tahmin eder (ör. bir evin fiyatı).
 
 ## a) Mean Absolute Error (MAE)
+
 Gerçek ve tahmin değerleri arasındaki mutlak farkların ortalaması:
+
 MAE=1/n ∑_(i=1)^n▒|y_i-y_i^^ |  
 
 Avantaj: Kolay yorumlanabilir.
-	Dezavantaj: Büyük hataları aynı ağırlıkta değerlendirir.
+
+Dezavantaj: Büyük hataları aynı ağırlıkta değerlendirir.
  
-b) Mean Squared Error (MSE)
+## b) Mean Squared Error (MSE)
+
 Hataların karesinin ortalaması:
+
 MSE = 1/N ∑_(i=1)^n▒〖(y_,-〖y^〗_i)〗^2 
-	Avantaj: Büyük hatalara daha fazla ağırlık verir.
-	Dezavantaj: Birimlerden etkilenir.
+	
+ Avantaj: Büyük hatalara daha fazla ağırlık verir.
+	
+ Dezavantaj: Birimlerden etkilenir.
  
-c) Root Mean Squared Error (RMSE)
+## c) Root Mean Squared Error (RMSE)
+
 MSE’nin karekökü alınarak hesaplanır:
+
 RMSE =√MSE
-	Avantaj: MSE’nin birim sorununu çözer.
+
+Avantaj: MSE’nin birim sorununu çözer.
  
-d) R-Squared (R²)
+## d) R-Squared (R²)
+
 Modelin veri varyansını ne kadar açıkladığını gösterir:
+
 R^2=1-〖SS〗_residual/〖SS〗_total 
-	0 ile 1 arasında değer alır:
-	1: Mükemmel uyum.
-	0: Model, hiçbir şey açıklayamıyor.
+	
+ 0 ile 1 arasında değer alır:
+	
+ 1: Mükemmel uyum.
+	
+ 0: Model, hiçbir şey açıklayamıyor.
  
-3. Öneriler
-	Sınıflandırmada: Veri dengesine dikkat ederek F1 Score veya ROC-AUC kullanın.
-	Regresyonda: Hedef birime göre MAE veya RMSE kullanın.
-![image](https://github.com/user-attachments/assets/cb0f96b9-dbf7-4ffb-8444-70d78f05e945)
+## 3. Öneriler
+	
+ Sınıflandırmada, veri dengesine dikkat ederek F1 Score veya ROC-AUC kullanın.
+ 
+ Regresyonda, hedef birime göre MAE veya RMSE kullanın.
 
 ## Kayıp Fonksiyonu (Loss Function)
 
 Makine öğrenmesi ve derin öğrenme modellerinde, modelin yaptığı tahminler ile gerçek değerler arasındaki farkı ölçmek için kullanılan matematiksel bir fonksiyondur. Modelin başarısızlık derecesini belirler ve amacı, bu hatayı minimize etmektir.
 
 Regresyon Analizlerinde Mean Square Error(MSE) ve Mean Absolute Error(MAE) sıklıkla kullanılmaktadır. 
-
 
 ## Çalıştığımız ortamda internetten veri çekebilme
 
@@ -1069,7 +1139,6 @@ HTML : Hyper Text Markup Language. Hiper metin işaretleme dili programlama dili
 <a>HTML ile bir web sitesi tasarlarken link vermek istediğimizde bu etiketi kullanırız. </a> 
 <li>Listeleme Etkiletidir.</li>
 <!--   --> : Html yorum satırı.
-
 
 Örneğin VsCode'da çalıştığımızı varsayalım ve internetten veri çekmek için VsCode'u internete bağlamalıyız. VsCode python ortamında 
 internete bağlanmalıdır. 
